@@ -1,0 +1,24 @@
+// #767676 회색
+// #FC5C42 오렌지색
+.NavBarContainer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  .NavBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    align-items: center;
+
+    li {
+      svg {
+        padding: 7px 0 2px 0;
+      }
+      margin-bottom: 7px;
+      font-size: 0.6887rem;
+      font-weight: 400;
+      letter-spacing: -0.41px;
+      color: #767676;
+    }
+  }
+}

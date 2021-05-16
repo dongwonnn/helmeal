@@ -1,0 +1,36 @@
+.LoginContainer {
+  width: 100%;
+  height: 100vh;
+  max-width: 1024px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-rows: 6fr 4fr;
+
+  .Logo {
+    svg {
+      position: fixed;
+      top: 31.7%;
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 400px;
+      width: 38.66%;
+    }
+  }
+  .LoginButtonGroup {
+    margin: 0 6.4%;
+  }
+  .TermsOfService {
+    margin: 32px auto 0 auto;
+    color: #767676;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 20px;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
