@@ -1,7 +1,7 @@
 import React from 'react';
 import './HomePage.scss';
 import HomeImage from '../assets/images/HomeImage.png';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -58,7 +58,7 @@ const HomePage = () => {
           깨끗한 재료로 다양한 단백질 식사를 제공하는 것이 <br />
           헬밀의 식단플랜입니다.
         </p>
-        <Link to="./detail">메뉴 보기</Link>
+
         <img src={HomeImage} alt="HomeImage" />
       </article>
     </div>
