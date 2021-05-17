@@ -1,0 +1,54 @@
+.MealInfomationContainer {
+  padding: 24px 25px 40px 25px;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: -1px;
+    padding-bottom: 4px;
+  }
+
+  p {
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    color: rgba(60, 60, 67, 0.6);
+    padding-bottom: 24px;
+  }
+
+  .IngredientsGroup {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: 5.8px;
+
+    div {
+      svg {
+        width: 48px;
+      }
+      p {
+        text-align: center;
+        font-size: 12px;
+        color: #767676;
+        line-height: 16px;
+        letter-spacing: -0.5px;
+      }
+    }
+  }
+
+  .DietComposition {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4.52fr 0.96fr 4.52fr;
+    justify-items: center;
+    align-items: center;
+
+    div {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

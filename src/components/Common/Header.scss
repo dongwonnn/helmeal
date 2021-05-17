@@ -1,0 +1,22 @@
+.HeaderContainer {
+  background-color: white;
+  padding: 4px 16px 18px 16px;
+
+  .LeftArrow {
+    position: absolute;
+    left: 16px;
+  }
+
+  .Title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: -0.41%;
+    text-align: center;
+  }
+
+  .Side {
+    position: absolute;
+    right: 16px;
+  }
+}

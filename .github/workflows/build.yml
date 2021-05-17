@@ -1,42 +1,45 @@
-name: CI
-on:
-  push:
-    branches: [master]
+# name: CI
+# on:
+#   push:
+#     branches: [master]
 
-    workflow_dispatch:
+#     workflow_dispatch:
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      # 레파지토리 check out
-      - name: Checkout source code.
-        uses: actions/checkout@v2
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       # 레파지토리 check out
+#       - name: Checkout source code.
+#         uses: actions/checkout@v2
 
-      # node.js version 12
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '12'
+#       # node.js version 12
+#       - uses: actions/setup-node@v2
+#         with:
+#           node-version: '12'
 
-      # Set Dependencies
-      - name: Install Dependencies
-        run: npm install
+#       # Set Dependencies
+#       - name: Install Dependencies
+#         run: npm install
 
-      # Build
-      - name: Build
-        run: yarn preorder
+#       # Build
+#       - name: Build
+#         run: yarn preorder
 
-      # git auth
-      - uses: actions/labeler@v2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+#       # git auth
+#       - uses: actions/labeler@v2
+#         with:
+#           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # Author identity
-      - name: Github auth and commit
-        env:
-          MY_EMAIL: kkum9408@gmail.com
-          MY_NAME: dongwon
-        run: |
-          git config --global user.email $MY_EMAIL
-          git config --global user.name $MY_NAME
-          yarn deploy
+#       # Author identity
+#       - name: Github auth and commit
+#         env:
+#           MY_EMAIL: kkum9408@gmail.com
+#           MY_NAME: dongwon
+#         run: |
+#           git config --global user.email $MY_EMAIL
+#           git config --global user.name $MY_NAME
+
+#       # Deploy
+#       - name: Deploy
+#         run: yarn deploy

@@ -5,6 +5,7 @@ import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import DetailPage from '../pages/DetailPage';
 import ProfilePage from '../pages/ProfilePage';
+import SubscribePage from '../pages/SubscribePage';
 import './App.scss';
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
     <>
       <Switch>
         <Route path="/login" component={LoginPage} />
+        <Route path="/subscribe" component={SubscribePage} />
         <>
           <NavBar />
 
