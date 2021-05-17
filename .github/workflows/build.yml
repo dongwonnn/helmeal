@@ -17,8 +17,8 @@ build:
 
     # node.js 버전 12
     - uses: actions/setup-node@v2
-        with:
-            node-version: 12
+      with:
+        node-version: 12
 
     # npm 설치
     - name: Install Dependencies
@@ -26,8 +26,8 @@ build:
 
     # npm run build
     - name: Build
-        run: yarn preorder
+       run: yarn preorder
 
     # npm run build
     - name: deploy
-        run: yarn deploy 
+       run: yarn deploy 
