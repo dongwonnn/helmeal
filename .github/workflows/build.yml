@@ -21,13 +21,10 @@ build:
         node-version: 12
 
     # npm 설치
-    - name: Install Dependencies
-        run: npm install
+       run: npm install
 
     # npm run build
-    - name: Build
-        run: yarn preorder
+       run: yarn preorder
 
     # npm run build
-    - name: deploy
-        run: yarn deploy 
+       run: yarn deploy 
