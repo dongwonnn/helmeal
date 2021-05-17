@@ -22,6 +22,10 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      # Build
+      - name: Build
+        run: yarn preorder
+
       # git auth
       - uses: actions/labeler@v2
         with:
@@ -35,10 +39,6 @@ jobs:
         run: |
           git config --global user.email $MY_EMAIL
           git config --global user.name $MY_NAME
-
-      # Build
-      - name: Build
-        run: yarn preorder
 
       # Deploy
       - name: Deploy
