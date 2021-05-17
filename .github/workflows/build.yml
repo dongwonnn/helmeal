@@ -1,30 +1,31 @@
 name: CI
 on:
-push:
-    # master branch에서 push했을 때
+  push:
     branches: [master]
 
     workflow_dispatch:
 
 jobs:
-build:
+  build:
     runs-on: ubuntu-latest
     steps:
-    ##### 2 #####
-    # 레파지토리 check out
-    - name: Checkout source code.
-      uses: actions/checkout@v2
+      # 레파지토리 check out
+      - name: Checkout source code.
+        uses: actions/checkout@v2
 
-    # node.js 버전 12
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 12
+      # node.js 버전 12
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
 
-    # npm 설치
-       run: npm install
+      # 의존 파일 설치
+      - name: Install Dependencies
+        run: npm install
 
-    # npm run build
-       run: yarn preorder
+      # build
+      - name: Build
+        run: yarn preorder
 
-    # npm run build
-       run: yarn deploy 
+      # Deploy
+      - name: Deploy
+        run: yarn deploy
