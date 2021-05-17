@@ -39,7 +39,4 @@ jobs:
         run: |
           git config --global user.email $MY_EMAIL
           git config --global user.name $MY_NAME
-
-      # Deploy
-      - name: Deploy
-        run: yarn deploy
+          yarn deploy
