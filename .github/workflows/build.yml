@@ -1,0 +1,29 @@
+name: CI
+on:
+push:
+    ##### 1 #####
+    branches: [master]
+
+    workflow_dispatch:
+
+jobs:
+build:
+    runs-on: ubuntu-latest
+    steps:
+    ##### 2 #####
+    # 레파지토리 check out
+    - name: Checkout source code.
+      uses: actions/checkout@v2
+
+    # node.js 버전 12
+    - uses: actions/setup-node@v2
+        with:
+        node-version: '12'
+
+    # npm 설치
+    - name: Install Dependencies
+        run: npm install
+
+    #환경변수 설정 ( 상대경로 지정 )
+    - name: Set Env
+        run: echo "PUBLIC_URL=/${GITHUB_REPOSITORY#*/}" >> $GITHUB_ENV
