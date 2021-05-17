@@ -1,25 +1,36 @@
 {
   "files": {
-    "main.css": "/helmeal/static/css/main.1deff7f8.chunk.css",
-    "main.js": "/helmeal/static/js/main.f3527966.chunk.js",
-    "main.js.map": "/helmeal/static/js/main.f3527966.chunk.js.map",
+    "main.css": "/helmeal/static/css/main.59184a89.chunk.css",
+    "main.js": "/helmeal/static/js/main.0ce495dd.chunk.js",
+    "main.js.map": "/helmeal/static/js/main.0ce495dd.chunk.js.map",
     "runtime-main.js": "/helmeal/static/js/runtime-main.4bb52fe4.js",
     "runtime-main.js.map": "/helmeal/static/js/runtime-main.4bb52fe4.js.map",
-    "static/js/2.403e9d0f.chunk.js": "/helmeal/static/js/2.403e9d0f.chunk.js",
-    "static/js/2.403e9d0f.chunk.js.map": "/helmeal/static/js/2.403e9d0f.chunk.js.map",
+    "static/js/2.8344c4e8.chunk.js": "/helmeal/static/js/2.8344c4e8.chunk.js",
+    "static/js/2.8344c4e8.chunk.js.map": "/helmeal/static/js/2.8344c4e8.chunk.js.map",
     "index.html": "/helmeal/index.html",
-    "static/css/main.1deff7f8.chunk.css.map": "/helmeal/static/css/main.1deff7f8.chunk.css.map",
-    "static/js/2.403e9d0f.chunk.js.LICENSE.txt": "/helmeal/static/js/2.403e9d0f.chunk.js.LICENSE.txt",
+    "static/css/main.59184a89.chunk.css.map": "/helmeal/static/css/main.59184a89.chunk.css.map",
+    "static/js/2.8344c4e8.chunk.js.LICENSE.txt": "/helmeal/static/js/2.8344c4e8.chunk.js.LICENSE.txt",
+    "static/media/Beef_Protein.e43f5f3b.svg": "/helmeal/static/media/Beef_Protein.e43f5f3b.svg",
+    "static/media/Chicken_Protein.d9d06d30.svg": "/helmeal/static/media/Chicken_Protein.d9d06d30.svg",
+    "static/media/Fish_Protein.98c1cd8a.svg": "/helmeal/static/media/Fish_Protein.98c1cd8a.svg",
+    "static/media/Fork_Protein.bfa9dd4c.svg": "/helmeal/static/media/Fork_Protein.bfa9dd4c.svg",
     "static/media/Home.4e36604f.svg": "/helmeal/static/media/Home.4e36604f.svg",
     "static/media/HomeImage.74f718ec.png": "/helmeal/static/media/HomeImage.74f718ec.png",
+    "static/media/Large_Meal_02.51ba6c19.png": "/helmeal/static/media/Large_Meal_02.51ba6c19.png",
+    "static/media/LeftIcon.e74c0009.svg": "/helmeal/static/media/LeftIcon.e74c0009.svg",
     "static/media/Logo.5fa2d735.svg": "/helmeal/static/media/Logo.5fa2d735.svg",
+    "static/media/Meal_Presentation.add3b9e2.png": "/helmeal/static/media/Meal_Presentation.add3b9e2.png",
+    "static/media/PlusIcon.be60cc59.svg": "/helmeal/static/media/PlusIcon.be60cc59.svg",
     "static/media/Profile.0ae4bb44.svg": "/helmeal/static/media/Profile.0ae4bb44.svg",
-    "static/media/Routine.be0a0335.svg": "/helmeal/static/media/Routine.be0a0335.svg"
+    "static/media/Routine.be0a0335.svg": "/helmeal/static/media/Routine.be0a0335.svg",
+    "static/media/ShareLogo.8a3dd6ab.svg": "/helmeal/static/media/ShareLogo.8a3dd6ab.svg",
+    "static/media/Snack_Presentation.366d59d6.png": "/helmeal/static/media/Snack_Presentation.366d59d6.png",
+    "static/media/Vegetable_Protein.27988f18.svg": "/helmeal/static/media/Vegetable_Protein.27988f18.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.4bb52fe4.js",
-    "static/js/2.403e9d0f.chunk.js",
-    "static/css/main.1deff7f8.chunk.css",
-    "static/js/main.f3527966.chunk.js"
+    "static/js/2.8344c4e8.chunk.js",
+    "static/css/main.59184a89.chunk.css",
+    "static/js/main.0ce495dd.chunk.js"
   ]
 }
