@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/helmeal/static/css/main.1deff7f8.chunk.css",
+    "main.js": "/helmeal/static/js/main.f3527966.chunk.js",
+    "main.js.map": "/helmeal/static/js/main.f3527966.chunk.js.map",
+    "runtime-main.js": "/helmeal/static/js/runtime-main.4bb52fe4.js",
+    "runtime-main.js.map": "/helmeal/static/js/runtime-main.4bb52fe4.js.map",
+    "static/js/2.403e9d0f.chunk.js": "/helmeal/static/js/2.403e9d0f.chunk.js",
+    "static/js/2.403e9d0f.chunk.js.map": "/helmeal/static/js/2.403e9d0f.chunk.js.map",
+    "index.html": "/helmeal/index.html",
+    "static/css/main.1deff7f8.chunk.css.map": "/helmeal/static/css/main.1deff7f8.chunk.css.map",
+    "static/js/2.403e9d0f.chunk.js.LICENSE.txt": "/helmeal/static/js/2.403e9d0f.chunk.js.LICENSE.txt",
+    "static/media/Home.4e36604f.svg": "/helmeal/static/media/Home.4e36604f.svg",
+    "static/media/HomeImage.74f718ec.png": "/helmeal/static/media/HomeImage.74f718ec.png",
+    "static/media/Logo.5fa2d735.svg": "/helmeal/static/media/Logo.5fa2d735.svg",
+    "static/media/Profile.0ae4bb44.svg": "/helmeal/static/media/Profile.0ae4bb44.svg",
+    "static/media/Routine.be0a0335.svg": "/helmeal/static/media/Routine.be0a0335.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4bb52fe4.js",
+    "static/js/2.403e9d0f.chunk.js",
+    "static/css/main.1deff7f8.chunk.css",
+    "static/js/main.f3527966.chunk.js"
+  ]
+}
