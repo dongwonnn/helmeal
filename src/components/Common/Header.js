@@ -4,7 +4,6 @@ import './Header.scss';
 
 const Header = ({ children }) => {
   const [leftArrow, title, side] = children;
-  console.log(leftArrow);
 
   return (
     <div className="HeaderContainer">

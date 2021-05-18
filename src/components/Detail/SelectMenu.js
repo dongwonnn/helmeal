@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import './SelectMenu.scss';
 
 const SelectMenu = ({ setIsMeal }) => {
   const onClickMeal = useCallback(() => {
@@ -13,8 +14,12 @@ const SelectMenu = ({ setIsMeal }) => {
     <div className="SelectMenuContainer">
       <h2>헬밀 프로틴</h2>
       <div className="MenuToggle">
-        <div onClick={onClickMeal}>식사</div>
-        <div onClick={onClickSnack}>간식</div>
+        <div className="Meal" onClick={onClickMeal}>
+          <p>식사</p>
+        </div>
+        <div className="Snack" onClick={onClickSnack}>
+          <p>간식</p>
+        </div>
       </div>
     </div>
   );

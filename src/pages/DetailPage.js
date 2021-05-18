@@ -1,22 +1,25 @@
 import React, { useState } from 'react';
-import Carousel from '../components/Common/Carousel';
-import MealInfomation from '../components/Detail/MealInfomation';
+import { Link } from 'react-router-dom';
+
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { ReactComponent as ShareLogo } from '../assets/images/ShareLogo.svg';
 import LargeMeal_02 from '../assets/images/large/Large_Meal_02.png';
 
+import Carousel from '../components/Common/Carousel';
+import MealInfomation from '../components/Detail/MealInfomation';
 import Header from '../components/Common/Header';
 import MealMenus from '../components/Detail/MealMenus';
 import SnackMenus from '../components/Detail/SnackMenus';
-import { Link } from 'react-router-dom';
 import SelectMenu from '../components/Detail/SelectMenu';
 import DetailBackground from '../components/Detail/DetailBackground';
+
+import './DetailPage.scss';
 
 const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
 
   return (
-    <>
+    <div className="DetaiPageContainer">
       <Header>
         <LeftIcon />
         <h3>헬밀 프로틴</h3>
@@ -35,7 +38,7 @@ const DetailPage = () => {
           <p>루틴 시작하기</p>
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 

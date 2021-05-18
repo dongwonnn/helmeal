@@ -1,0 +1,30 @@
+.MenuCardContainer {
+  margin-bottom: 24px;
+  border-radius: 10px;
+  border: 1px solid #eaeaea;
+
+  img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: #767676;
+    padding: 0 24px 16px 24px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  h2 {
+    padding: 0 24px 16px 24px;
+
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.5px;
+    color: #000000;
+  }
+}
