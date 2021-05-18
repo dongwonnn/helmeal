@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { ReactComponent as ShareLogo } from '../assets/images/ShareLogo.svg';
@@ -14,12 +13,15 @@ import SelectMenu from '../components/Detail/SelectMenu';
 import DetailBackground from '../components/Detail/DetailBackground';
 
 import './DetailPage.scss';
+import StartRoutine from '../components/Common/StartRoutine';
+import MealCategories from '../components/Detail/MealCategories';
 
 const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
 
   return (
     <div className="DetaiPageContainer">
+      <StartRoutine />
       <Header>
         <LeftIcon />
         <h3>헬밀 프로틴</h3>
@@ -31,13 +33,14 @@ const DetailPage = () => {
       <MealInfomation />
       <DetailBackground />
       <SelectMenu setIsMeal={setIsMeal} />
-      {isMeal ? <MealMenus /> : <SnackMenus />}
-
-      <div>
-        <Link to="/subscribe">
-          <p>루틴 시작하기</p>
-        </Link>
-      </div>
+      {isMeal ? (
+        <>
+          <MealCategories />
+          <MealMenus />
+        </>
+      ) : (
+        <SnackMenus />
+      )}
     </div>
   );
 };
