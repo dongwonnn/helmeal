@@ -1,0 +1,26 @@
+.DetailBackgroundContainer {
+  background-image: url('../../assets/images/DetailBackground.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .ImageContent {
+    padding: 40px 24px 122px 24px;
+
+    h2 {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: -0.5px;
+      padding-bottom: 32px;
+    }
+
+    p {
+      color: #ffffff;
+
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: -0.5px;
+    }
+  }
+}

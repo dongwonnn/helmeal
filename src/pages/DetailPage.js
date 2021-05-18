@@ -10,6 +10,7 @@ import MealMenus from '../components/Detail/MealMenus';
 import SnackMenus from '../components/Detail/SnackMenus';
 import { Link } from 'react-router-dom';
 import SelectMenu from '../components/Detail/SelectMenu';
+import DetailBackground from '../components/Detail/DetailBackground';
 
 const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
@@ -25,8 +26,8 @@ const DetailPage = () => {
         <img src={LargeMeal_02} alt="LargeMeal_02" />
       </Carousel>
       <MealInfomation />
+      <DetailBackground />
       <SelectMenu setIsMeal={setIsMeal} />
-
       {isMeal ? <MealMenus /> : <SnackMenus />}
 
       <div>
