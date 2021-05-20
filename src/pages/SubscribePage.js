@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Common/Header';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { useSelector } from 'react-redux';
@@ -10,8 +10,15 @@ import TotalPay from '../components/Subscribe/TotalPay';
 import { getPayForm } from '../utils/getPayForm';
 import PayWayContainer from '../components/Subscribe/PayWayContainer';
 import AddressContainer from '../components/Subscribe/AddressContainer';
+import { useLocation } from 'react-router';
 
 const SubscribePage = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option }) => ({
     dateInfoPrice: option.dateInfoPrice,
     subscribeTermPrice: option.subscribeTermPrice,

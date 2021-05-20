@@ -9,6 +9,7 @@ import SubscribePage from '../pages/SubscribePage';
 import SubscribeOptionPage from '../pages/SubscribeOptionPage';
 import AddressPage from '../pages/AddressPage';
 import SubscribeCompletePage from '../pages/SubscribeCompletePage';
+import MenuDetailPage from '../pages/MenuDetailPage';
 import './App.scss';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/subscribe" component={SubscribePage} />
         <Route path="/address" component={AddressPage} />
         <Route path="/subscribe-complete" component={SubscribeCompletePage} />
+        <Route path="/menu-detail" component={MenuDetailPage} />
         <>
           <NavBar />
 

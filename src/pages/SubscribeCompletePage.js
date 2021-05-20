@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import Button from '../components/Common/Button';
 import Header from '../components/Common/Header';
 import OrderInfos from '../components/Subscribe/OrderInfos';
+import { useLocation } from 'react-router';
 
 import './SubscribeCompletePage.scss';
 
 const SubscribeCompletePage = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <div className="SubscribeCompletePage">
       <Header>
@@ -29,7 +40,9 @@ const SubscribeCompletePage = () => {
         </div>
       </div>
       <div className="ButtonContainer">
-        <Button>확인</Button>
+        <Link to="/">
+          <Button>확인</Button>
+        </Link>
       </div>
     </div>
   );

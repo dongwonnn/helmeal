@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ReactComponent as Logo } from '../assets/images/Logo.svg';
 import LoginButton from '../components/Login/LoginButton';
 import TermsOfService from '../components/Login/TermsOfService';
+import { useLocation } from 'react-router';
 import './LoginPage.scss';
 
 const LoginPage = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="LoginPage">
+      {console.log('check')}
       <div className="Logo">
         <Logo />
       </div>

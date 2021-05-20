@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { ReactComponent as ShareLogo } from '../assets/images/ShareLogo.svg';
@@ -15,10 +15,17 @@ import DetailBackground from '../components/Detail/DetailBackground';
 import './DetailPage.scss';
 import MealCategories from '../components/Detail/MealCategories';
 import Button from '../components/Common/Button';
+import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 
 const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
+
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="DetailPage">

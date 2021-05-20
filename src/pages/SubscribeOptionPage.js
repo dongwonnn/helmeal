@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SubscribeDropdown from '../components/Subscribe/SubscribeDropdown';
 import OrderInfos from '../components/Subscribe/OrderInfos';
 import TotalPay from '../components/Subscribe/TotalPay';
@@ -7,9 +7,15 @@ import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import './SubscribeOptionPage.scss';
 import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 const SubscribeOptionPage = () => {
   const [canSelectOption, setCanSelectOption] = useState(true);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   return (
     <div className="SubscribeOptionPage">

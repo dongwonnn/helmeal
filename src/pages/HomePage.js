@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './HomePage.scss';
 import HomeImage from '../assets/images/HomeImage.png';
+import { useLocation } from 'react-router';
 // import { Link } from 'react-router-dom';
 
 const HomePage = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="HomePage">
       <div className="VideoContainer">동영상 더미 블럭</div>

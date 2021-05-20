@@ -8,7 +8,7 @@ const MealMenus = () => {
   return (
     <div className="MealMenusContainer">
       <div className="MenuCarsdContainer">
-        <Link to="menuDetail">
+        <Link to="/menu-detail">
           <MenuCard>
             <img src={LargeMeal_02} alt="MenuImage" />
             <p>프로틴:38g | 탄수화물:38g </p>
@@ -16,7 +16,7 @@ const MealMenus = () => {
           </MenuCard>
         </Link>
 
-        <Link to="menuDetail">
+        <Link to="/menu-detail">
           <MenuCard>
             <img src={LargeMeal_02} alt="MenuImage" />
             <p>프로틴:38g | 탄수화물:38g </p>
@@ -25,21 +25,21 @@ const MealMenus = () => {
             </h2>
           </MenuCard>
         </Link>
-        <Link to="menuDetail">
+        <Link to="/menu-detail">
           <MenuCard>
             <img src={LargeMeal_02} alt="MenuImage" />
             <p>프로틴:38g | 탄수화물:38g </p>
             <h2>두부 샐러드와 브로콜리 오리엔탈 드래싱과 오트밀 밥</h2>
           </MenuCard>
         </Link>
-        <Link to="menuDetail">
+        <Link to="/menu-detail">
           <MenuCard>
             <img src={LargeMeal_02} alt="MenuImage" />
             <p>프로틴:38g | 탄수화물:38g </p>
             <h2>비건용 식물성 고기 야채 볶음과 부면 파스타</h2>
           </MenuCard>
         </Link>
-        <Link to="menuDetail">
+        <Link to="/menu-detail">
           <MenuCard>
             <img src={LargeMeal_02} alt="MenuImage" />
             <p>프로틴:38g | 탄수화물:38g </p>
