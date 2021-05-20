@@ -13,15 +13,15 @@ import SelectMenu from '../components/Detail/SelectMenu';
 import DetailBackground from '../components/Detail/DetailBackground';
 
 import './DetailPage.scss';
-import StartRoutine from '../components/Common/StartRoutine';
 import MealCategories from '../components/Detail/MealCategories';
+import Button from '../components/Common/Button';
+import { Link } from 'react-router-dom';
 
 const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
 
   return (
     <div className="DetaiPageContainer">
-      <StartRoutine />
       <Header>
         <LeftIcon />
         <h3>헬밀 프로틴</h3>
@@ -41,6 +41,11 @@ const DetailPage = () => {
       ) : (
         <SnackMenus />
       )}
+      <div className="ButtonContainer">
+        <Link to="/subscribe-option">
+          <Button>루틴 시작하기</Button>
+        </Link>
+      </div>
     </div>
   );
 };
