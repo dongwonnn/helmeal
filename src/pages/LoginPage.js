@@ -6,7 +6,7 @@ import './LoginPage.scss';
 
 const LoginPage = () => {
   return (
-    <div className="LoginContainer">
+    <div className="LoginPage">
       <div className="Logo">
         <Logo />
       </div>

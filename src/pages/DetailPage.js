@@ -21,7 +21,7 @@ const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
 
   return (
-    <div className="DetaiPageContainer">
+    <div className="DetailPage">
       <Header>
         <LeftIcon />
         <h3>헬밀 프로틴</h3>

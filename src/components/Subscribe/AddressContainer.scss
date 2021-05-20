@@ -1,0 +1,39 @@
+.AddressContainer {
+  .AddressInfo {
+    border-radius: 8px;
+    background-color: #f5f6f7;
+    margin-bottom: 16px;
+
+    p {
+      padding: 24px 90px 10px 90px;
+
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      letter-spacing: -0.5px;
+
+      color: #767676;
+    }
+
+    .AddressButtonContainer {
+      padding: 0 103px 24px 103px;
+      .AddressButton {
+        padding: 10px 7.2px;
+        background-color: #fc5c42;
+        color: white;
+        border-radius: 8px;
+
+        a {
+          font-size: 13px;
+          line-height: 18px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          letter-spacing: 0.374px;
+
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}

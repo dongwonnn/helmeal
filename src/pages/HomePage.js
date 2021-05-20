@@ -5,7 +5,7 @@ import HomeImage from '../assets/images/HomeImage.png';
 
 const HomePage = () => {
   return (
-    <div className="HomeContainer">
+    <div className="HomePage">
       <div className="VideoContainer">동영상 더미 블럭</div>
       <article className="ArticleContainer">
         <h4>VALUE AND MISSION</h4>
