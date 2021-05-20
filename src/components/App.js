@@ -7,6 +7,8 @@ import DetailPage from '../pages/DetailPage';
 import ProfilePage from '../pages/ProfilePage';
 import SubscribePage from '../pages/SubscribePage';
 import SubscribeOptionPage from '../pages/SubscribeOptionPage';
+import AddressPage from '../pages/AddressPage';
+import SubscribeCompletePage from '../pages/SubscribeCompletePage';
 import './App.scss';
 
 const App = () => {
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/login" component={LoginPage} />
         <Route path="/subscribe-option" component={SubscribeOptionPage} />
         <Route path="/subscribe" component={SubscribePage} />
+        <Route path="/address" component={AddressPage} />
+        <Route path="/subscribe-complete" component={SubscribeCompletePage} />
         <>
           <NavBar />
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/Common/Header';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 import './SubscribePage.scss';
 import Button from '../components/Common/Button';
 import OrderInfos from '../components/Subscribe/OrderInfos';
@@ -43,7 +43,9 @@ const SubscribePage = () => {
         <TotalPay />
       </div>
       <div className="ButtonContauner">
-        <Button>{totalPay}원 결제하기</Button>
+        <Link to="/subscribe-complete">
+          <Button>{totalPay}원 결제하기</Button>
+        </Link>
       </div>
     </div>
   );

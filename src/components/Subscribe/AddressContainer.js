@@ -10,7 +10,7 @@ const AddressContainer = () => {
         <p>배송지 정보가 없습니다.</p>
         <div className="AddressButtonContainer">
           <div className="AddressButton">
-            <Link to="/">배송지 입력하기</Link>
+            <Link to="/address">배송지 입력하기</Link>
           </div>
         </div>
       </div>
