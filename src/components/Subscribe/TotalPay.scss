@@ -1,0 +1,29 @@
+.TotalPay {
+  background-color: #f5f6f7;
+  border-radius: 8px;
+
+  .TotalPayContent {
+    padding: 16px 24px;
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    div:first-child {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: right;
+      letter-spacing: -0.5px;
+
+      color: #020202;
+    }
+    div:last-child {
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: -0.5px;
+
+      color: #767676;
+    }
+  }
+}

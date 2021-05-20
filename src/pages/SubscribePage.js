@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import SubscribeDropdown from '../components/Subscribe/SubscribeDropdown';
-import './SubscribePage.scss';
 import OrderInfos from '../components/Subscribe/OrderInfos';
 import TotalPay from '../components/Subscribe/TotalPay';
+import Header from '../components/Common/Header';
+import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
+import './SubscribePage.scss';
+import StartRoutine from '../components/Common/StartRoutine';
 
 const SubscribePage = () => {
   const [canSelectOption, setCanSelectOption] = useState(true);
@@ -10,13 +13,26 @@ const SubscribePage = () => {
   return (
     <div className="SubscribePage">
       {canSelectOption ? (
-        <SubscribeDropdown setCanSelectOption={setCanSelectOption} />
+        <>
+          <Header>
+            <LeftIcon />
+            <h3>구독 옵션 선택</h3>
+            <p></p>
+          </Header>
+          <SubscribeDropdown setCanSelectOption={setCanSelectOption} />
+        </>
       ) : (
         <>
+          <Header>
+            <LeftIcon />
+            <h3>구독 옵션 선택</h3>
+            <p>선택취소</p>
+          </Header>
           <div className="OrderInfoContainer">
             <OrderInfos />
             <TotalPay />
           </div>
+          <StartRoutine />
         </>
       )}
     </div>
@@ -24,27 +40,3 @@ const SubscribePage = () => {
 };
 
 export default SubscribePage;
-
-/* <select>
-          <option>프로틴 종류</option>
-          <option>골고루 프로틴</option>
-          <option>소고기 프로틴</option>
-          <option>돼지고기 프로틴</option>
-          <option>생선 프로틴</option>
-          <option>식물성 (비건)프로틴</option>
-        </select>
-
-        <select>
-          <option>요일 선택</option>
-          <option>5일 - 월/화/수/목/금</option>
-          <option>3일 - 월/수/금</option>
-          <option>2일 - 화/목</option>
-        </select>
-
-        <select>
-          <option>구독 기간 선택</option>
-          <option>1주</option>
-          <option>2주</option>
-          <option>3주</option>
-          <option>4주</option>
-        </select>*/

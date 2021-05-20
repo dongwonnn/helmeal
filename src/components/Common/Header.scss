@@ -19,5 +19,14 @@
   .Side {
     position: absolute;
     right: 16px;
+
+    p {
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: -0.5px;
+
+      color: #000000;
+    }
   }
 }

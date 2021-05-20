@@ -8,8 +8,7 @@ import {
   setSubscribePrice,
 } from '../../reducers/option';
 
-import { ReactComponent as LeftIcon } from '../../assets/images/LeftIcon.svg';
-import Header from '../Common/Header';
+import { getNumberForm } from '../../utils/getNumberForm';
 import './SubscribeDropdown.scss';
 
 const SubscribeDropdown = ({ setCanSelectOption }) => {
@@ -48,16 +47,21 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
   const onDateinInfo = useCallback(
     (e) => {
       if (
-        // li 제외 클릭했을 때
+        // 자식 DOM 클릭 했을 시 처리
         e.target.className === 'OptionDetail' ||
         e.target.className === 'OptionMenu'
       ) {
         dispatch(setDateInfo(e.target.parentElement.firstChild.innerText));
-        dispatch(setDatePrice(e.target.parentElement.lastChild.innerText));
+        const tempDatePrice =
+          e.target.parentElement.lastChild.innerText.split(' / ')[1];
+        const newDatePrice = getNumberForm(tempDatePrice);
+        dispatch(setDatePrice(newDatePrice));
       } else if (e.target.className === 'Option') {
-        // li를 클릭했을 때
         dispatch(setDateInfo(e.target.firstChild.innerText));
-        dispatch(setDatePrice(e.target.lastChild.innerText));
+        const tempDatePrice = e.target.lastChild.innerText.split(' / ')[1];
+        const newDatePrice = getNumberForm(tempDatePrice);
+
+        dispatch(setDatePrice(newDatePrice));
       }
 
       setIsDateBoxShow(false);
@@ -69,16 +73,23 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
   const OnSubscribeTerm = useCallback(
     (e) => {
       if (
-        // li 제외 클릭했을 때
+        // 자식 DOM 클릭 했을 시 처리
         e.target.className === 'OptionDetail' ||
         e.target.className === 'OptionMenu'
       ) {
         dispatch(setSubscribeInfo(e.target.parentElement.firstChild.innerText));
-        dispatch(setSubscribePrice(e.target.parentElement.lastChild.innerText));
+
+        const tempSubscribePrice = e.target.parentElement.lastChild.innerText;
+        const newSubscribePrice = getNumberForm(tempSubscribePrice);
+
+        dispatch(setSubscribePrice(newSubscribePrice));
       } else if (e.target.className === 'Option') {
-        // li를 클릭했을 때
         dispatch(setSubscribeInfo(e.target.firstChild.innerText));
-        dispatch(setSubscribePrice(e.target.lastChild.innerText));
+
+        const tempSubscribePrice = e.target.lastChild.innerText;
+        const newSubscribePrice = getNumberForm(tempSubscribePrice);
+
+        dispatch(setSubscribePrice(newSubscribePrice));
       }
 
       setCanSelectOption(false);
@@ -86,7 +97,7 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
     [setCanSelectOption, dispatch],
   );
 
-  const onChangeMenu = (order) => {
+  const onChangeMenu = useCallback((order) => {
     if (order === 'first') {
       setIsProteinBoxShow(true);
       setIsDateBoxShow(false);
@@ -100,15 +111,10 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
       setIsDateBoxShow(false);
       setIsTermBoxShow(true);
     }
-  };
+  }, []);
 
   return (
     <div className="SubscribeDropdown">
-      <Header>
-        <LeftIcon />
-        <h3>구독 옵션 선택</h3>
-        <p></p>
-      </Header>
       <p className="OrderGroup">주문 상품</p>
       <h2>헬밀 프로틴</h2>
       <div className="DropDown">
