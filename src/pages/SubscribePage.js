@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SubscribeDropdown from '../components/Subscribe/SubscribeDropdown';
 import './SubscribePage.scss';
 import OrderInfos from '../components/Subscribe/OrderInfos';
+import TotalPay from '../components/Subscribe/TotalPay';
 
 const SubscribePage = () => {
   const [canSelectOption, setCanSelectOption] = useState(true);
@@ -14,16 +15,7 @@ const SubscribePage = () => {
         <>
           <div className="OrderInfoContainer">
             <OrderInfos />
-            <div className="PayInfo">
-              <div className="TotalPayment">
-                <p>총 결제 금액</p>
-                <p>원</p>
-              </div>
-              <div className="DeliveryFee">
-                <p>배송비</p>
-                <p></p>
-              </div>
-            </div>
+            <TotalPay />
           </div>
         </>
       )}

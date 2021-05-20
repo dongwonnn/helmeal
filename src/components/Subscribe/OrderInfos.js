@@ -1,7 +1,16 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+
 import './OrderInfos.scss';
 
-const OrderInfos = ({ proteinInfo, dateInfo, subscribeTerm }) => {
+const OrderInfos = () => {
+  const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
+    ({ option }) => ({
+      proteinInfo: option.proteinInfo,
+      dateInfo: option.dateInfo,
+      subscribeTerm: option.subscribeTerm,
+    }),
+  );
   return (
     <div className="OrderInfos">
       <h2>헬밀 프로틴</h2>

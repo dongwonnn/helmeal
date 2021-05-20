@@ -1,53 +1,70 @@
 import React, { useCallback, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  setProteinInfo,
+  setDateInfo,
+  setDatePrice,
+  setSubscribeInfo,
+  setSubscribePrice,
+} from '../../reducers/option';
+
 import { ReactComponent as LeftIcon } from '../../assets/images/LeftIcon.svg';
 import Header from '../Common/Header';
 import './SubscribeDropdown.scss';
 
 const SubscribeDropdown = ({ setCanSelectOption }) => {
-  // 데이터
-  const [proteinInfo, setProteinInfo] = useState('');
-  const [dateInfo, setDateInfo] = useState('');
-  const [dateInfoPrice, setDateInfoPrice] = useState('');
-  const [subscribeTerm, setSubscribeTerm] = useState('');
-  const [subscribeTermPrice, setSubscribeTermPrice] = useState('');
+  const dispatch = useDispatch();
+  const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
+    ({ option }) => ({
+      proteinInfo: option.proteinInfo,
+      dateInfo: option.dateInfo,
+      subscribeTerm: option.subscribeTerm,
+    }),
+  );
 
   // 드롭박스 상태
   const [isProteinBoxShow, setIsProteinBoxShow] = useState(true);
   const [isDateBoxShow, setIsDateBoxShow] = useState(false);
   const [isTermBoxShow, setIsTermBoxShow] = useState(false);
 
-  const onProteinInfo = useCallback((e) => {
-    if (
-      // li 제외 클릭했을 때
-      e.target.className === 'OptionDetail' ||
-      e.target.className === 'OptionMenu'
-    ) {
-      setProteinInfo(e.target.parentElement.firstChild.innerText);
-    } else if (e.target.className === 'Option') {
-      // li를 클릭했을 때
-      setProteinInfo(e.target.firstChild.innerText);
-    }
-    setIsProteinBoxShow(false);
-    setIsDateBoxShow(true);
-  }, []);
+  const onProteinInfo = useCallback(
+    (e) => {
+      if (
+        // li 제외 클릭했을 때
+        e.target.className === 'OptionDetail' ||
+        e.target.className === 'OptionMenu'
+      ) {
+        dispatch(setProteinInfo(e.target.parentElement.firstChild.innerText));
+      } else if (e.target.className === 'Option') {
+        dispatch(setProteinInfo(e.target.firstChild.innerText));
+        // li를 클릭했을 때
+      }
+      setIsProteinBoxShow(false);
+      setIsDateBoxShow(true);
+    },
+    [dispatch],
+  );
 
-  const onDateinInfo = useCallback((e) => {
-    if (
-      // li 제외 클릭했을 때
-      e.target.className === 'OptionDetail' ||
-      e.target.className === 'OptionMenu'
-    ) {
-      setDateInfo(e.target.parentElement.firstChild.innerText);
-      setDateInfoPrice(e.target.parentElement.lastChild.innerText);
-    } else if (e.target.className === 'Option') {
-      // li를 클릭했을 때
-      setDateInfo(e.target.firstChild.innerText);
-      setDateInfoPrice(e.target.lastChild.innerText);
-    }
+  const onDateinInfo = useCallback(
+    (e) => {
+      if (
+        // li 제외 클릭했을 때
+        e.target.className === 'OptionDetail' ||
+        e.target.className === 'OptionMenu'
+      ) {
+        dispatch(setDateInfo(e.target.parentElement.firstChild.innerText));
+        dispatch(setDatePrice(e.target.parentElement.lastChild.innerText));
+      } else if (e.target.className === 'Option') {
+        // li를 클릭했을 때
+        dispatch(setDateInfo(e.target.firstChild.innerText));
+        dispatch(setDatePrice(e.target.lastChild.innerText));
+      }
 
-    setIsDateBoxShow(false);
-    setIsTermBoxShow(true);
-  }, []);
+      setIsDateBoxShow(false);
+      setIsTermBoxShow(true);
+    },
+    [dispatch],
+  );
 
   const OnSubscribeTerm = useCallback(
     (e) => {
@@ -56,17 +73,17 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
         e.target.className === 'OptionDetail' ||
         e.target.className === 'OptionMenu'
       ) {
-        setSubscribeTerm(e.target.parentElement.firstChild.innerText);
-        setSubscribeTermPrice(e.target.parentElement.lastChild.innerText);
+        dispatch(setSubscribeInfo(e.target.parentElement.firstChild.innerText));
+        dispatch(setSubscribePrice(e.target.parentElement.lastChild.innerText));
       } else if (e.target.className === 'Option') {
         // li를 클릭했을 때
-        setSubscribeTerm(e.target.firstChild.innerText);
-        setSubscribeTermPrice(e.target.lastChild.innerText);
+        dispatch(setSubscribeInfo(e.target.firstChild.innerText));
+        dispatch(setSubscribePrice(e.target.lastChild.innerText));
       }
 
       setCanSelectOption(false);
     },
-    [setCanSelectOption],
+    [setCanSelectOption, dispatch],
   );
 
   const onChangeMenu = (order) => {
