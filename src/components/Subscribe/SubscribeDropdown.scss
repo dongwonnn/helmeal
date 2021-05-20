@@ -1,0 +1,110 @@
+.SubscribeDropdown {
+  padding: 24px;
+
+  .OrderGroup {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+
+    color: #020202;
+
+    padding-bottom: 8px;
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+
+    color: #020202;
+    padding-bottom: 24px;
+  }
+
+  .DropDown {
+    margin-bottom: 24px;
+    .DropDownTitle.show {
+      padding: 9px 14px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+
+      color: #1d1d1d;
+    }
+
+    .DropDownTitle.hide {
+      padding: 9px 14px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+
+      color: #1d1d1d;
+      opacity: 0.5;
+    }
+
+    .DropDownMenu.show {
+      display: block;
+
+      .Option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .OptionMenu {
+          padding: 11px 16px;
+
+          font-size: 16px;
+          line-height: 26px;
+
+          letter-spacing: -0.5px;
+
+          color: #1d1d1d;
+          border-bottom: 1px solid #f5f5f5;
+        }
+
+        .OptionDetail {
+          font-size: 12px;
+          line-height: 16px;
+
+          text-align: right;
+          letter-spacing: -0.5px;
+
+          color: #767676;
+        }
+      }
+
+      .DeliveryInfo {
+        p:first-child {
+          background-color: #f5f5f5;
+          border-radius: 4px;
+          padding: 8px 26px;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: center;
+          letter-spacing: -0.5px;
+
+          color: #767676;
+          margin-bottom: 16px;
+        }
+        p:last-child {
+          font-size: 12px;
+          line-height: 16px;
+          letter-spacing: -0.5px;
+
+          color: #767676;
+        }
+      }
+    }
+
+    .DropDownMenu.hide {
+      display: none;
+    }
+  }
+}

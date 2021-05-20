@@ -1,0 +1,45 @@
+.OrderInfos {
+  background-color: #f5f6f7;
+  border-radius: 8px;
+  padding: 24px;
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.5px;
+
+    color: #020202;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 16px;
+  }
+
+  .OrderInfo {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+
+    padding: 16px 0;
+    color: #020202;
+    border-bottom: 1px solid #eaeaea;
+  }
+
+  .DeliveryInfo {
+    h4 {
+      padding-top: 16px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+
+      color: #020202;
+    }
+    .DateInfo {
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+
+      color: #020202;
+    }
+  }
+}

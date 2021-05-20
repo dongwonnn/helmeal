@@ -7,7 +7,6 @@ import DetailPage from '../pages/DetailPage';
 import ProfilePage from '../pages/ProfilePage';
 import SubscribePage from '../pages/SubscribePage';
 import './App.scss';
-import MenuDetailPage from '../pages/MenuDetailPage';
 
 const App = () => {
   return (
@@ -15,7 +14,6 @@ const App = () => {
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/subscribe" component={SubscribePage} />
-        <Route path="/menuDetail" component={MenuDetailPage} />
         <>
           <NavBar />
 
