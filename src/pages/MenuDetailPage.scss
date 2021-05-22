@@ -1,5 +1,6 @@
 .MenuDetailPage {
   width: 100%;
+  max-width: 375px;
   background-color: #c4c4c4;
 
   .MenuDetailContainer {
@@ -62,12 +63,54 @@
         }
 
         .MenuIntegrity {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          justify-items: center;
+          height: 10vh;
+
+          display: flex;
+          justify-content: space-evenly;
           align-items: center;
           text-align: center;
-          padding-bottom: 24px;
+          margin-bottom: 24px;
+          .Gap {
+            width: 1px;
+            height: 100%;
+            background-color: #eaeaea;
+          }
+
+          .Calorie {
+            font-weight: bold;
+            font-size: 40px;
+            line-height: 48px;
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+            letter-spacing: -0.41px;
+
+            color: #fc5c42;
+            padding-bottom: 8px;
+          }
+
+          .CalorieText {
+            font-size: 12px;
+            line-height: 16px;
+
+            text-align: center;
+            letter-spacing: -0.41px;
+
+            color: #000000;
+          }
+
+          svg {
+            padding-bottom: 8px;
+          }
+          .ProteinText {
+            font-size: 12px;
+            line-height: 16px;
+            text-align: center;
+            letter-spacing: -0.41px;
+
+            color: #000000;
+          }
         }
 
         .MenuNutrient {
@@ -75,6 +118,13 @@
           grid-template-columns: 1fr 1fr 1fr;
           justify-items: center;
           align-items: center;
+
+          .DoughnutContainer {
+            canvas {
+              max-height: 85px;
+              max-width: 85px;
+            }
+          }
         }
       }
     }
