@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { getDeliveryDate } from '../../utils/getDeliveryDate';
 
 import './OrderInfos.scss';
 
@@ -19,7 +20,7 @@ const OrderInfos = () => {
       <p className="OrderInfo">{subscribeTerm}</p>
       <div className="DeliveryInfo">
         <h4>배송 시작일</h4>
-        <p className="DateInfo">2021년 4월 26일~2021년 5월 1일</p>
+        <p className="DateInfo">{getDeliveryDate(subscribeTerm)}</p>
       </div>
     </div>
   );

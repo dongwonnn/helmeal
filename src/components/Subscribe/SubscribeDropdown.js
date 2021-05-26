@@ -173,7 +173,9 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
           </li>
 
           <div className="DeliveryInfo">
-            <p>오늘 신청하면 수요일에 받아보실 수 있어요!</p>
+            <p>
+              오늘 신청하면 <span>수요일</span>에 받아보실 수 있어요!
+            </p>
             <p>
               신청일 기준 2일 뒤부터 배송됩니다. <br />
               월요일 신청 &gt; 수요일 수령(자정 이후 신청시 목요일 수령) <br />
