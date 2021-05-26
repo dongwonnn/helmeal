@@ -18,6 +18,14 @@
 
       svg {
         padding-right: 12px;
+
+        rect:first-child {
+          fill: #fc5c42;
+        }
+
+        circle {
+          fill: white;
+        }
       }
     }
 

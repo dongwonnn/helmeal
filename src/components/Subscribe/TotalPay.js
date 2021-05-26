@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import './TotalPay.scss';
 import { useSelector } from 'react-redux';
 import { getPayForm } from '../../utils/getPayForm';
@@ -9,8 +9,9 @@ const TotalPay = () => {
     subscribeTermPrice: option.subscribeTermPrice,
   }));
 
-  const [totalPay] = useState(
-    getPayForm(parseInt(dateInfoPrice) + parseInt(subscribeTermPrice)),
+  const totalPay = useMemo(
+    () => getPayForm(parseInt(dateInfoPrice) + parseInt(subscribeTermPrice)),
+    [dateInfoPrice, subscribeTermPrice],
   );
 
   return (

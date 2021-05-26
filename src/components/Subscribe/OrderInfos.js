@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getDeliveryDate } from '../../utils/getDeliveryDate';
+import { getDeliveryDate } from '../../utils/getDate';
 
 import './OrderInfos.scss';
 

@@ -15,3 +15,13 @@ export const getDeliveryDate = (subscribeTerm) => {
   const deliveryTerm = `${year}년 ${month}월 ${day}일 ~ ${deadLineYear}년 ${deadLineMonth}월 ${deadLineDay}일`;
   return deliveryTerm;
 };
+
+export const getReceiveDay = () => {
+  const WEEKDAY = ['일', '월', '화', '수', '목', '금', '토'];
+
+  const today = new Date();
+  const receiveDay = WEEKDAY[today.getDay()];
+  console.log(receiveDay);
+
+  return receiveDay;
+};

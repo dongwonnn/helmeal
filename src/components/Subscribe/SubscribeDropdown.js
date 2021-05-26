@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   setProteinInfo,
@@ -7,6 +7,7 @@ import {
   setSubscribeInfo,
   setSubscribePrice,
 } from '../../reducers/option';
+import { getReceiveDay } from '../../utils/getDate';
 
 import { getNumberForm } from '../../utils/getNumberForm';
 import './SubscribeDropdown.scss';
@@ -115,6 +116,8 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
     }
   }, []);
 
+  const receiveDay = useMemo(() => getReceiveDay(), []);
+
   return (
     <div className="SubscribeDropdown">
       <p className="OrderGroup">주문 상품</p>
@@ -174,7 +177,7 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
 
           <div className="DeliveryInfo">
             <p>
-              오늘 신청하면 <span>수요일</span>에 받아보실 수 있어요!
+              오늘 신청하면 <span>{receiveDay}요일</span>에 받아보실 수 있어요!
             </p>
             <p>
               신청일 기준 2일 뒤부터 배송됩니다. <br />

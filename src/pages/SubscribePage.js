@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Header from '../components/Common/Header';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { useSelector } from 'react-redux';
@@ -24,8 +24,9 @@ const SubscribePage = () => {
     subscribeTermPrice: option.subscribeTermPrice,
   }));
 
-  const [totalPay] = useState(
-    getPayForm(parseInt(dateInfoPrice) + parseInt(subscribeTermPrice)),
+  const totalPay = useMemo(
+    () => getPayForm(parseInt(dateInfoPrice) + parseInt(subscribeTermPrice)),
+    [dateInfoPrice, subscribeTermPrice],
   );
 
   return (

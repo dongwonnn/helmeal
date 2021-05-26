@@ -4,12 +4,12 @@ export const getPayForm = (pay) => {
   let point = pay.length % 3;
   const len = pay.length;
 
-  let str = pay.substring(0, point);
+  let strPay = pay.substring(0, point);
   while (point < len) {
-    if (str !== '') str += ',';
-    str += pay.substring(point, point + 3);
+    if (strPay !== '') strPay += ',';
+    strPay += pay.substring(point, point + 3);
     point += 3;
   }
 
-  return str;
+  return strPay;
 };
