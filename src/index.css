@@ -1,0 +1,8 @@
+body {
+  background-color: #ccc;
+}
+#root {
+  background-color: white;
+  max-width: 375px;
+  margin: 0 auto;
+}

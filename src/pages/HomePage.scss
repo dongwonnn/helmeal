@@ -39,45 +39,54 @@
   }
 
   .ArticleImageContainer {
-    background-color: #1d1d1d;
-    h2 {
-      padding: 40px 0 16px 25px;
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 40px;
-      color: #ffffff;
-    }
-    p {
-      padding-left: 25px;
-      font-weight: 600;
-      font-size: 16px;
-      line-height: 26px;
-      letter-spacing: -0.5px;
-      color: #ffffff;
-    }
-    .LastDetail {
-      padding-left: 25px;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 26px;
-      letter-spacing: -0.5px;
-      color: #ffffff;
-    }
-    a {
-      padding-left: 25px;
+    width: 100%;
+    background-image: url('../assets/images/HomeImage.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 
-      p {
-        background-color: #fc5c42;
-        padding: 11px 32px;
-        color: white;
-        font-size: 16px;
-        line-height: 21px;
-        letter-spacing: -0.41px;
+    .ArticleText {
+      padding: 40px 0 426px 25px;
+      h2 {
+        padding-bottom: 16px;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 40px;
+        color: #ffffff;
       }
-    }
-    img {
-      z-index: -1;
-      width: 100%;
+      p {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.5px;
+        color: #ffffff;
+      }
+      .LastText {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 26px;
+        letter-spacing: -0.5px;
+        color: #ffffff;
+        padding-bottom: 31px;
+      }
+
+      .ShowMenuButton {
+        width: 33.9%;
+        border-radius: 8px;
+        background-color: #fc5c42;
+
+        .ButtonText {
+          padding: 11px 32px;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          display: flex;
+          align-items: center;
+          text-align: center;
+          letter-spacing: -0.41px;
+
+          color: #ffffff;
+        }
+      }
     }
   }
 }

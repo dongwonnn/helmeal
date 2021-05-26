@@ -62,6 +62,8 @@ const SubscribeDropdown = ({ setCanSelectOption }) => {
         const newDatePrice = getNumberForm(tempDatePrice);
 
         dispatch(setDatePrice(newDatePrice));
+      } else {
+        return;
       }
 
       setIsDateBoxShow(false);

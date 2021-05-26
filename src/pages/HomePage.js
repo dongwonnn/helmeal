@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import './HomePage.scss';
-import HomeImage from '../assets/images/HomeImage.png';
 import { useLocation } from 'react-router';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const { pathname } = useLocation();
@@ -56,17 +55,22 @@ const HomePage = () => {
         </p>
       </article>
       <article className="ArticleImageContainer">
-        <h2>헬밀 프로틴</h2>
-        <p>
-          전문 영양사와 트레이너가 고심하여 <br />
-          오래 지속할 수 있는 식단을 설계해드립니다. <br />
-        </p>
-        <p className="LastDetail">
-          깨끗한 재료로 다양한 단백질 식사를 제공하는 것이 <br />
-          헬밀의 식단플랜입니다.
-        </p>
-
-        <img src={HomeImage} alt="HomeImage" />
+        <div className="ArticleText">
+          <h2>헬밀 프로틴</h2>
+          <p>
+            전문 영양사와 트레이너가 고심하여 <br />
+            오래 지속할 수 있는 식단을 설계해드립니다. <br />
+          </p>
+          <p className="LastText">
+            깨끗한 재료로 다양한 단백질 식사를 제공하는 것이 <br />
+            헬밀의 식단플랜입니다.
+          </p>
+          <div className="ShowMenuButton">
+            <Link to="/detail">
+              <p className="ButtonText">메뉴보기</p>
+            </Link>
+          </div>
+        </div>
       </article>
     </div>
   );

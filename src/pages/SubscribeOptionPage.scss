@@ -1,8 +1,10 @@
 .SubscribeOptionPage {
+  height: 100vh;
   .OrderInfoContainer {
     padding: 24px;
   }
   .ButtonContainer {
+    max-width: 375px;
     width: 100%;
     position: fixed;
     bottom: 0;
