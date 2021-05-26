@@ -12,22 +12,19 @@ react-router-dom
 
 ### HomePage
 
-- [ ] homepage 배경 이미지 바꾸고 버튼 추가하기
-- [ ] navbar 색상 넣기
 - [ ] 동영상 넣기
 
 ### DetailPage
 
 - [ ] Carousel 추가할 이미지
 - [ ] Carousel 상태 색상넣기
-- [ ] 식사, 간식 색상 토글
-- [ ] 프로틴별 Scroll Spy
+- [ ] 프로틴별 Scroll Spy -> API 적용 후에
 
 ### Subscribe Option Page
 
 - [ ] 요일 색 설정하기
 - [ ] 배송 날짜 계산하기. 영수증에 추가
-- [ ] 총 결제금액 산정
+- [ ] 총 결제금액 산정 하기
 
 ### Subscribe Page
 
@@ -40,7 +37,11 @@ react-router-dom
 
 ### Profile Page
 
-- [ ] 시작할때 로그인 하는데 마이페이지에 로그인/회원가입
+- [ ] 시작할 때 로그인 하는데 마이페이지에 로그인/회원가입
+
+### Address Page
+
+- [ ] 주소 설정하기
 
 ### 질문
 

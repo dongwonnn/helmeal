@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollSpy from '../Detail/ScrollSpy';
+// import ScrollSpy from '../Detail/ScrollSpy';
 import './Carousel.scss';
 
 const Carousel = ({ children }) => {
@@ -7,7 +7,7 @@ const Carousel = ({ children }) => {
   return (
     <div className="CarouselContainer">
       <div className="CarouselImage">{img}</div>
-      <ScrollSpy />
+      {/* <ScrollSpy /> */}
     </div>
   );
 };

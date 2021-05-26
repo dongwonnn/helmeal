@@ -39,7 +39,7 @@ const DetailPage = () => {
       </Carousel>
       <MealInfomation />
       <DetailBackground />
-      <SelectMenu setIsMeal={setIsMeal} />
+      <SelectMenu setIsMeal={setIsMeal} isMeal={isMeal} />
       {isMeal ? (
         <>
           <MealCategories />

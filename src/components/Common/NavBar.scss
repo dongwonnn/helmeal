@@ -7,21 +7,37 @@
   background-color: white;
   position: fixed;
   bottom: 0;
-  .NavBar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center;
+  border-top: 0.05px solid #ccc;
 
-    li {
-      svg {
-        padding: 7px 0 2px 0;
-      }
-      margin-bottom: 7px;
-      font-size: 0.6887rem;
-      font-weight: 400;
-      letter-spacing: -0.41px;
-      color: #767676;
+  li {
+    a {
+      display: block;
     }
+    img {
+      padding: 7px 0 2px 0;
+      padding-bottom: 5px;
+    }
+
+    margin-bottom: 7px;
+    font-size: 0.6887rem;
+    font-weight: 400;
+    letter-spacing: -0.41px;
+    color: #767676;
+  }
+
+  .Cliked {
+    img {
+      filter: invert(68%) sepia(85%) saturate(4997%) hue-rotate(333deg)
+        brightness(102%) contrast(107%);
+    }
+    color: #fc5c42;
+  }
+
+  .DetailClick {
+    color: #fc5c42;
   }
 }
