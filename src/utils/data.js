@@ -1,11 +1,6 @@
 // 동영상
-export const videoInfo = [
-  {
-    name: 'video',
-    videoUrl:
-      'https://user-images.githubusercontent.com/59330828/119786834-87462a00-bf0b-11eb-942b-fbce2cc2545b.mp4',
-  },
-];
+export const videoUrl =
+  'https://user-images.githubusercontent.com/59330828/119786834-87462a00-bf0b-11eb-942b-fbce2cc2545b.mp4';
 
 // MEAL 정보
 export const mealInfo = [

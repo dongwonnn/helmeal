@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import './HomePage.scss';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+import { videoUrl } from '../utils/data';
 
 const HomePage = () => {
   const { pathname } = useLocation();
@@ -12,7 +13,11 @@ const HomePage = () => {
 
   return (
     <div className="HomePage">
-      <div className="VideoContainer">동영상 더미 블럭</div>
+      <div className="VideoContainer">
+        <video autoPlay muted loop>
+          <source src={videoUrl} type="video/mp4" />
+        </video>
+      </div>
       <article className="ArticleContainer">
         <h4>VALUE AND MISSION</h4>
         <h2>

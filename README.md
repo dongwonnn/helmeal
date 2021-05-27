@@ -6,8 +6,10 @@ Healmeal 프로젝트
 
 ## 아직 남은 기능들
 
-- [ ] 임시 data.json 활용해 더미 데이터 만들기
-- [ ] Header 높이설정
+- [x] 임시 data.json 활용해 더미 데이터 만들기 -> map 이용
+- detail menu 섞인 것 어떻게 처리 ?
+  1. 따로 분리하기
+  2. title을 기준으로 쿼리
 
 ### HomePage
 
@@ -18,10 +20,6 @@ Healmeal 프로젝트
 - [ ] Carousel 추가할 이미지
 - [ ] Carousel 상태 색상넣기
 - [ ] 프로틴별 Scroll Spy -> API 적용 후에
-
-### Menu Detail Page
-
-- [ ] 올라오는 팝업 css 구현
 
 ### Dropdown
 
@@ -47,6 +45,10 @@ Healmeal 프로젝트
 ### Profile Page
 
 - [ ] 시작할 때 로그인 하는데 마이페이지에 로그인/회원가입
+
+### Menu Detail Page
+
+- [ ] 올라오는 팝업 css 구현
 
 ### 질문
 
