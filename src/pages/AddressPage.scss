@@ -2,20 +2,49 @@
   .AddressContainer {
     padding: 24px;
 
-    input {
+    .AddressInput {
       border: 1px solid #eaeaea;
       border-radius: 100px;
       background: #f5f6f7;
       width: 90%;
       padding: 11px 16px;
+      margin-bottom: 24px;
+
+      p {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: -0.5px;
+
+        color: #cccccc;
+      }
     }
+    .RecentAddress {
+      h4 {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: -0.5px;
 
-    input::placeholder {
-      font-size: 16px;
-      line-height: 26px;
-      letter-spacing: -0.5px;
+        color: #000000;
+        margin-bottom: 8px;
+      }
 
-      color: #cccccc;
+      .RecentAddressList {
+        li {
+          padding: 16px 0;
+          border-bottom: 1px solid #f5f5f5;
+          p:first-child {
+            padding-bottom: 8px;
+          }
+
+          p:last-child {
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: -0.5px;
+            color: #767676;
+          }
+        }
+      }
     }
   }
 }

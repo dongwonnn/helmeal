@@ -20,8 +20,9 @@ export const getReceiveDay = () => {
   const WEEKDAY = ['일', '월', '화', '수', '목', '금', '토'];
 
   const today = new Date();
-  const receiveDay = WEEKDAY[today.getDay()];
-  console.log(receiveDay);
+
+  // 2일 후 계산
+  const receiveDay = WEEKDAY[today.getDay() + 2];
 
   return receiveDay;
 };

@@ -1,6 +1,12 @@
 Healmeal 프로젝트
 
+- SWR
+- chart.js
+- daum-postcode
+
 ## 아직 남은 기능들
+
+- [ ] 임시 data.json 활용해 더미 데이터 만들기
 
 ### HomePage
 
@@ -16,9 +22,10 @@ Healmeal 프로젝트
 
 - [ ] 올라오는 팝업 css 구현
 
-### Subscribe Option Page
+### Dropdown
 
-- [ ] 총 결제금액 산정 하기
+- [ ] 화살표 위 아래 넣기
+- [ ] 텍스트 밑 라인 다 긋기
 
 ### Subscribe Page
 
@@ -28,6 +35,7 @@ Healmeal 프로젝트
 ### Address Page
 
 - [ ] 주소 설정하기
+- [ ] 디자인 대로 구현하려면 주소 DB 필요함
 
 ### Subscribe Complete Page
 
@@ -46,4 +54,6 @@ Healmeal 프로젝트
 
 ### 처리해야 할 것.
 
+- import 경로 깔끔하게 처리하기
+- css font size 크기 반응형 구현
 - 결제 한 상태에서 또 결제할 때 로직 처리
