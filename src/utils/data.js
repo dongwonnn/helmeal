@@ -12,10 +12,10 @@ export const mealInfo = [
   {
     id: 0,
     title: '데리야끼 연어 스테이크와 그린빈 볶음 그리고 퀴노아',
-    protein: 510,
+    protein: 10,
     carb: 36,
     fat: 15,
-    cal: 10,
+    cal: 510,
     integrity: '소고기 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790514-f5402080-bf0e-11eb-90d2-ef9b50929b3e.png',
@@ -25,10 +25,10 @@ export const mealInfo = [
   {
     id: 1,
     title: '미니 양배추 볶음 소고기 미트볼 통밀 크림 파스타',
-    protein: 480,
+    protein: 15,
     carb: 10,
     fat: 20,
-    cal: 15,
+    cal: 480,
     integrity: '돼지고기 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790521-f709e400-bf0e-11eb-8853-149c1324b638.png',
@@ -38,10 +38,10 @@ export const mealInfo = [
   {
     id: 2,
     title: '두부 샐러드와 브로콜리 오리엔탈 드래싱과 오트밀 밥',
-    protein: 600,
+    protein: 20,
     carb: 48,
     fat: 30,
-    cal: 20,
+    cal: 600,
     integrity: '닭고기 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790527-f8d3a780-bf0e-11eb-89d2-6aed96d7088d.png',
@@ -51,10 +51,10 @@ export const mealInfo = [
   {
     id: 3,
     title: '비건용 식물성 고기 야채 볶음과 두부면 파스타',
-    protein: 700,
+    protein: 30,
     carb: 15,
     fat: 25,
-    cal: 30,
+    cal: 700,
     integrity: '생선 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790537-fa04d480-bf0e-11eb-9612-a9784196857d.png',
@@ -64,10 +64,10 @@ export const mealInfo = [
   {
     id: 4,
     title: '비건용 식물성 고기 야채 볶음과 두부면 파스타',
-    protein: 410,
+    protein: 15,
     carb: 36,
     fat: 25,
-    cal: 15,
+    cal: 410,
     integrity: '식물성 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790544-fbce9800-bf0e-11eb-845a-8f5454cf1e1e.png',
@@ -81,10 +81,10 @@ export const snackInfo = [
   {
     id: 0,
     title: '식물성 프로틴 미니볼 (초코,흑임자,바닐라 맛)',
-    protein: 410,
+    protein: 13,
     carb: 16,
     fat: 25,
-    cal: 13,
+    cal: 410,
     integrity: '식물성 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790544-fbce9800-bf0e-11eb-845a-8f5454cf1e1e.png',
@@ -93,11 +93,11 @@ export const snackInfo = [
   },
   {
     id: 1,
-    title: '프로틴 파우더와 오트밀로 만든 피칸+월넛 머핀 ',
-    protein: 480,
+    title: '프로틴 파우더와 오트밀로 만든 피칸+월넛 머핀',
+    protein: 35,
     carb: 12,
     fat: 24,
-    cal: 35,
+    cal: 480,
     integrity: '돼지고기 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790521-f709e400-bf0e-11eb-8853-149c1324b638.png',
@@ -106,11 +106,11 @@ export const snackInfo = [
   },
   {
     id: 2,
-    title: '프로틴 파우더와 오트밀로 만든 피칸+월넛 머핀 ',
-    protein: 600,
+    title: '식물성 프로틴 바닐라빈 라즈베리 스콘',
+    protein: 40,
     carb: 28,
     fat: 30,
-    cal: 40,
+    cal: 600,
     integrity: '닭고기 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790527-f8d3a780-bf0e-11eb-89d2-6aed96d7088d.png',
@@ -119,11 +119,11 @@ export const snackInfo = [
   },
   {
     id: 3,
-    title: '프로틴 파우더와 오트밀로 만든 피칸+월넛 머핀 ',
-    protein: 700,
+    title: '두부 밀크 프로틴 푸딩과 식물성 생크림',
+    protein: 45,
     carb: 25,
     fat: 15,
-    cal: 45,
+    cal: 700,
     integrity: '생선 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790537-fa04d480-bf0e-11eb-9612-a9784196857d.png',
@@ -132,11 +132,11 @@ export const snackInfo = [
   },
   {
     id: 4,
-    title: '프로틴 파우더와 오트밀로 만든 피칸+월넛 머핀 ',
-    protein: 410,
+    title: '프로틴 파우더 오트밀 팬케익과 메이플시럽',
+    protein: 45,
     carb: 26,
     fat: 35,
-    cal: 45,
+    cal: 410,
     integrity: '소고기 프로틴',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790514-f5402080-bf0e-11eb-90d2-ef9b50929b3e.png',

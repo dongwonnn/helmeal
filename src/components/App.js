@@ -21,7 +21,7 @@ const App = () => {
         <Route path="/subscribe" component={SubscribePage} />
         <Route path="/address" component={AddressPage} />
         <Route path="/subscribe-complete" component={SubscribeCompletePage} />
-        <Route path="/menu-detail" component={MenuDetailPage} />
+        <Route path="/menu-detail/:id" component={MenuDetailPage} />
         <>
           <NavBar />
 
