@@ -4,7 +4,10 @@ import MenuCard from './MenuCard';
 import LargeMeal_02 from '../../assets/images/large/Large_Meal_02.png';
 import { Link } from 'react-router-dom';
 
+import { mealInfo } from '../../utils/data';
+
 const MealMenus = () => {
+  console.log(mealInfo);
   return (
     <div className="MealMenusContainer">
       <div className="MenuCarsdContainer">
@@ -15,7 +18,6 @@ const MealMenus = () => {
             <h2>데리야끼 연어 스테이크와 그린빈 볶음 그리고 퀴노아</h2>
           </MenuCard>
         </Link>
-
         <Link to="/menu-detail">
           <MenuCard>
             <img src={LargeMeal_02} alt="MenuImage" />

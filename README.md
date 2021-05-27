@@ -7,6 +7,7 @@ Healmeal 프로젝트
 ## 아직 남은 기능들
 
 - [ ] 임시 data.json 활용해 더미 데이터 만들기
+- [ ] Header 높이설정
 
 ### HomePage
 
@@ -36,6 +37,8 @@ Healmeal 프로젝트
 
 - [ ] 주소 설정하기
 - [ ] 디자인 대로 구현하려면 주소 DB 필요함
+- [ ] 최근 3개 까지만 설정하기
+- [ ] 현재 주소 체크하기
 
 ### Subscribe Complete Page
 
