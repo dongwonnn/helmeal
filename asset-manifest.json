@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/helmeal/static/css/main.958af0a4.chunk.css",
-    "main.js": "/helmeal/static/js/main.b8af1d2c.chunk.js",
-    "main.js.map": "/helmeal/static/js/main.b8af1d2c.chunk.js.map",
+    "main.css": "/helmeal/static/css/main.fb5a9def.chunk.css",
+    "main.js": "/helmeal/static/js/main.6e0d0c92.chunk.js",
+    "main.js.map": "/helmeal/static/js/main.6e0d0c92.chunk.js.map",
     "runtime-main.js": "/helmeal/static/js/runtime-main.4bb52fe4.js",
     "runtime-main.js.map": "/helmeal/static/js/runtime-main.4bb52fe4.js.map",
-    "static/js/2.03ad62e2.chunk.js": "/helmeal/static/js/2.03ad62e2.chunk.js",
-    "static/js/2.03ad62e2.chunk.js.map": "/helmeal/static/js/2.03ad62e2.chunk.js.map",
+    "static/js/2.acaf1d0a.chunk.js": "/helmeal/static/js/2.acaf1d0a.chunk.js",
+    "static/js/2.acaf1d0a.chunk.js.map": "/helmeal/static/js/2.acaf1d0a.chunk.js.map",
     "index.html": "/helmeal/index.html",
-    "static/css/main.958af0a4.chunk.css.map": "/helmeal/static/css/main.958af0a4.chunk.css.map",
-    "static/js/2.03ad62e2.chunk.js.LICENSE.txt": "/helmeal/static/js/2.03ad62e2.chunk.js.LICENSE.txt",
+    "static/css/main.fb5a9def.chunk.css.map": "/helmeal/static/css/main.fb5a9def.chunk.css.map",
+    "static/js/2.acaf1d0a.chunk.js.LICENSE.txt": "/helmeal/static/js/2.acaf1d0a.chunk.js.LICENSE.txt",
     "static/media/Beef_Protein.e43f5f3b.svg": "/helmeal/static/media/Beef_Protein.e43f5f3b.svg",
     "static/media/Chicken_Protein.d9d06d30.svg": "/helmeal/static/media/Chicken_Protein.d9d06d30.svg",
     "static/media/ColorRoutine.863885e7.svg": "/helmeal/static/media/ColorRoutine.863885e7.svg",
@@ -20,7 +20,7 @@
     "static/media/HomePage.scss": "/helmeal/static/media/HomeImage.09e605f3.png",
     "static/media/Large_Meal_02.51ba6c19.png": "/helmeal/static/media/Large_Meal_02.51ba6c19.png",
     "static/media/LeftIcon.e74c0009.svg": "/helmeal/static/media/LeftIcon.e74c0009.svg",
-    "static/media/ListIcon.b5c51c49.svg": "/helmeal/static/media/ListIcon.b5c51c49.svg",
+    "static/media/ListIcon.63f79a0f.svg": "/helmeal/static/media/ListIcon.63f79a0f.svg",
     "static/media/Logo.5fa2d735.svg": "/helmeal/static/media/Logo.5fa2d735.svg",
     "static/media/Meal_Presentation.add3b9e2.png": "/helmeal/static/media/Meal_Presentation.add3b9e2.png",
     "static/media/PlusIcon.be60cc59.svg": "/helmeal/static/media/PlusIcon.be60cc59.svg",
@@ -32,8 +32,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4bb52fe4.js",
-    "static/js/2.03ad62e2.chunk.js",
-    "static/css/main.958af0a4.chunk.css",
-    "static/js/main.b8af1d2c.chunk.js"
+    "static/js/2.acaf1d0a.chunk.js",
+    "static/css/main.fb5a9def.chunk.css",
+    "static/js/main.6e0d0c92.chunk.js"
   ]
 }
