@@ -13,7 +13,14 @@ const PayWayContainer = ({ setIsSelect }) => {
   const [clickId, setClickId] = useState(null);
   const onClick = useCallback(
     (e) => {
-      setClickId(Number(e.target.id));
+      let targetId = e.target.id;
+      if (e.target.nodeName === 'rect' || e.target.nodeName === 'circle') {
+        targetId = e.target.parentNode.parentNode.id;
+      } else if (e.target.nodeName === 'svg') {
+        targetId = e.target.parentNode.id;
+      }
+
+      setClickId(Number(targetId));
       if (mainAddress !== null || detailAddress !== null) setIsSelect(true);
     },
     [setIsSelect, mainAddress, detailAddress],

@@ -17,21 +17,12 @@ Healmeal 프로젝트
 - [ ] Carousel 상태 색상넣기
 - [ ] 프로틴별 Scroll Spy -> API 적용 후에
 
-### Subscribe Page
-
-- [ ] 결제수단 색
-- [ ] 주소 설정, 결제수단 선택 -> 버튼 색 추가하기
-
 ### Address Page
 
 - [ ] 주소 설정하기
 - [ ] 디자인 대로 구현하려면 주소 DB 필요함
 - [ ] 최근 3개 까지만 설정하기
 - [ ] 현재 주소 체크하기
-
-### Subscribe Complete Page
-
-- [ ] 구독 완료 시 배송지 추가하기
 
 ### Profile Page
 

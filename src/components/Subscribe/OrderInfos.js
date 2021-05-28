@@ -4,7 +4,7 @@ import { getDeliveryDate } from '../../utils/getDate';
 
 import './OrderInfos.scss';
 
-const OrderInfos = () => {
+const OrderInfos = ({ children }) => {
   const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
     ({ option }) => ({
       proteinInfo: option.proteinInfo,
@@ -22,6 +22,7 @@ const OrderInfos = () => {
         <h4>배송 시작일</h4>
         <p className="DateInfo">{getDeliveryDate(subscribeTerm)}</p>
       </div>
+      <div className="AddressInfo">{children}</div>
     </div>
   );
 };

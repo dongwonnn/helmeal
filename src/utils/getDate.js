@@ -22,7 +22,7 @@ export const getReceiveDay = () => {
   const today = new Date();
 
   // 2일 후 계산
-  const receiveDay = WEEKDAY[today.getDay() + 2];
+  const receiveDay = WEEKDAY[(today.getDay() + 2) % 7];
 
   return receiveDay;
 };

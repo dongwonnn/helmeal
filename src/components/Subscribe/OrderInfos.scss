@@ -26,6 +26,9 @@
   }
 
   .DeliveryInfo {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 16px;
+
     h4 {
       padding-top: 16px;
       font-weight: 600;
@@ -36,6 +39,25 @@
       color: #020202;
     }
     .DateInfo {
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+
+      color: #020202;
+    }
+  }
+
+  .AddressInfo {
+    h4 {
+      padding-top: 16px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: -0.5px;
+
+      color: #020202;
+    }
+    .AddrssDetail {
       font-size: 16px;
       line-height: 26px;
       letter-spacing: -0.5px;

@@ -36,7 +36,10 @@ const SubscribeCompletePage = () => {
         </div>
         <div className="OrderInfo">
           <h4>주문내역</h4>
-          <OrderInfos />
+          <OrderInfos>
+            <h4>배송지</h4>
+            <p className="AddrssDetail">서울시 강남구</p>
+          </OrderInfos>
         </div>
       </div>
       <div className="ButtonContainer">

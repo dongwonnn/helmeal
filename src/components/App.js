@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-// import NavBar from './Common/NavBar';
 import HomePage from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import DetailPage from '../pages/DetailPage';
@@ -22,13 +21,9 @@ const App = () => {
         <Route path="/address" component={AddressPage} />
         <Route path="/subscribe-complete" component={SubscribeCompletePage} />
         <Route path="/menu-detail/:id" component={MenuDetailPage} />
-        <>
-          {/* <NavBar /> */}
-
-          <Route path="/" exact={true} component={HomePage} />
-          <Route path="/detail" component={DetailPage} />
-          <Route path="/profile" component={ProfilePage} />
-        </>
+        <Route path="/" exact={true} component={HomePage} />
+        <Route path="/detail" component={DetailPage} />
+        <Route path="/profile" component={ProfilePage} />
       </Switch>
     </>
   );
