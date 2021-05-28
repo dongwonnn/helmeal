@@ -7,7 +7,7 @@ import { ReactComponent as FishProtein } from '../assets/images/ingredients/Fish
 import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
 
-import { snackInfo } from '../utils/data';
+// import { snackInfo } from '../utils/data';
 import { mealInfo } from '../utils/data';
 
 const MenuDetailPage = ({ match }) => {

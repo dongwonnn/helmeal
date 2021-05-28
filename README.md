@@ -11,25 +11,16 @@ Healmeal 프로젝트
   1. 따로 분리하기
   2. title을 기준으로 쿼리
 
-### HomePage
-
-- [ ] 동영상 넣기
-
 ### DetailPage
 
 - [ ] Carousel 추가할 이미지
 - [ ] Carousel 상태 색상넣기
 - [ ] 프로틴별 Scroll Spy -> API 적용 후에
 
-### Dropdown
-
-- [ ] 화살표 위 아래 넣기
-- [ ] 텍스트 밑 라인 다 긋기
-
 ### Subscribe Page
 
 - [ ] 결제수단 색
-- [ ] 결제수단 선택 -> 버튼 색 추가하기
+- [ ] 주소 설정, 결제수단 선택 -> 버튼 색 추가하기
 
 ### Address Page
 

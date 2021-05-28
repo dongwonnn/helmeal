@@ -1,9 +1,9 @@
 import React from 'react';
 import './Button.scss';
 
-const Button = ({ children }) => {
+const Button = ({ children, isSelect }) => {
   return (
-    <div className="Button">
+    <div className={'Button' + (isSelect === undefined ? '' : ' passive')}>
       <p>{children}</p>
     </div>
   );

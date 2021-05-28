@@ -2,6 +2,26 @@
 export const videoUrl =
   'https://user-images.githubusercontent.com/59330828/119786834-87462a00-bf0b-11eb-942b-fbce2cc2545b.mp4';
 
+// 지불 방법
+export const payWay = [
+  {
+    id: 0,
+    way: '네이버 페이',
+  },
+  {
+    id: 1,
+    way: '카카오 페이',
+  },
+  {
+    id: 2,
+    way: '신용/체크 카드',
+  },
+  {
+    id: 3,
+    way: '휴대폰 결제',
+  },
+];
+
 // MEAL 정보
 export const mealInfo = [
   {

@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom';
 import { mealInfo } from '../../utils/data';
 
 const MealMenus = () => {
-  console.log(mealInfo);
-
   if (!mealInfo) {
     return <div>로딩중..</div>;
   }
