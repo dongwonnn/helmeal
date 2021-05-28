@@ -17,8 +17,9 @@ import MealCategories from '../components/Detail/MealCategories';
 import Button from '../components/Common/Button';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
+import NavBar from '../components/Common/NavBar';
 
-const DetailPage = () => {
+const DetailPage = ({ history }) => {
   const [isMeal, setIsMeal] = useState(true);
 
   const { pathname } = useLocation();
@@ -53,6 +54,7 @@ const DetailPage = () => {
           <Button>루틴 시작하기</Button>
         </Link>
       </div>
+      <NavBar path={history.location.pathname} />
     </div>
   );
 };

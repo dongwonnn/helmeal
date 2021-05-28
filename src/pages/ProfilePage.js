@@ -4,7 +4,8 @@ import Header from '../components/Common/Header';
 import { useLocation } from 'react-router';
 
 import './ProfilePage.scss';
-const ProfilePage = () => {
+import NavBar from '../components/Common/NavBar';
+const ProfilePage = ({ history }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -26,6 +27,7 @@ const ProfilePage = () => {
           <p>로그인/회원가입</p>
         </div>
       </div>
+      <NavBar path={history.location.pathname} />
     </div>
   );
 };

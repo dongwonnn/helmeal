@@ -3,8 +3,9 @@ import './HomePage.scss';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { videoUrl } from '../utils/data';
+import NavBar from '../components/Common/NavBar';
 
-const HomePage = () => {
+const HomePage = ({ history }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -77,6 +78,7 @@ const HomePage = () => {
           </div>
         </div>
       </article>
+      <NavBar path={history.location.pathname} />
     </div>
   );
 };

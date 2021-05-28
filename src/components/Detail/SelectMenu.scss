@@ -9,6 +9,11 @@
     padding-bottom: 24px;
   }
 
+  .Sticky {
+    position: sticky;
+    top: 0;
+  }
+
   .MenuToggle {
     display: grid;
     grid-template-columns: 1fr 1fr;
