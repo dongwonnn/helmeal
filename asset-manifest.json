@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/helmeal/static/css/main.0e8b38c0.chunk.css",
+    "main.css": "/helmeal/static/css/main.60230ed4.chunk.css",
     "main.js": "/helmeal/static/js/main.5fad54c4.chunk.js",
     "main.js.map": "/helmeal/static/js/main.5fad54c4.chunk.js.map",
     "runtime-main.js": "/helmeal/static/js/runtime-main.4bb52fe4.js",
@@ -8,7 +8,7 @@
     "static/js/2.8e5bbc12.chunk.js": "/helmeal/static/js/2.8e5bbc12.chunk.js",
     "static/js/2.8e5bbc12.chunk.js.map": "/helmeal/static/js/2.8e5bbc12.chunk.js.map",
     "index.html": "/helmeal/index.html",
-    "static/css/main.0e8b38c0.chunk.css.map": "/helmeal/static/css/main.0e8b38c0.chunk.css.map",
+    "static/css/main.60230ed4.chunk.css.map": "/helmeal/static/css/main.60230ed4.chunk.css.map",
     "static/js/2.8e5bbc12.chunk.js.LICENSE.txt": "/helmeal/static/js/2.8e5bbc12.chunk.js.LICENSE.txt",
     "static/media/Beef_Protein.e43f5f3b.svg": "/helmeal/static/media/Beef_Protein.e43f5f3b.svg",
     "static/media/Chicken_Protein.d9d06d30.svg": "/helmeal/static/media/Chicken_Protein.d9d06d30.svg",
@@ -33,7 +33,7 @@
   "entrypoints": [
     "static/js/runtime-main.4bb52fe4.js",
     "static/js/2.8e5bbc12.chunk.js",
-    "static/css/main.0e8b38c0.chunk.css",
+    "static/css/main.60230ed4.chunk.css",
     "static/js/main.5fad54c4.chunk.js"
   ]
 }
