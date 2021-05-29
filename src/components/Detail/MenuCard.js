@@ -1,13 +1,14 @@
 import React from 'react';
 import './MenuCard.scss';
 
-const MenuCard = ({ children }) => {
-  const [menuImg, detail, menu] = children;
+const MenuCard = ({ meal }) => {
   return (
     <div className="MenuCardContainer">
-      {menuImg}
-      {detail}
-      {menu}
+      <img src={meal.imgUrl} alt="MenuImage" />
+      <p>
+        프로틴:{meal.protein}g | 탄수화물:{meal.carb}g
+      </p>
+      <h2>{meal.title}</h2>
     </div>
   );
 };

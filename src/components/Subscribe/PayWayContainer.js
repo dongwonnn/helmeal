@@ -48,19 +48,3 @@ const PayWayContainer = ({ setIsSelect }) => {
 };
 
 export default PayWayContainer;
-/* <li>
-  <ListIcon />
-  네이버 페이
-</li>
-<li>
-  <ListIcon />
-  카카오 페이
-</li>
-<li>
-  <ListIcon />
-  신용/체크 카드
-</li>
-<li>
-  <ListIcon />
-  휴대폰 결제
-</li> */

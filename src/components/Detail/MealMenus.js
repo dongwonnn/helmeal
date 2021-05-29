@@ -1,30 +1,33 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './MealMenus.scss';
 import MenuCard from './MenuCard';
-import { Link } from 'react-router-dom';
 import { mealInfo } from '../../utils/data';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { currentMealInfo } from '../../reducers/food';
 
 const MealMenus = () => {
-  if (!mealInfo) {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(currentMealInfo(mealInfo));
+  }, [dispatch]);
+
+  const { totalMealInfo } = useSelector(({ food }) => ({
+    totalMealInfo: food.totalMealInfo,
+  }));
+
+  if (!totalMealInfo) {
     return <div>로딩중..</div>;
   }
 
   return (
     <div className="MealMenusContainer">
       <div className="MenuCarsdContainer">
-        {mealInfo.map((meal) => {
-          return (
-            <Link key={meal.id} to={`/menu-detail/${meal.id}`}>
-              <MenuCard>
-                <img src={meal.imgUrl} alt="MenuImage" />
-                <p>
-                  프로틴:{meal.protein}g | 탄수화물:{meal.carb}g
-                </p>
-                <h2>{meal.title}</h2>
-              </MenuCard>
-            </Link>
-          );
-        })}
+        {totalMealInfo.map((meal) => (
+          <Link key={meal.id} to={`/menu-detail/${meal.id}`}>
+            <MenuCard meal={meal} />
+          </Link>
+        ))}
       </div>
     </div>
   );

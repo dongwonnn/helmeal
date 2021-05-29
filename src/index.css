@@ -1,8 +1,9 @@
-/* body {
-  background-color: #ccc;
-} */
 #root {
   background-color: white;
   max-width: 480px;
   margin: 0 auto;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }

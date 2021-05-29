@@ -25,7 +25,7 @@ export const payWay = [
 // MEAL 정보
 export const mealInfo = [
   {
-    id: 0,
+    id: 'meal_0',
     title: '데리야끼 연어 스테이크와 그린빈 볶음 그리고 퀴노아',
     protein: 10,
     carb: 36,
@@ -38,7 +38,7 @@ export const mealInfo = [
       'https://user-images.githubusercontent.com/59330828/119785354-16ead900-bf0a-11eb-86af-6a32e351f7ed.png',
   },
   {
-    id: 1,
+    id: 'meal_1',
     title: '미니 양배추 볶음 소고기 미트볼 통밀 크림 파스타',
     protein: 15,
     carb: 10,
@@ -51,7 +51,7 @@ export const mealInfo = [
       'https://user-images.githubusercontent.com/59330828/119785377-1c482380-bf0a-11eb-982e-be05f31df481.png',
   },
   {
-    id: 2,
+    id: 'meal_2',
     title: '두부 샐러드와 브로콜리 오리엔탈 드래싱과 오트밀 밥',
     protein: 20,
     carb: 48,
@@ -64,7 +64,7 @@ export const mealInfo = [
       'https://user-images.githubusercontent.com/59330828/119785395-1fdbaa80-bf0a-11eb-831c-8bebfe995627.png',
   },
   {
-    id: 3,
+    id: 'meal_3',
     title: '비건용 식물성 고기 야채 볶음과 두부면 파스타',
     protein: 30,
     carb: 15,
@@ -77,7 +77,7 @@ export const mealInfo = [
       'https://user-images.githubusercontent.com/59330828/119785409-210cd780-bf0a-11eb-9983-842667838a45.png',
   },
   {
-    id: 4,
+    id: 'meal_4',
     title: '비건용 식물성 고기 야채 볶음과 두부면 파스타',
     protein: 15,
     carb: 36,
@@ -94,7 +94,7 @@ export const mealInfo = [
 // SNACK 정보
 export const snackInfo = [
   {
-    id: 0,
+    id: 'snack_0',
     title: '식물성 프로틴 미니볼 (초코,흑임자,바닐라 맛)',
     protein: 13,
     carb: 16,
@@ -107,7 +107,7 @@ export const snackInfo = [
       'https://user-images.githubusercontent.com/59330828/119785436-279b4f00-bf0a-11eb-8a96-1d6772a0aae4.png',
   },
   {
-    id: 1,
+    id: 'snack_1',
     title: '프로틴 파우더와 오트밀로 만든 피칸+월넛 머핀',
     protein: 35,
     carb: 12,
@@ -120,7 +120,7 @@ export const snackInfo = [
       'https://user-images.githubusercontent.com/59330828/119785448-29651280-bf0a-11eb-8604-a3d5b97eb554.png',
   },
   {
-    id: 2,
+    id: 'snack_2',
     title: '식물성 프로틴 바닐라빈 라즈베리 스콘',
     protein: 40,
     carb: 28,
@@ -133,7 +133,7 @@ export const snackInfo = [
       'https://user-images.githubusercontent.com/59330828/119785461-2b2ed600-bf0a-11eb-9db0-41cd77f2486f.png',
   },
   {
-    id: 3,
+    id: 'snack_3',
     title: '두부 밀크 프로틴 푸딩과 식물성 생크림',
     protein: 45,
     carb: 25,
@@ -146,7 +146,7 @@ export const snackInfo = [
       'https://user-images.githubusercontent.com/59330828/119785465-2cf89980-bf0a-11eb-842a-534771308f6f.png',
   },
   {
-    id: 4,
+    id: 'snack_4',
     title: '프로틴 파우더 오트밀 팬케익과 메이플시럽',
     protein: 45,
     carb: 26,
