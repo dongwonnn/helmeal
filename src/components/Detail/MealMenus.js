@@ -25,7 +25,7 @@ const MealMenus = () => {
       <div className="MenuCarsdContainer">
         {totalMealInfo.map((meal) => (
           <Link key={meal.id} to={`/menu-detail/${meal.id}`}>
-            <MenuCard meal={meal} />
+            <MenuCard food={meal} />
           </Link>
         ))}
       </div>

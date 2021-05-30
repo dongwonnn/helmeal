@@ -5,15 +5,25 @@ import DoughnutGraph from '../components/Common/DoughnutGraph';
 import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { getFoodKinds, getParamsId } from '../utils/getParamsId';
 
 const MenuDetailPage = ({ match }) => {
   const { id } = match.params;
 
-  const { totalMealInfo } = useSelector(({ food }) => ({
+  const [currentMeal, setCurrentMeal] = useState(null);
+
+  const { totalMealInfo, totalSnackInfo } = useSelector(({ food }) => ({
     totalMealInfo: food.totalMealInfo,
+    totalSnackInfo: food.totalSnackInfo,
   }));
 
-  const [currentMeal] = useState(totalMealInfo[id]);
+  useEffect(() => {
+    if (getFoodKinds(id) === 'meal') {
+      setCurrentMeal(totalMealInfo[getParamsId(id)]);
+    } else {
+      setCurrentMeal(totalSnackInfo[getParamsId(id)]);
+    }
+  }, [id, totalMealInfo, totalSnackInfo]);
 
   const { pathname } = useLocation();
 
@@ -21,7 +31,7 @@ const MenuDetailPage = ({ match }) => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  if (currentMeal === undefined) {
+  if (currentMeal === null) {
     return <div>로딩중...</div>;
   }
 
@@ -30,60 +40,20 @@ const MenuDetailPage = ({ match }) => {
       <div className="MenuDetailContainer">
         <div className="MenuCategories">
           <ul>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
-            <li className="MenuImg">
-              <div></div>
-            </li>
+            {totalMealInfo.map((meal) => (
+              <Link to={`/menu-detail/${meal.id}`} key={meal.id}>
+                <li className="MenuImg">
+                  <div></div>
+                </li>
+              </Link>
+            ))}
+            {totalSnackInfo.map((snack) => (
+              <Link to={`/menu-detail/${snack.id}`} key={snack.id}>
+                <li className="MenuImg">
+                  <div></div>
+                </li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className="MenuInfo">

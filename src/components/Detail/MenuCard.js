@@ -1,14 +1,14 @@
 import React from 'react';
 import './MenuCard.scss';
 
-const MenuCard = ({ meal }) => {
+const MenuCard = ({ food }) => {
   return (
     <div className="MenuCardContainer">
-      <img src={meal.imgUrl} alt="MenuImage" />
+      <img src={food.imgUrl} alt="MenuImage" />
       <p>
-        프로틴:{meal.protein}g | 탄수화물:{meal.carb}g
+        프로틴:{food.protein}g | 탄수화물:{food.carb}g
       </p>
-      <h2>{meal.title}</h2>
+      <h2>{food.title}</h2>
     </div>
   );
 };

@@ -18,9 +18,17 @@ import Button from '../components/Common/Button';
 import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/Common/NavBar';
+import { useDispatch } from 'react-redux';
+import { currentSnackInfo } from '../reducers/food';
+import { snackInfo } from '../utils/data';
 
 const DetailPage = ({ history }) => {
   const [isMeal, setIsMeal] = useState(true);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(currentSnackInfo(snackInfo));
+  }, [dispatch]);
 
   const { pathname } = useLocation();
 
