@@ -11,22 +11,22 @@
     }
   }
   .ArticleContainer {
-    padding: 0 25px 60px 23px;
+    padding: 0 6.66% 60px 6.66%;
     h4 {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 600;
       line-height: 26px;
       color: #fc5c42;
     }
     h2 {
-      font-size: 28px;
+      font-size: 1.75rem;
       font-weight: 700;
       line-height: 40px;
       color: #020202;
       margin-bottom: 16px;
     }
     p {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 400;
       line-height: 26px;
       letter-spacing: -0.5px;
@@ -47,21 +47,21 @@
       padding: 40px 0 426px 25px;
       h2 {
         padding-bottom: 16px;
-        font-size: 28px;
+        font-size: 1.75rem;
         font-weight: 700;
         line-height: 40px;
         color: #ffffff;
       }
       p {
         font-weight: 600;
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 26px;
         letter-spacing: -0.5px;
         color: #ffffff;
       }
       .LastText {
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 26px;
         letter-spacing: -0.5px;
         color: #ffffff;
@@ -76,10 +76,8 @@
         .ButtonText {
           padding: 11px 32px;
           font-weight: 400;
-          font-size: 14px;
+          font-size: 0.875rem;
           line-height: 21px;
-          display: flex;
-          align-items: center;
           text-align: center;
           letter-spacing: -0.41px;
 
