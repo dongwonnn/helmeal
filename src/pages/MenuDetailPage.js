@@ -6,8 +6,9 @@ import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getFoodKinds, getParamsId } from '../utils/getParamsId';
+import MenuCategories from '../components/Detail/MenuCategories';
 
-const MenuDetailPage = ({ match }) => {
+const MenuDetailPage = ({ match, history }) => {
   const { id } = match.params;
 
   const [currentMeal, setCurrentMeal] = useState(null);
@@ -38,26 +39,17 @@ const MenuDetailPage = ({ match }) => {
   return (
     <div className="MenuDetailPage">
       <div className="MenuDetailContainer">
-        <div className="MenuCategories">
-          <ul>
-            {totalMealInfo.map((meal) => (
-              <Link to={`/menu-detail/${meal.id}`} key={meal.id}>
-                <li className="MenuImg">
-                  <div></div>
-                </li>
-              </Link>
-            ))}
-            {totalSnackInfo.map((snack) => (
-              <Link to={`/menu-detail/${snack.id}`} key={snack.id}>
-                <li className="MenuImg">
-                  <div></div>
-                </li>
-              </Link>
-            ))}
-          </ul>
-        </div>
+        <MenuCategories
+          totalMealInfo={totalMealInfo}
+          totalSnackInfo={totalSnackInfo}
+          curUrl={history.location.pathname}
+        />
         <div className="MenuInfo">
-          <img src={currentMeal.imgUrl} alt="Menu Img" className="MainImg" />
+          <img
+            src={currentMeal.largeImgUrl}
+            alt="Menu Img"
+            className="MainImg"
+          />
           <div className="MenuDetail">
             <h3>헬밀P 프로틴</h3>
             <h2>{currentMeal.title}</h2>

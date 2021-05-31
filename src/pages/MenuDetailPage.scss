@@ -15,31 +15,7 @@
     height: 100vh;
     display: grid;
     grid-template-columns: 1.9fr 8fr;
-    .MenuCategories {
-      background-color: white;
-      border-top-left-radius: 30px;
-      display: flex;
-      flex-direction: column;
 
-      white-space: nowrap;
-      overflow-y: scroll;
-      ul {
-        .MenuImg:first-child {
-          margin-top: 27px;
-        }
-
-        .MenuImg {
-          background-color: #ccc;
-          border-radius: 100px;
-          margin: 0 12px 24px 12px;
-          width: 66.666667%;
-          padding-bottom: 66.6666%;
-        }
-      }
-    }
-    .MenuCategories::-webkit-scrollbar {
-      display: none; /* Chrome, Safari, Opera*/
-    }
     .MenuInfo {
       background-color: white;
       overflow-y: scroll;

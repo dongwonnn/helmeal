@@ -1,0 +1,29 @@
+.MenuCategories {
+  border-right: 1px solid #ccc;
+  background-color: white;
+  border-top-left-radius: 30px;
+  display: flex;
+  flex-direction: column;
+
+  justify-items: flex-start;
+  align-items: center;
+
+  white-space: nowrap;
+  overflow-y: scroll;
+  ul {
+    .MenuImg {
+      margin-bottom: 13px;
+      opacity: 0.5;
+    }
+
+    .MenuImg.Clicked {
+      opacity: 1;
+    }
+  }
+  ul:first-child {
+    margin-top: 27px;
+  }
+}
+.MenuCategories::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}

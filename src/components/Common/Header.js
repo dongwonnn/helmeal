@@ -6,11 +6,11 @@ const Header = ({ children }) => {
   const [leftArrow, title, side] = children;
 
   return (
-    <div className="HeaderContainer">
+    <header className="HeaderContainer">
       <div className="LeftArrow">{leftArrow}</div>
       <div className="Side">{side}</div>
       <div className="Title">{title}</div>
-    </div>
+    </header>
   );
 };
 
