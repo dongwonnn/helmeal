@@ -5,10 +5,12 @@ import food from './food';
 import auth from './auth';
 
 const rootReducer = combineReducers({
+  auth,
   option,
   address,
   food,
-  auth,
 });
 
 export default rootReducer;
+
+export type RootState = ReturnType<typeof rootReducer>;

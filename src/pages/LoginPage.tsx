@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react';
 import { ReactComponent as Logo } from '../assets/images/Logo.svg';
-import { useLocation } from 'react-router';
+import { RouteComponentProps, useLocation } from 'react-router';
 import LoginButton from '../components/Auth/LoginButton';
 import './LoginPage.scss';
 import TermsOfService from '../components/Profile/TermsOfService';
+import { Location } from 'history';
+import { StaticContext } from 'react-router';
 
-const LoginPage = ({ location }) => {
+
+interface LocationProps{
+  from : Location;
+}
+
+const LoginPage = ({ location }:RouteComponentProps<{}, StaticContext, LocationProps>) => {
   const { pathname } = useLocation();
 
   useEffect(() => {

@@ -38,3 +38,25 @@ Healmeal 프로젝트
 
 - css font size 크기 반응형 구현
 - 결제 한 상태에서 또 결제할 때 로직 처리
+
+### TS 적용
+
+- {children} : 그냥 FC 추가
+- history: RouteComponentProps 추가 (import)
+- location :
+
+```javascript
+  import { Location } from 'history';
+  import { StaticContext } from 'react-router';
+
+  interface LocationProps{
+  // from 사용시
+  from : Location;
+  }
+
+  const LoginPage = ({ location }:RouteComponentProps<{}, StaticContext, LocationProps>) => {
+```
+
+- reducer 관련 velopert
+- 객체 타입 - ITotalMealInfo 처럼 만들기
+- useSelector 오류 : Default -> any로 치환

@@ -1,11 +1,16 @@
-import React, { useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 import './LoginButton.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../../utils/data';
 import { check } from '../../reducers/auth';
 import { Redirect } from 'react-router';
+import { Location } from 'history';
 
-const LoginButton = ({ children, from }) => {
+interface LoginButtonProps{
+  from : Location;
+}
+
+const LoginButton:FC<LoginButtonProps> = ({ children, from }) => {
   const dispatch = useDispatch();
 
   const { user } = useSelector(({ auth }) => ({
@@ -13,7 +18,7 @@ const LoginButton = ({ children, from }) => {
   }));
 
   const onCheckUser = useCallback(() => {
-    dispatch(check(userData));
+    dispatch(check(userData))
   }, [dispatch]);
 
   if (user) {
