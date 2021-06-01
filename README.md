@@ -6,12 +6,12 @@ Healmeal 프로젝트
 
 ## 아직 남은 기능들
 
-- 뒤로가기 구현
+- oAuth 인증 방식
+- 결제 수단 연동
 
 ### HTML, CSS
 
 - [ ] 시맨틱태그 표현
-- [ ] 글씨, padding, margin 반응형 구현
 
 ### DetailPage
 

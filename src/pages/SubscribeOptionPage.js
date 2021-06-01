@@ -7,7 +7,8 @@ import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import './SubscribeOptionPage.scss';
 import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router';
+import { Redirect, useLocation } from 'react-router';
+import { useSelector } from 'react-redux';
 
 const SubscribeOptionPage = () => {
   const [canSelectOption, setCanSelectOption] = useState(true);
@@ -16,6 +17,13 @@ const SubscribeOptionPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  const { user } = useSelector(({ auth }) => ({
+    user: auth.user,
+  }));
+  if (!user) {
+    return <Redirect to="/login" />;
+  }
 
   return (
     <div className="SubscribeOptionPage">

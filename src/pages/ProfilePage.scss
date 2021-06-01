@@ -16,7 +16,7 @@
     .ProfileLogin {
       max-width: 892.95px;
       margin: 0 auto;
-      margin-bottom: 24px;
+      margin-bottom: 48px;
 
       background-color: black;
       border-radius: 8px;
@@ -27,6 +27,29 @@
         text-align: center;
         font-weight: bold;
       }
+    }
+    .Divider {
+      width: 100%;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 48px;
+    }
+    .Question {
+      font-weight: bold;
+      font-size: 1.25rem;
+      line-height: 28px;
+      letter-spacing: -0.5px;
+
+      color: #111111;
+      margin-bottom: 16px;
+    }
+
+    .Policies {
+      font-weight: bold;
+      font-size: 1.25rem;
+      line-height: 28px;
+      letter-spacing: -0.5px;
+
+      color: #111111;
     }
   }
 }

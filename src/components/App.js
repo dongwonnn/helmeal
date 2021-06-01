@@ -15,15 +15,17 @@ const App = () => {
   return (
     <>
       <Switch>
-        <Route path="/login" component={LoginPage} />
+        <Route path="/" exact={true} component={HomePage} />
+        <Route path="/detail" component={DetailPage} />
+
         <Route path="/subscribe-option" component={SubscribeOptionPage} />
         <Route path="/subscribe" component={SubscribePage} />
         <Route path="/address" component={AddressPage} />
         <Route path="/subscribe-complete" component={SubscribeCompletePage} />
         <Route path="/menu-detail/:id" component={MenuDetailPage} />
-        <Route path="/" exact={true} component={HomePage} />
-        <Route path="/detail" component={DetailPage} />
         <Route path="/profile" component={ProfilePage} />
+
+        <Route path="/login" component={LoginPage} />
       </Switch>
     </>
   );

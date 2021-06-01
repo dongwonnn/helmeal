@@ -181,3 +181,15 @@ export const snackInfo = [
 ];
 
 // 개인정보
+export const userData = {
+  id: 0,
+  emial: 'test@gmail.com',
+  name: '테스트',
+  address: '서울시 강동구 올림픽아파트 103동 1201호',
+  protein: '소고기 프로틴',
+  freq: 5,
+  terms: 2,
+  startDate: '',
+  endDate: '',
+  amountPaymont: 100,
+};

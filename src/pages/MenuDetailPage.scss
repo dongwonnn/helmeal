@@ -20,9 +20,19 @@
       background-color: white;
       overflow-y: scroll;
 
-      .MainImg {
-        width: 100%;
-        margin-bottom: 24px;
+      .MainImageContainer {
+        position: relative;
+        .MainImg {
+          width: 100%;
+          margin-bottom: 24px;
+        }
+        .CloseButton {
+          color: #767676;
+          position: absolute;
+          font-size: 1.5rem;
+          top: 10px;
+          right: 10px;
+        }
       }
 
       .MenuDetail {

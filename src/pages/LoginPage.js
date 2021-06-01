@@ -14,7 +14,6 @@ const LoginPage = () => {
 
   return (
     <div className="LoginPage">
-      {console.log('check')}
       <div className="Logo">
         <Logo />
       </div>

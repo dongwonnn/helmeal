@@ -1,13 +1,31 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import './LoginButton.scss';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { userData } from '../../utils/data';
+import { check } from '../../reducers/auth';
+import { Redirect, useHistory } from 'react-router';
 
 const LoginButton = ({ children }) => {
+  const dispatch = useDispatch();
+
+  const history = useHistory();
+  console.log(history);
+
+  const { user } = useSelector(({ auth }) => ({
+    user: auth.user,
+  }));
+
+  const onCheckUser = useCallback(() => {
+    dispatch(check(userData));
+  }, [dispatch]);
+
+  if (user) {
+    return <Redirect to="/" />;
+  }
+
   return (
     <div className="LoginButtonContainer">
-      <p>
-        <Link to="/">{children}</Link>
-      </p>
+      <p onClick={onCheckUser}>{children}</p>
     </div>
   );
 };

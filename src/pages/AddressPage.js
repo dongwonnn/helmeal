@@ -46,14 +46,6 @@ const AddressPage = () => {
                   <p>{detailAddress}</p>
                   <p>{mainAddress}</p>
                 </li>
-                <li>
-                  <p>{detailAddress}</p>
-                  <p>{mainAddress}</p>
-                </li>
-                <li>
-                  <p>{detailAddress}</p>
-                  <p>{mainAddress}</p>
-                </li>
               </ul>
             </div>
           ) : (

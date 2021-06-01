@@ -38,7 +38,7 @@ const DetailPage = ({ history }) => {
 
   return (
     <div className="DetailPage">
-      <Header>
+      <Header history={history}>
         <LeftIcon />
         <h3>헬밀 프로틴</h3>
         <ShareLogo />

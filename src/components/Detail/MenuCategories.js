@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './MenuCategories.scss';
 
 const MenuCategories = ({ totalMealInfo, totalSnackInfo, curUrl }) => {
-  console.log(curUrl);
   return (
     <nav className="MenuCategories">
       <ul>
