@@ -1,11 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { FC, useEffect } from 'react';
 import './HomePage.scss';
-import { useLocation } from 'react-router';
+import { RouteComponentProps, useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import { videoUrl } from '../utils/data';
 import NavBar from '../components/Common/NavBar';
 
-const HomePage = ({ history }) => {
+interface HomePageProps{
+  history: RouteComponentProps;
+}
+
+const HomePage:FC<HomePageProps>  = ({ history }) => {
   const { pathname } = useLocation();
 
   useEffect(() => {
