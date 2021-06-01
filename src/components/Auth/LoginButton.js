@@ -5,7 +5,7 @@ import { userData } from '../../utils/data';
 import { check } from '../../reducers/auth';
 import { Redirect } from 'react-router';
 
-const LoginButton = ({ children }) => {
+const LoginButton = ({ children, from }) => {
   const dispatch = useDispatch();
 
   const { user } = useSelector(({ auth }) => ({
@@ -17,7 +17,7 @@ const LoginButton = ({ children }) => {
   }, [dispatch]);
 
   if (user) {
-    return <Redirect to="/" />;
+    return <Redirect to={from} />;
   }
 
   return (
