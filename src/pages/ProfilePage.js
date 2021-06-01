@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import Header from '../components/Common/Header';
-import { Redirect, useLocation } from 'react-router';
+import { useLocation } from 'react-router';
 
 import './ProfilePage.scss';
 import NavBar from '../components/Common/NavBar';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Logout from '../components/Auth/Logout';
+import OrderHistory from '../components/Profile/OrderHistory';
+import Polices from '../components/Profile/Polices';
+import Question from '../components/Profile/Question';
 const ProfilePage = ({ history }) => {
   const { user } = useSelector(({ auth }) => ({
     user: auth.user,
@@ -26,7 +30,12 @@ const ProfilePage = ({ history }) => {
         <p></p>
       </Header>
       {user ? (
-        <div></div>
+        <div className="ProfileContainer">
+          <OrderHistory />
+          <Question />
+          <Polices />
+          <Logout />
+        </div>
       ) : (
         <div className="ProfileContainer">
           <div className="ProfileMessage">
@@ -39,12 +48,8 @@ const ProfilePage = ({ history }) => {
             </Link>
           </div>
           <div className="Divider"></div>
-          <div className="Question">
-            <p>문의하기</p>
-          </div>
-          <div className="Policies">
-            <p>약관 및 정책 </p>
-          </div>
+          <Question />
+          <Polices />
         </div>
       )}
       <NavBar path={history.location.pathname} />

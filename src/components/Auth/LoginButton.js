@@ -3,13 +3,10 @@ import './LoginButton.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../../utils/data';
 import { check } from '../../reducers/auth';
-import { Redirect, useHistory } from 'react-router';
+import { Redirect } from 'react-router';
 
 const LoginButton = ({ children }) => {
   const dispatch = useDispatch();
-
-  const history = useHistory();
-  console.log(history);
 
   const { user } = useSelector(({ auth }) => ({
     user: auth.user,

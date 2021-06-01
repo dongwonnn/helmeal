@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { ReactComponent as Logo } from '../assets/images/Logo.svg';
-import LoginButton from '../components/Login/LoginButton';
-import TermsOfService from '../components/Login/TermsOfService';
 import { useLocation } from 'react-router';
+import LoginButton from '../components/Auth/LoginButton';
 import './LoginPage.scss';
+import TermsOfService from '../components/Profile/TermsOfService';
 
 const LoginPage = () => {
   const { pathname } = useLocation();

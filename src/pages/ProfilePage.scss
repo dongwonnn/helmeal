@@ -33,7 +33,10 @@
       border-bottom: 1px solid #ccc;
       margin-bottom: 48px;
     }
-    .Question {
+
+    .OrderHistory,
+    .Question,
+    .Policies {
       font-weight: bold;
       font-size: 1.25rem;
       line-height: 28px;
@@ -44,12 +47,16 @@
     }
 
     .Policies {
+      margin-bottom: 60px;
+    }
+
+    .Logout {
       font-weight: bold;
       font-size: 1.25rem;
       line-height: 28px;
       letter-spacing: -0.5px;
 
-      color: #111111;
+      color: #ccc;
     }
   }
 }
