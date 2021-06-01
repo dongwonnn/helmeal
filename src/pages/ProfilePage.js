@@ -22,21 +22,9 @@ const ProfilePage = ({ history }) => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return (
-    <div className="ProfilePage">
-      <Header>
-        <LeftIcon />
-        <h3>마이페이지</h3>
-        <p></p>
-      </Header>
-      {user ? (
-        <div className="ProfileContainer">
-          <OrderHistory />
-          <Question />
-          <Polices />
-          <Logout />
-        </div>
-      ) : (
+  if (!user) {
+    return (
+      <div className="ProfilePage">
         <div className="ProfileContainer">
           <div className="ProfileMessage">
             <p>가입하고 건강한 식단을 준비하세요!</p>
@@ -51,7 +39,23 @@ const ProfilePage = ({ history }) => {
           <Question />
           <Polices />
         </div>
-      )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="ProfilePage">
+      <Header>
+        <LeftIcon />
+        <h3>마이페이지</h3>
+        <p></p>
+      </Header>
+      <div className="ProfileContainer">
+        <OrderHistory />
+        <Question />
+        <Polices />
+        <Logout />
+      </div>
       <NavBar path={history.location.pathname} />
     </div>
   );

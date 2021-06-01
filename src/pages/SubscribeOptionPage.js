@@ -21,8 +21,9 @@ const SubscribeOptionPage = () => {
   const { user } = useSelector(({ auth }) => ({
     user: auth.user,
   }));
+
   if (!user) {
-    return <Redirect to="/login" />;
+    return <Redirect to={{ pathname: '/login', state: { from: pathname } }} />;
   }
 
   return (
