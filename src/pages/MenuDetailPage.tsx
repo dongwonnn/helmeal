@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, {  useCallback, useEffect, useState } from 'react';
 import './MenuDetailPage.scss';
-import { useLocation } from 'react-router';
+import {  useHistory, useLocation, useParams } from 'react-router';
 import DoughnutGraph from '../components/Common/DoughnutGraph';
 import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
@@ -8,11 +8,18 @@ import { useSelector } from 'react-redux';
 import { getFoodKinds, getParamsId } from '../utils/getParamsId';
 import MenuCategories from '../components/Detail/MenuCategories';
 import { AiOutlineClose } from 'react-icons/ai';
+import { ITotalMealInfo } from '../types/ITotalMealInfo';
 
-const MenuDetailPage = ({ match, history }) => {
-  const { id } = match.params;
+interface ParamTypes{
+  id: string;
+}
 
-  const [currentMeal, setCurrentMeal] = useState(null);
+const MenuDetailPage =  () => {
+  const history = useHistory();
+
+  const { id } = useParams<ParamTypes>();
+
+  const [currentMeal, setCurrentMeal] = useState<ITotalMealInfo | null>(null);
 
   const { totalMealInfo, totalSnackInfo } = useSelector(({ food }) => ({
     totalMealInfo: food.totalMealInfo,
@@ -27,30 +34,29 @@ const MenuDetailPage = ({ match, history }) => {
     }
   }, [id, totalMealInfo, totalSnackInfo]);
 
-  const [locationKeys, setLocationKeys] = useState([]);
+  // const [locationKeys, setLocationKeys] = useState([]);
 
-  useEffect(() => {
-    // 뒷정리 함수
-    return history.listen((location) => {
-      if (history.action === 'PUSH') {
-        setLocationKeys([location.key]);
-      }
+  // useEffect(() => {
+  //   // 뒷정리 함수
+  //   return history.listen((location) => {
+  //     if (history.action === 'PUSH') {
+  //       setLocationKeys([location.key]);
+  //     }
 
-      if (history.action === 'POP') {
-        console.log('현재 위치 키 : ', location.key);
-        if (locationKeys[1] === location.key) {
-          setLocationKeys(([_, ...keys]) => keys);
+  //     if (history.action === 'POP') {
+  //       if (locationKeys[1] === location.key) {
+  //         setLocationKeys(([_, ...keys]) => keys);
 
-          // 앞으로 가기
-        } else {
-          setLocationKeys((keys) => [location.key, ...keys]);
+  //         // 앞으로 가기
+  //       } else {
+  //         setLocationKeys((keys) => [location.key, ...keys]);
 
-          // 뒤로 가기
-          history.push('/detail');
-        }
-      }
-    });
-  }, [locationKeys, history]);
+  //         // 뒤로 가기
+  //         history.push('/detail');
+  //       }
+  //     }
+  //   });
+  // }, [locationKeys, history]);
 
   const goDetailPage = useCallback(() => {
     history.push('/detail');

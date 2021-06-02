@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   setProteinInfo,
@@ -12,7 +12,11 @@ import { getReceiveDay } from '../../utils/getDate';
 import { getNumberForm } from '../../utils/getNumberForm';
 import './SubscribeDropdown.scss';
 
-const SubscribeDropdown = ({ setCanSelectOption }) => {
+interface DropdownProps {
+  setCanSelectOption: (e:boolean) => void 
+}
+
+const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
   const dispatch = useDispatch();
   const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
     ({ option }) => ({

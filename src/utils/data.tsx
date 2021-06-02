@@ -5,19 +5,19 @@ export const videoUrl =
 // 지불 방법
 export const payWay = [
   {
-    id: 0,
+    id: "0",
     way: '네이버 페이',
   },
   {
-    id: 1,
+    id: "1",
     way: '카카오 페이',
   },
   {
-    id: 2,
+    id: "2",
     way: '신용/체크 카드',
   },
   {
-    id: 3,
+    id: "3",
     way: '휴대폰 결제',
   },
 ];

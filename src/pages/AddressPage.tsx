@@ -26,7 +26,7 @@ const AddressPage = () => {
 
   return (
     <div className="AddressPage">
-      <Header>
+      <Header pathname="/">
         <LeftIcon />
         <h3>배송지 입력</h3>
         <p></p>

@@ -20,7 +20,7 @@ const SubscribeCompletePage = () => {
   }, [pathname]);
   return (
     <div className="SubscribeCompletePage">
-      <Header>
+      <Header pathname='/subscribe'>
         <LeftIcon />
         <h3>구독 완료</h3>
         <p></p>

@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import './DoughnutGraph.scss';
 
-const DoughnutGraph = ({ ingredient, amount }) => {
+interface DoughnutProps {
+  ingredient: string;
+  amount: number;
+}
+
+const DoughnutGraph:FC<DoughnutProps> = ({ ingredient, amount }) => {
   const data = {
     maintainAspectRatio: false,
     responsive: false,
@@ -22,7 +27,7 @@ const DoughnutGraph = ({ ingredient, amount }) => {
         <p>{amount}</p>
         <p>{ingredient}</p>
       </div>
-      <Doughnut data={data} />
+      <Doughnut type data={data} />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-export const getPayForm = (pay) => {
+export const getPayForm = (pay: number | string) => {
   pay = pay + '';
 
   let point = pay.length % 3;

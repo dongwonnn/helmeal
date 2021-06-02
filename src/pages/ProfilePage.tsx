@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import Header from '../components/Common/Header';
-import { useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 
 import './ProfilePage.scss';
 import NavBar from '../components/Common/NavBar';
@@ -11,7 +11,8 @@ import Logout from '../components/Auth/Logout';
 import OrderHistory from '../components/Profile/OrderHistory';
 import Polices from '../components/Profile/Polices';
 import Question from '../components/Profile/Question';
-const ProfilePage = ({ history }) => {
+const ProfilePage = () => {
+  const history = useHistory();
   const { user } = useSelector(({ auth }) => ({
     user: auth.user,
   }));
@@ -45,7 +46,7 @@ const ProfilePage = ({ history }) => {
 
   return (
     <div className="ProfilePage">
-      <Header>
+      <Header pathname="/">
         <LeftIcon />
         <h3>마이페이지</h3>
         <p></p>

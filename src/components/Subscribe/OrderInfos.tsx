@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getDeliveryDate } from '../../utils/getDate';
 
 import './OrderInfos.scss';
 
-const OrderInfos = ({ children }) => {
+const OrderInfos:FC = ({ children }) => {
   const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
     ({ option }) => ({
       proteinInfo: option.proteinInfo,

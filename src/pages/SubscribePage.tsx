@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Header from '../components/Common/Header';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { useSelector } from 'react-redux';
@@ -19,7 +19,6 @@ const SubscribePage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const [isSelect, setIsSelect] = useState(false);
 
   const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option }) => ({
     dateInfoPrice: option.dateInfoPrice,
@@ -33,7 +32,7 @@ const SubscribePage = () => {
 
   return (
     <div className="SubscribePage">
-      <Header>
+      <Header pathname="/subscribe-option">
         <LeftIcon />
         <h3>구독하기</h3>
         <p></p>
@@ -48,18 +47,21 @@ const SubscribePage = () => {
         </div>
 
         <h4>결제 수단</h4>
-        <PayWayContainer setIsSelect={setIsSelect} />
+        <PayWayContainer  />
 
         <TotalPay />
       </div>
       <div className="ButtonContainer">
-        {isSelect ? (
+          <Link to="/subscribe-complete">
+            <Button>{totalPay}원 결제하기</Button>
+          </Link>
+        {/* {isSelect ? (
           <Link to="/subscribe-complete">
             <Button>{totalPay}원 결제하기</Button>
           </Link>
         ) : (
           <Button isSelect={isSelect}>{totalPay}원 결제하기</Button>
-        )}
+        )} */}
       </div>
     </div>
   );

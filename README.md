@@ -64,8 +64,35 @@ Healmeal 프로젝트
 
 - hisotry, location 웬만하면 훅 사용할 것
 - 함수의 타입. 웬만하면 useState 함수 넘기지 말것.
+
   ```javascript
   // 인자의 타입 명시
   setIsMeal: (arg: boolean) => boolean;
   onClickMeal: () => void;
   ```
+
+- history, location, params 관련
+  RouteComponentProps<관련 타입들>
+
+  ```javascript
+  interface MatchParams {
+    id: string;
+  }
+
+  const MenuDetailPage:FC<RouteComponentProps<MatchParams>> =  ({match}) => {
+  ```
+
+- useParamrs 사용시
+
+```javascript
+interface ParamTypes{
+  id: string;
+}
+  const { id } = useParams<ParamTypes>();
+```
+
+- 객체가 null 일 수도 있다는 오류 타입을 직접 지정해준다.
+
+```javascript
+useState<ITotalMealInfo | null>
+```

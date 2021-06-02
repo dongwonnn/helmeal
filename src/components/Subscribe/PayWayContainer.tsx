@@ -2,15 +2,15 @@ import React, { useCallback, useState } from 'react';
 import { ReactComponent as ListIcon } from '../../assets/images/ListIcon.svg';
 import './PayWayContainer.scss';
 import { payWay } from '../../utils/data';
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
-const PayWayContainer = ({ setIsSelect }) => {
-  const { mainAddress, detailAddress } = useSelector(({ address }) => ({
-    mainAddress: address.mainAddress,
-    detailAddress: address.detailAddress,
-  }));
+const PayWayContainer = () => {
+  // const { mainAddress, detailAddress } = useSelector(({ address }) => ({
+  //   mainAddress: address.mainAddress,
+  //   detailAddress: address.detailAddress,
+  // }));
 
-  const [clickId, setClickId] = useState(null);
+  const [clickId, setClickId] = useState<string | null>(null);
   const onClick = useCallback(
     (e) => {
       let targetId = e.target.id;
@@ -20,10 +20,9 @@ const PayWayContainer = ({ setIsSelect }) => {
         targetId = e.target.parentNode.id;
       }
 
-      setClickId(Number(targetId));
-      if (mainAddress !== null || detailAddress !== null) setIsSelect(true);
+      setClickId((targetId));
     },
-    [setIsSelect, mainAddress, detailAddress],
+    [],
   );
 
   return (

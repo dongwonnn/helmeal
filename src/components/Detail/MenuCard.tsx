@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './MenuCard.scss';
+import { ITotalMealInfo } from '../../types/ITotalMealInfo';
 
-const MenuCard = ({ food }) => {
+interface MenuCardProps{
+  food: ITotalMealInfo
+}
+
+const MenuCard:FC<MenuCardProps> = ({ food }) => {
   return (
     <div className="MenuCardContainer">
       <img src={food.largeImgUrl} alt="MenuImage" />

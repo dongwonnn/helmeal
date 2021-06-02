@@ -11,9 +11,8 @@ export const login = () => ({
   type: LOGIN,
 });
 
-export const logout = (data: IUser[]) => ({
+export const logout = () => ({
   type: LOGOUT,
-  data,
 });
 
 export const check = (data: IUser[]) => ({
@@ -29,7 +28,7 @@ type AuthAction =
 
 // 초기값 타입
 type AuthState = {
-  user: IUser[] ;
+  user: IUser[];
 };
 
 // 초기값 설정

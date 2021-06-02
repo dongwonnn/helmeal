@@ -30,7 +30,7 @@ const SubscribeOptionPage = () => {
     <div className="SubscribeOptionPage">
       {canSelectOption ? (
         <>
-          <Header>
+          <Header pathname='/detail'>
             <LeftIcon />
             <h3>구독 옵션 선택</h3>
             <p></p>
@@ -39,7 +39,7 @@ const SubscribeOptionPage = () => {
         </>
       ) : (
         <>
-          <Header>
+          <Header pathname='/subscribe-option'>
             <LeftIcon />
             <h3>구독 옵션 선택</h3>
             <p>선택취소</p>

@@ -1,4 +1,4 @@
-export const getDeliveryDate = (subscribeTerm) => {
+export const getDeliveryDate = (subscribeTerm: any) => {
   // 주 -> 일로 변환
   const nextday = Number(subscribeTerm.split('')[0]) * 7;
 

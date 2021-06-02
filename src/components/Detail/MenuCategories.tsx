@@ -1,8 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './MenuCategories.scss';
+import { ITotalMealInfo } from '../../types/ITotalMealInfo';
+import { ITotalSnackInfo } from '../../types/ITotalSnackInfo';
 
-const MenuCategories = ({ totalMealInfo, totalSnackInfo, curUrl }) => {
+interface MenuCategoriesProps {
+  totalMealInfo: ITotalMealInfo[];
+  totalSnackInfo: ITotalSnackInfo[];
+  curUrl: String;
+}
+
+const MenuCategories:import('react').FC<MenuCategoriesProps> = ({ totalMealInfo, totalSnackInfo, curUrl }) => {
+  console.log(totalMealInfo);
+  console.log(totalSnackInfo);
+  console.log(curUrl);
   return (
     <nav className="MenuCategories">
       <ul>
