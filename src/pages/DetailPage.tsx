@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { ReactComponent as ShareLogo } from '../assets/images/ShareLogo.svg';
@@ -15,18 +15,16 @@ import DetailBackground from '../components/Detail/DetailBackground';
 import './DetailPage.scss';
 import MealCategories from '../components/Detail/MealCategories';
 import Button from '../components/Common/Button';
-import { RouteComponentProps, useLocation } from 'react-router';
+import {  useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/Common/NavBar';
 import { useDispatch } from 'react-redux';
 import { currentSnackInfo } from '../reducers/food';
 import { snackInfo } from '../utils/data';
 
-interface DetailPageProps{
-  history: RouteComponentProps;
-}
 
-const DetailPage:FC<DetailPageProps> = ({ history }) => {
+
+const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
 
   const dispatch = useDispatch();
@@ -40,9 +38,17 @@ const DetailPage:FC<DetailPageProps> = ({ history }) => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const onClickMeal = useCallback(() => {
+    setIsMeal(true);
+  }, [setIsMeal]);
+
+  const onClickSnack = useCallback(() => {
+    setIsMeal(false);
+  }, [setIsMeal]);
+
   return (
     <div className="DetailPage">
-      <Header history={history}>
+      <Header pathname='/'>
         <LeftIcon />
         <h3>헬밀 프로틴</h3>
         <ShareLogo />
@@ -52,7 +58,7 @@ const DetailPage:FC<DetailPageProps> = ({ history }) => {
       </Carousel>
       <MealInfomation />
       <DetailBackground />
-      <SelectMenu setIsMeal={setIsMeal} isMeal={isMeal} />
+      <SelectMenu onClickMeal={onClickMeal} onClickSnack={onClickSnack} isMeal={isMeal} />
       {isMeal ? (
         <>
           <MealCategories />
@@ -66,7 +72,7 @@ const DetailPage:FC<DetailPageProps> = ({ history }) => {
           <Button>루틴 시작하기</Button>
         </Link>
       </div>
-      <NavBar path={history.location.pathname} />
+      <NavBar path={pathname} />
     </div>
   );
 };

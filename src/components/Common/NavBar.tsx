@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './NavBar.scss';
 import { Link } from 'react-router-dom';
 import Home from '../../assets/images/Home.svg';
@@ -6,7 +6,11 @@ import Routine from '../../assets/images/Routine.svg';
 import ColorRoutine from '../../assets/images/ColorRoutine.svg';
 import Profile from '../../assets/images/Profile.svg';
 
-const NavBar = ({ path }) => {
+interface NavBarProps {
+  path: string;
+}
+
+const NavBar:FC<NavBarProps> = ({ path }) => {
   return (
     <ul className="NavBarContainer">
       <li className={path === '/' ? 'Cliked' : ''}>

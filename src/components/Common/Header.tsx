@@ -1,13 +1,20 @@
-import React, { useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
+import { useHistory } from 'react-router';
 import './Header.scss';
-// height : 48px
 
-const Header = ({ children, history }) => {
+interface HeaderProps{
+  children: JSX.Element[];
+  pathname: string;
+}
+
+const Header :FC<HeaderProps> = ({ children, pathname}) => {
   const [leftArrow, title, side] = children;
 
+  const history = useHistory();
+
   const onBackPage = useCallback(() => {
-    history.go(-1);
-  }, [history]);
+    history.push(pathname);
+  }, [history,pathname]);
 
   return (
     <header className="HeaderContainer">

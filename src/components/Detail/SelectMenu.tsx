@@ -1,15 +1,13 @@
-import React, { useCallback } from 'react';
+import React, { FC } from 'react';
 import './SelectMenu.scss';
 
-const SelectMenu = ({ setIsMeal, isMeal }) => {
-  const onClickMeal = useCallback(() => {
-    setIsMeal(true);
-  }, [setIsMeal]);
+interface SelectMenuProps {
+  isMeal: boolean;
+  onClickMeal: ()=> void;
+  onClickSnack: () => void;
+}
 
-  const onClickSnack = useCallback(() => {
-    setIsMeal(false);
-  }, [setIsMeal]);
-
+const SelectMenu:FC<SelectMenuProps>= ({ onClickMeal, onClickSnack, isMeal }) => {
   return (
     <div className="SelectMenuContainer">
       <h2>헬밀 프로틴</h2>

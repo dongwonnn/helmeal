@@ -4,6 +4,7 @@ import MenuCard from './MenuCard';
 import './SnackMenus.scss';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { ITotalSnackInfo } from '../../types/ITotalSnackInfo';
 
 const SnackMenus = () => {
   const { totalSnackInfo } = useSelector(({ food }) => ({
@@ -16,7 +17,7 @@ const SnackMenus = () => {
 
   return (
     <div className="SnackCarsdContainer">
-      {totalSnackInfo.map((snack) => {
+      {totalSnackInfo.map((snack:ITotalSnackInfo) => {
         return (
           <Link key={snack.id} to={`/menu-detail/${snack.id}`}>
             <MenuCard food={snack} />
