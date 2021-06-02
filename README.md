@@ -60,3 +60,4 @@ Healmeal 프로젝트
 - reducer 관련 velopert
 - 객체 타입 - ITotalMealInfo 처럼 만들기
 - useSelector 오류 : Default -> any로 치환
+- chilren이 JSX 배열일 때 : JSX.Element[];
