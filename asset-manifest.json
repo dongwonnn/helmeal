@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/helmeal/static/css/main.064ffa92.chunk.css",
-    "main.js": "/helmeal/static/js/main.70441329.chunk.js",
-    "main.js.map": "/helmeal/static/js/main.70441329.chunk.js.map",
+    "main.js": "/helmeal/static/js/main.d8114308.chunk.js",
+    "main.js.map": "/helmeal/static/js/main.d8114308.chunk.js.map",
     "runtime-main.js": "/helmeal/static/js/runtime-main.4bb52fe4.js",
     "runtime-main.js.map": "/helmeal/static/js/runtime-main.4bb52fe4.js.map",
     "static/js/2.6348829c.chunk.js": "/helmeal/static/js/2.6348829c.chunk.js",
@@ -34,6 +34,6 @@
     "static/js/runtime-main.4bb52fe4.js",
     "static/js/2.6348829c.chunk.js",
     "static/css/main.064ffa92.chunk.css",
-    "static/js/main.70441329.chunk.js"
+    "static/js/main.d8114308.chunk.js"
   ]
 }
