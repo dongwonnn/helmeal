@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 // import ScrollSpy from '../Detail/ScrollSpy';
 import './Carousel.scss';
 
-const Carousel = ({ children }) => {
+const Carousel:FC = ({ children }) => {
   const img = children;
   return (
     <div className="CarouselContainer">

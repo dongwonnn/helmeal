@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { ReactComponent as ShareLogo } from '../assets/images/ShareLogo.svg';
@@ -38,6 +38,14 @@ const DetailPage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  const onClickMeal = useCallback(() => {
+    setIsMeal(true);
+  }, [setIsMeal]);
+
+  const onClickSnack = useCallback(() => {
+    setIsMeal(false);
+  }, [setIsMeal]);
+
   return (
     <div className="DetailPage">
       <Header pathname='/'>
@@ -50,7 +58,7 @@ const DetailPage = () => {
       </Carousel>
       <MealInfomation />
       <DetailBackground />
-      <SelectMenu setIsMeal={setIsMeal} isMeal={isMeal} />
+      <SelectMenu onClickMeal={onClickMeal} onClickSnack={onClickSnack} isMeal={isMeal} />
       {isMeal ? (
         <>
           <MealCategories />

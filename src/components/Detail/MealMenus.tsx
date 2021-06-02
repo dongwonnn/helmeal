@@ -5,6 +5,7 @@ import { mealInfo } from '../../utils/data';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { currentMealInfo } from '../../reducers/food';
+import { ITotalMealInfo } from '../../types/ITotalMealInfo';
 
 const MealMenus = () => {
   const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const MealMenus = () => {
   return (
     <div className="MealMenusContainer">
       <div className="MenuCarsdContainer">
-        {totalMealInfo.map((meal) => (
+        {totalMealInfo.map((meal:ITotalMealInfo) => (
           <Link key={meal.id} to={`/menu-detail/${meal.id}`}>
             <MenuCard food={meal} />
           </Link>

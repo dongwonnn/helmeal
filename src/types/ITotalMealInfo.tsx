@@ -1,4 +1,4 @@
-export interface IProductItem {
+export interface ITotalMealInfo {
     id: string;
     title: string;
     protein: number;

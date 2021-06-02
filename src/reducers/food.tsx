@@ -1,4 +1,4 @@
-import { IProductItem } from '../types/ITotalMealInfo';
+import { ITotalMealInfo } from '../types/ITotalMealInfo';
 import { ITotalSnackInfo } from '../types/ITotalSnackInfo';
 
 // 액션 타입 정의
@@ -6,7 +6,7 @@ const SET_MEAL_INFO = 'food/SET_MEAL_INFO' as const;
 const SET_SNACK_INFO = 'food/SET_SNACK_INFO' as const;
 
 // 액션 생성 함수
-export const currentMealInfo = (data: IProductItem[]) => ({
+export const currentMealInfo = (data: ITotalMealInfo[]) => ({
   type: SET_MEAL_INFO,
   data,
 });
@@ -22,7 +22,7 @@ type FoodAction =
 
 // 초기값 타입
 type FoodState = {
-  totalMealInfo:  IProductItem[];
+  totalMealInfo:  ITotalMealInfo[];
   totalSnackInfo:  ITotalSnackInfo[];
 };
 
