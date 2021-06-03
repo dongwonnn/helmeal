@@ -10,6 +10,7 @@ import {
 import { getReceiveDay } from '../../utils/getDate';
 
 import { getNumberForm } from '../../utils/getNumberForm';
+import { DropDown, OrderGroup, SubscribeDropdownContainer } from './styles';
 import './SubscribeDropdown.scss';
 
 interface DropdownProps {
@@ -123,10 +124,10 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
   const receiveDay = useMemo(() => getReceiveDay(), []);
 
   return (
-    <div className="SubscribeDropdown">
-      <p className="OrderGroup">주문 상품</p>
+    <SubscribeDropdownContainer>
+      <OrderGroup>주문 상품</OrderGroup>
       <h2>헬밀 프로틴</h2>
-      <div className="DropDown">
+      <DropDown>
         <div
           className={`DropDownTitle ${isProteinBoxShow ? 'show' : 'hide'}`}
           onClick={() => onChangeMenu('first')}
@@ -154,8 +155,8 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
             <p className="OptionMenu">식물성 (비건)프로틴</p>
           </li>
         </ul>
-      </div>
-      <div className="DropDown">
+      </DropDown>
+      <DropDown>
         <div
           className={`DropDownTitle ${isDateBoxShow ? 'show' : 'hide'}`}
           onClick={() => onChangeMenu('second')}
@@ -190,8 +191,8 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
             </p>
           </div>
         </ul>
-      </div>
-      <div className="DropDown">
+      </DropDown>
+      <DropDown>
         <div
           className={`DropDownTitle ${isTermBoxShow ? 'show' : 'hide'}`}
           onClick={() => onChangeMenu('third')}
@@ -219,8 +220,8 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
             <p className="OptionDetail">120,000원</p>
           </li>
         </ul>
-      </div>
-    </div>
+      </DropDown>
+    </SubscribeDropdownContainer>
   );
 };
 

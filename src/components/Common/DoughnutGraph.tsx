@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import './DoughnutGraph.scss';
+import { GraphContainer, TextContainer } from './styles';
 
 interface DoughnutProps {
   ingredient: string;
@@ -22,13 +22,13 @@ const DoughnutGraph:FC<DoughnutProps> = ({ ingredient, amount }) => {
   };
 
   return (
-    <div className="GraphContainer">
-      <div className="TextContainer">
+    <GraphContainer>
+      <TextContainer>
         <p>{amount}</p>
         <p>{ingredient}</p>
-      </div>
+      </TextContainer>
       <Doughnut type data={data} />
-    </div>
+    </GraphContainer>
   );
 };
 

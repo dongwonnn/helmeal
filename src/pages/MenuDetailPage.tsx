@@ -1,14 +1,12 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import './MenuDetailPage.scss';
+import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation, useParams } from 'react-router';
-import DoughnutGraph from '../components/Common/DoughnutGraph';
-import Button from '../components/Common/Button';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { getFoodKinds, getParamsId } from '../utils/getParamsId';
-import MenuCategories from '../components/Detail/MenuCategories';
-import { AiOutlineClose } from 'react-icons/ai';
+import MenuCategories from '../components/MenuDetail/MenuCategories';
 import { ITotalMealInfo } from '../types/ITotalMealInfo';
+import MenuInfo from '../components/MenuDetail/MenuInfo';
+import { getFoodKinds, getParamsId } from '../utils/getParamsId';
+
+import { MenuDetailContainer, MenuDetailPageContainer } from '../components/MenuDetail/styles'
 
 interface ParamTypes{
   id: string;
@@ -17,6 +15,9 @@ interface ParamTypes{
 const MenuDetailPage = ()   => {
   const history = useHistory();
   const { id } = useParams<ParamTypes>();
+  const { pathname } = useLocation();
+
+  const [locationKeys, setLocationKeys] = useState<any[]>([]);
 
   const [currentMeal, setCurrentMeal] = useState<ITotalMealInfo | null>(null);
 
@@ -31,9 +32,7 @@ const MenuDetailPage = ()   => {
     } else {
       setCurrentMeal(totalSnackInfo[getParamsId(id)]);
     }
-  }, [id, totalMealInfo, totalSnackInfo]);
-
-  const [locationKeys, setLocationKeys] = useState<any[]>([]);
+  }, [id, totalMealInfo, totalSnackInfo, setCurrentMeal]);
 
   useEffect(() => {
     // 뒷정리 함수
@@ -59,12 +58,6 @@ const MenuDetailPage = ()   => {
     });
   }, [locationKeys, history]);
 
-  const goDetailPage = useCallback(() => {
-    history.push('/detail');
-  }, [history]);
-
-  const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
@@ -74,60 +67,16 @@ const MenuDetailPage = ()   => {
   }
 
   return (
-    <div className="MenuDetailPage">
-      <div className="MenuDetailContainer">
+    <MenuDetailPageContainer>
+      <MenuDetailContainer>
         <MenuCategories
           totalMealInfo={totalMealInfo}
           totalSnackInfo={totalSnackInfo}
           curUrl={history.location.pathname}
         />
-        <div className="MenuInfo">
-          <div className="MainImageContainer">
-            <img
-              className="MainImg"
-              src={currentMeal.largeImgUrl}
-              alt="Menu Img"
-            />
-            <AiOutlineClose className="CloseButton" onClick={goDetailPage} />
-          </div>
-          <div className="MenuDetail">
-            <h3>헬밀P 프로틴</h3>
-            <h2>{currentMeal.title}</h2>
-            <div className="MenuIntegrity">
-              <div className="MenuCalorie">
-                <p className="Calorie">{currentMeal.cal}</p>
-                <p className="CalorieText">칼로리</p>
-              </div>
-              <div className="Gap"></div>
-              <div className="MenuProtein">
-                <img src={currentMeal.proteinImgUrl} alt="Integrity" />
-                <p className="ProteinText">{currentMeal.integrity}</p>
-              </div>
-            </div>
-            <div className="MenuNutrient">
-              <div className="DoughnutContainer">
-                <DoughnutGraph
-                  ingredient="단백질"
-                  amount={currentMeal.protein}
-                />
-              </div>
-              <div className="DoughnutContainer">
-                <DoughnutGraph ingredient="지방" amount={currentMeal.fat} />
-              </div>
-              <div className="DoughnutContainer">
-                <DoughnutGraph
-                  ingredient="탄수화물"
-                  amount={currentMeal.carb}
-                />
-              </div>
-            </div>
-          </div>
-          <Link to="/subscribe-option">
-            <Button>루틴 시작하기</Button>
-          </Link>
-        </div>
-      </div>
-    </div>
+        <MenuInfo totalMealInfo={totalMealInfo} totalSnackInfo={totalSnackInfo} currentMeal={currentMeal}/>
+      </MenuDetailContainer>
+    </MenuDetailPageContainer>
   );
 };
 

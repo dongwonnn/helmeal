@@ -2,9 +2,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import Header from '../components/Common/Header';
 import { useLocation } from 'react-router';
-import './AddressPage.scss';
 import PostCode from '../components/Address/PostCode';
 import { useSelector } from 'react-redux';
+import { AddressInput, AddressSettingContainer, RecentAddress, RecentAddressList } from '../components/Subscribe/styles';
 
 const AddressPage = () => {
   const { pathname } = useLocation();
@@ -25,7 +25,7 @@ const AddressPage = () => {
   }, []);
 
   return (
-    <div className="AddressPage">
+    <div>
       <Header pathname="/">
         <LeftIcon />
         <h3>배송지 입력</h3>
@@ -34,24 +34,24 @@ const AddressPage = () => {
       {showPostCode ? (
         <PostCode setShowPostCode={setShowPostCode} />
       ) : (
-        <div className="AddressContainer">
-          <div className="AddressInput" onClick={onShowPostCode}>
+        <AddressSettingContainer>
+          <AddressInput onClick={onShowPostCode}>
             <p>지번, 도로면, 건물명을 입력해 주세요</p>
-          </div>
+          </AddressInput>
           {mainAddress || detailAddress ? (
-            <div className="RecentAddress">
+            <RecentAddress>
               <h4>최근 배송지</h4>
-              <ul className="RecentAddressList">
+              <RecentAddressList>
                 <li>
                   <p>{detailAddress}</p>
                   <p>{mainAddress}</p>
                 </li>
-              </ul>
-            </div>
+              </RecentAddressList>
+            </RecentAddress>
           ) : (
             ''
           )}
-        </div>
+        </AddressSettingContainer>
       )}
     </div>
   );

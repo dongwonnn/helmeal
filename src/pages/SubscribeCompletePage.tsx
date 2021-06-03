@@ -6,7 +6,7 @@ import Header from '../components/Common/Header';
 import OrderInfos from '../components/Subscribe/OrderInfos';
 import { useLocation } from 'react-router';
 
-import './SubscribeCompletePage.scss';
+import { DelivertAddress, MesseageDetail, MesseageTitle, OrderInfo, SubscribeCompleteContainer, SubscribeCompleteMesseg } from '../components/Subscribe/styles';
 
 const SubscribeCompletePage = () => {
   const { pathname } = useLocation();
@@ -19,29 +19,29 @@ const SubscribeCompletePage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return (
-    <div className="SubscribeCompletePage">
+    <div>
       <Header pathname='/subscribe'>
         <LeftIcon />
         <h3>구독 완료</h3>
         <p></p>
       </Header>
-      <div className="SubscribeCompleteContainer">
-        <div className="SubscribeCompleteMesseg">
+      <SubscribeCompleteContainer>
+        <SubscribeCompleteMesseg>
           <h2>
             Enjoy Helmeal, <br />
             and Keep the TRACK
           </h2>
-          <p className="MesseageTitle">헬밀 프로틴</p>
-          <p className="MesseageDetail">구독이 완료되었습니다</p>
-        </div>
-        <div className="OrderInfo">
+          <MesseageTitle>헬밀 프로틴</MesseageTitle>
+          <MesseageDetail>구독이 완료되었습니다</MesseageDetail>
+        </SubscribeCompleteMesseg>
+        <OrderInfo>
           <h4>주문내역</h4>
           <OrderInfos>
-            <h4>배송지</h4>
+            <DelivertAddress>배송지</DelivertAddress>
             <p className="AddrssDetail">서울시 강남구</p>
           </OrderInfos>
-        </div>
-      </div>
+        </OrderInfo>
+      </SubscribeCompleteContainer>
       <div className="ButtonContainer">
         <Link to="/">
           <Button>확인</Button>

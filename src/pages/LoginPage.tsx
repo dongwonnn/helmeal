@@ -2,10 +2,10 @@ import React, { useEffect } from 'react';
 import { ReactComponent as Logo } from '../assets/images/Logo.svg';
 import { RouteComponentProps, useLocation } from 'react-router';
 import LoginButton from '../components/Auth/LoginButton';
-import './LoginPage.scss';
 import TermsOfService from '../components/Profile/TermsOfService';
 import { Location } from 'history';
 import { StaticContext } from 'react-router';
+import { LoginPageContainer, LogoContainer, LoginButtonGroup } from '../components/Auth/styles';
 
 
 interface LocationProps{
@@ -22,17 +22,17 @@ const LoginPage = ({ location }:RouteComponentProps<{}, StaticContext, LocationP
   const { from } = location.state || { from: '/profile' };
 
   return (
-    <div className="LoginPage">
-      <div className="Logo">
+    <LoginPageContainer>
+      <LogoContainer>
         <Logo />
-      </div>
-      <div className="LoginButtonGroup">
+      </LogoContainer>
+      <LoginButtonGroup>
         <LoginButton from={from}>카카오톡 아이디 로그인</LoginButton>
         <LoginButton from={from}>애플 아이디 로그인</LoginButton>
         <LoginButton from={from}>구글 아이디 로그인</LoginButton>
         <TermsOfService />
-      </div>
-    </div>
+      </LoginButtonGroup>
+    </LoginPageContainer>
   );
 };
 

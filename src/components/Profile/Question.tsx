@@ -1,10 +1,11 @@
 import React from 'react';
+import { QuestionContainer } from './styles';
 
 const Question = () => {
   return (
-    <div className="Question">
+    <QuestionContainer>
       <p>문의하기</p>
-    </div>
+    </QuestionContainer>
   );
 };
 

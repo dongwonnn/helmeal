@@ -55,3 +55,35 @@ export const ButtonContainer = styled.div`
     letter-spacing: -0.408px;
   }
 `
+
+export const GraphContainer = styled.article`
+  position: relative;
+`
+
+export const TextContainer = styled.div`
+ position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+
+    p:first-child {
+      white-space: nowrap;
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: -0.5px;
+
+      color: #000000;
+    }
+
+    p:last-child {
+      white-space: nowrap;
+      font-size: 0.875rem;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: -0.5px;
+
+      color: #000000;
+    }
+`

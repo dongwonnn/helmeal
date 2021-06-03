@@ -1,10 +1,10 @@
 import React, { FC, useCallback } from 'react';
-import './LoginButton.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { userData } from '../../utils/data';
 import { check } from '../../reducers/auth';
 import { Redirect } from 'react-router';
 import { Location } from 'history';
+import { LoginButtonContainer } from './styles';
 
 interface LoginButtonProps{
   from : Location;
@@ -26,9 +26,9 @@ const LoginButton:FC<LoginButtonProps> = ({ children, from }) => {
   }
 
   return (
-    <div className="LoginButtonContainer">
+    <LoginButtonContainer>
       <p onClick={onCheckUser}>{children}</p>
-    </div>
+    </LoginButtonContainer>
   );
 };
 

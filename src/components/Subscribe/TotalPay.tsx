@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import './TotalPay.scss';
 import { useSelector } from 'react-redux';
 import { getPayForm } from '../../utils/getPayForm';
+import { TotalPayContent, TotalPayContiner } from './styles';
 
 const TotalPay = () => {
   const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option }) => ({
@@ -15,18 +15,18 @@ const TotalPay = () => {
   );
 
   return (
-    <div className="TotalPay">
-      <div className="TotalPayContent">
-        <div className="TotalPayment">
+    <TotalPayContiner>
+      <TotalPayContent>
+        <div>
           <p className="TotalText">총 결제 금액</p>
           <p className="TotalPay">{totalPay}원</p>
         </div>
-        <div className="DeliveryFee">
+        <div>
           <p>배송비</p>
           <p>무료</p>
         </div>
-      </div>
-    </div>
+      </TotalPayContent>
+    </TotalPayContiner>
   );
 };
 

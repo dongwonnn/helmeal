@@ -1,10 +1,11 @@
 import React from 'react';
+import { OrderHistoryContainer } from './styles';
 
 const OrderHistory = () => {
   return (
-    <div className="OrderHistory">
+    <OrderHistoryContainer>
       <p>주문내역</p>
-    </div>
+    </OrderHistoryContainer>
   );
 };
 

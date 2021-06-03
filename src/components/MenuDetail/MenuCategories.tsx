@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './MenuCategories.scss';
 import { ITotalMealInfo } from '../../types/ITotalMealInfo';
 import { ITotalSnackInfo } from '../../types/ITotalSnackInfo';
+import {MenuCategoriesContainer} from './styles'
+
 
 interface MenuCategoriesProps {
   totalMealInfo: ITotalMealInfo[];
@@ -12,7 +13,7 @@ interface MenuCategoriesProps {
 
 const MenuCategories:import('react').FC<MenuCategoriesProps> = ({ totalMealInfo, totalSnackInfo, curUrl }) => {
   return (
-    <nav className="MenuCategories">
+    <MenuCategoriesContainer>
       <ul>
         {totalMealInfo.map((meal) => (
           <li
@@ -41,7 +42,7 @@ const MenuCategories:import('react').FC<MenuCategoriesProps> = ({ totalMealInfo,
           </li>
         ))}
       </ul>
-    </nav>
+    </MenuCategoriesContainer>
   );
 };
 

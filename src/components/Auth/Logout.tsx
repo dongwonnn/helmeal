@@ -2,6 +2,7 @@ import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { logout } from '../../reducers/auth';
+import { LogoutContainer } from '../Profile/styles';
 
 const Logout = () => {
   const history = useHistory();
@@ -14,9 +15,9 @@ const Logout = () => {
   }, [dispatch, history]);
 
   return (
-    <div className="Logout" onClick={onLogout}>
+    <LogoutContainer onClick={onLogout}>
       <p>로그아웃</p>
-    </div>
+    </LogoutContainer>
   );
 };
 

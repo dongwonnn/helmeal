@@ -4,11 +4,11 @@ import OrderInfos from '../components/Subscribe/OrderInfos';
 import TotalPay from '../components/Subscribe/TotalPay';
 import Header from '../components/Common/Header';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
-import './SubscribeOptionPage.scss';
 import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
 import { Redirect, useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
+import { ButtonContainer, OrderInfoContainer, SubscribeOptionPageContainer } from '../components/Subscribe/styles'
 
 const SubscribeOptionPage = () => {
   const [canSelectOption, setCanSelectOption] = useState(true);
@@ -31,7 +31,7 @@ const SubscribeOptionPage = () => {
   }
 
   return (
-    <div className="SubscribeOptionPage">
+    <SubscribeOptionPageContainer>
       {canSelectOption ? (
         <>
           <Header pathname='/detail'>
@@ -48,18 +48,18 @@ const SubscribeOptionPage = () => {
             <h3>구독 옵션 선택</h3>
             <p onClick={onSelectCancle}>선택취소</p>
           </Header>
-          <div className="OrderInfoContainer">
+          <OrderInfoContainer>
             <OrderInfos />
             <TotalPay />
-          </div>
-          <div className="ButtonContainer">
+          </OrderInfoContainer>
+          <ButtonContainer>
             <Link to="/subscribe">
               <Button>바로 구매</Button>
             </Link>
-          </div>
+          </ButtonContainer>
         </>
       )}
-    </div>
+    </SubscribeOptionPageContainer>
   );
 };
 

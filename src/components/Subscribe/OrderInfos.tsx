@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
 import { getDeliveryDate } from '../../utils/getDate';
 
-import './OrderInfos.scss';
+import { AddressInfo, DateInfo, DeliveryInfo, OrderInfo, OrderInfosContainer } from './styles';
 
 const OrderInfos:FC = ({ children }) => {
   const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
@@ -13,17 +13,17 @@ const OrderInfos:FC = ({ children }) => {
     }),
   );
   return (
-    <div className="OrderInfos">
+    <OrderInfosContainer>
       <h2>헬밀 프로틴</h2>
-      <p className="OrderInfo">{proteinInfo}</p>
-      <p className="OrderInfo">{dateInfo}</p>
-      <p className="OrderInfo">{subscribeTerm}</p>
-      <div className="DeliveryInfo">
+      <OrderInfo>{proteinInfo}</OrderInfo>
+      <OrderInfo>{dateInfo}</OrderInfo>
+      <OrderInfo>{subscribeTerm}</OrderInfo>
+      <DeliveryInfo>
         <h4>배송 시작일</h4>
-        <p className="DateInfo">{getDeliveryDate(subscribeTerm)}</p>
-      </div>
-      <div className="AddressInfo">{children}</div>
-    </div>
+        <DateInfo>{getDeliveryDate(subscribeTerm)}</DateInfo>
+      </DeliveryInfo>
+      <AddressInfo>{children}</AddressInfo>
+    </OrderInfosContainer>
   );
 };
 

@@ -3,7 +3,6 @@ import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import Header from '../components/Common/Header';
 import { useHistory, useLocation } from 'react-router';
 
-import './ProfilePage.scss';
 import NavBar from '../components/Common/NavBar';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -11,6 +10,7 @@ import Logout from '../components/Auth/Logout';
 import OrderHistory from '../components/Profile/OrderHistory';
 import Polices from '../components/Profile/Polices';
 import Question from '../components/Profile/Question';
+import { Divider, ProfileContainer, ProfileLogin, ProfileMessage, ProfilePageContainer } from '../components/Profile/styles';
 const ProfilePage = () => {
   const history = useHistory();
   const { user } = useSelector(({ auth }) => ({
@@ -25,40 +25,40 @@ const ProfilePage = () => {
 
   if (!user) {
     return (
-      <div className="ProfilePage">
-        <div className="ProfileContainer">
-          <div className="ProfileMessage">
+      <ProfilePageContainer>
+        <ProfileContainer>
+          <ProfileMessage>
             <p>가입하고 건강한 식단을 준비하세요!</p>
-          </div>
+          </ProfileMessage>
 
-          <div className="ProfileLogin">
+          <ProfileLogin>
             <Link to="/login">
               <p>로그인/회원가입</p>
             </Link>
-          </div>
-          <div className="Divider"></div>
+          </ProfileLogin>
+          <Divider />
           <Question />
           <Polices />
-        </div>
-      </div>
+        </ProfileContainer>
+      </ProfilePageContainer>
     );
   }
 
   return (
-    <div className="ProfilePage">
+    <ProfilePageContainer>
       <Header pathname="/">
         <LeftIcon />
         <h3>마이페이지</h3>
         <p></p>
       </Header>
-      <div className="ProfileContainer">
+      <ProfileContainer>
         <OrderHistory />
         <Question />
         <Polices />
         <Logout />
-      </div>
+      </ProfileContainer>
       <NavBar path={history.location.pathname} />
-    </div>
+    </ProfilePageContainer>
   );
 };
 
