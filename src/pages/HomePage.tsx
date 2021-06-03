@@ -1,15 +1,15 @@
-import React, { FC, useEffect } from 'react';
-import './HomePage.scss';
-import { RouteComponentProps, useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
-import { videoUrl } from '../utils/data';
+import React, { useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router';
+
 import NavBar from '../components/Common/NavBar';
+import VideoContainer from '../components/Home/VideoContainer';
+import ShowMenuButton from '../components/Home/ShowMenuButton';
 
-interface HomePageProps{
-  history: RouteComponentProps;
-}
+import { HomePageContainer, ArticleStyle, BacgroundArticleStyle, BackgroundStyle } from '../components/Home/styles';
 
-const HomePage:FC<HomePageProps>  = ({ history }) => {
+
+const HomePage = () => {
+  const history = useHistory()
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -17,13 +17,9 @@ const HomePage:FC<HomePageProps>  = ({ history }) => {
   }, [pathname]);
 
   return (
-    <div className="HomePage">
-      <div className="VideoContainer">
-        <video autoPlay muted loop>
-          <source src={videoUrl} type="video/mp4" />
-        </video>
-      </div>
-      <article className="ArticleContainer">
+    <HomePageContainer>
+      <VideoContainer />
+      <ArticleStyle>
         <h4>VALUE AND MISSION</h4>
         <h2>
           One of the Best meal
@@ -39,8 +35,8 @@ const HomePage:FC<HomePageProps>  = ({ history }) => {
           운동 후 간식까지, 헬밀과 함께 <br />
           당신의 하루를 완벽하게 마무리하세요.
         </p>
-      </article>
-      <article className="ArticleContainer">
+      </ArticleStyle>
+      <ArticleStyle>
         <h4>WHY WE DO IT</h4>
         <h2>
           Healthier food perfects <br />
@@ -63,27 +59,24 @@ const HomePage:FC<HomePageProps>  = ({ history }) => {
             당신의 삶을 만드는 것이 우리의 사명입니다.
           </strong>
         </p>
-      </article>
-      <article className="ArticleImageContainer">
-        <div className="ArticleText">
+      </ArticleStyle>
+      <BackgroundStyle>
+        <BacgroundArticleStyle>
           <h2>헬밀 프로틴</h2>
-          <p>
+          <strong>
             전문 영양사와 트레이너가 고심하여 <br />
             오래 지속할 수 있는 식단을 설계해드립니다. <br />
-          </p>
-          <p className="LastText">
+          </strong>
+          <p>
             깨끗한 재료로 다양한 단백질 식사를 제공하는 것이 <br />
             헬밀의 식단플랜입니다.
           </p>
-          <div className="ShowMenuButton">
-            <Link to="/detail">
-              <p className="ButtonText">메뉴보기</p>
-            </Link>
-          </div>
-        </div>
-      </article>
+          <ShowMenuButton />
+        </BacgroundArticleStyle>
+      </BackgroundStyle>
+      
       <NavBar path={history.location.pathname} />
-    </div>
+    </HomePageContainer>
   );
 };
 

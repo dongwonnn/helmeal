@@ -1,15 +1,15 @@
 import React from 'react';
-import './MealCategories.scss';
+import {MealCategoriesContainer} from './styles'
 
 const MealCategories = () => {
   return (
-    <div className="MealCategories">
+    <MealCategoriesContainer>
       <label>골고루 프로틴</label>
       <label>소고기 프로틴</label>
       <label>돼지고기 프로틴</label>
       <label>돼지고기 프로틴</label>
       <label>돼지고기 프로틴</label>
-    </div>
+    </MealCategoriesContainer>
   );
 };
 

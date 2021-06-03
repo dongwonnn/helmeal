@@ -1,25 +1,13 @@
-import React, { CSSProperties, FC } from 'react';
+import React from 'react';
 import DaumPostcode from 'react-daum-postcode';
 import { useDispatch } from 'react-redux';
 
 import { setMainAddress, setDetailAddress } from '../../reducers/address';
 
-interface PostCodeProps{
-  setShowPostCode: (e:boolean) => boolean
-}
-
-interface StyleProps{
-  display: string;
-position: string;
-top: string;
-width: string;
-height: string;
-}
-
-const PostCode :FC<PostCodeProps> = ({ setShowPostCode }) => {
+const PostCode = ({ setShowPostCode }) => {
   const dispatch = useDispatch();
 
-  const onCompletePost = (data : any) => {
+  const onCompletePost = (data) => {
     let fullAddr = data.address;
     let extraAddr = '';
 
@@ -39,7 +27,7 @@ const PostCode :FC<PostCodeProps> = ({ setShowPostCode }) => {
     setShowPostCode(false);
   };
 
-  const postCodeStyle : StyleProps= {
+  const postCodeStyle = {
     display: 'block',
     position: 'relative',
     top: '0%',

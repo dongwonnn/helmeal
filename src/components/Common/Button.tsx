@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
-import './Button.scss';
+import { ButtonContainer } from '../Common/styles';
 
 const Button: FC = ({ children }) => {
   return (
-    <div className='Button'>
+    <ButtonContainer>
       <p>{children}</p>
-    </div>
+    </ButtonContainer>
   );
 };
 

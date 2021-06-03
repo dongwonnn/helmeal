@@ -1,6 +1,6 @@
-import React, {  useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './MenuDetailPage.scss';
-import {  useHistory, useLocation, useParams } from 'react-router';
+import { useHistory, useLocation, useParams } from 'react-router';
 import DoughnutGraph from '../components/Common/DoughnutGraph';
 import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
@@ -14,9 +14,8 @@ interface ParamTypes{
   id: string;
 }
 
-const MenuDetailPage =  () => {
+const MenuDetailPage = ()   => {
   const history = useHistory();
-
   const { id } = useParams<ParamTypes>();
 
   const [currentMeal, setCurrentMeal] = useState<ITotalMealInfo | null>(null);
@@ -34,29 +33,31 @@ const MenuDetailPage =  () => {
     }
   }, [id, totalMealInfo, totalSnackInfo]);
 
-  // const [locationKeys, setLocationKeys] = useState([]);
+  const [locationKeys, setLocationKeys] = useState<any[]>([]);
 
-  // useEffect(() => {
-  //   // 뒷정리 함수
-  //   return history.listen((location) => {
-  //     if (history.action === 'PUSH') {
-  //       setLocationKeys([location.key]);
-  //     }
+  useEffect(() => {
+    // 뒷정리 함수
+    return history.listen((location) => {
+      if (history.action === 'PUSH') {
+        setLocationKeys([location.key]);
+      }
 
-  //     if (history.action === 'POP') {
-  //       if (locationKeys[1] === location.key) {
-  //         setLocationKeys(([_, ...keys]) => keys);
+      if (history.action === 'POP') {
+        if (locationKeys[1] === location.key) {
+          setLocationKeys(([_, ...keys]) => keys);
+          console.log("1")
 
-  //         // 앞으로 가기
-  //       } else {
-  //         setLocationKeys((keys) => [location.key, ...keys]);
+          // 앞으로 가기
+        } else {
+          console.log("2")
+          setLocationKeys((keys) => [location.key, ...keys]);
 
-  //         // 뒤로 가기
-  //         history.push('/detail');
-  //       }
-  //     }
-  //   });
-  // }, [locationKeys, history]);
+          // 뒤로 가기
+          history.push('/detail');
+        }
+      }
+    });
+  }, [locationKeys, history]);
 
   const goDetailPage = useCallback(() => {
     history.push('/detail');
@@ -69,7 +70,7 @@ const MenuDetailPage =  () => {
   }, [pathname]);
 
   if (currentMeal === null) {
-    return <div>로딩중...</div>;
+    return <div>로딩중...</div>
   }
 
   return (

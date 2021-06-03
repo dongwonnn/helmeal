@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './DetailBackground.scss';
+import { DetailBackgroundContainer, ImageContent } from './styles';
 
 const DetailBackground = () => {
   return (
-    <div className="DetailBackgroundContainer">
-      <div className="ImageContent">
+    <DetailBackgroundContainer>
+      <ImageContent>
         <h2>
           선수처럼 먹고 <br />
           효과적으로 운동해 보세요!
@@ -23,8 +23,8 @@ const DetailBackground = () => {
           단백질을 중점적으로 섭취하되 지방 함량을 줄여 <br />
           보다 멋진 몸을 만드는 데 도움을 주는 루틴입니다.
         </p>
-      </div>
-    </div>
+      </ImageContent>
+    </DetailBackgroundContainer>
   );
 };
 

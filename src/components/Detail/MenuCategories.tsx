@@ -11,9 +11,6 @@ interface MenuCategoriesProps {
 }
 
 const MenuCategories:import('react').FC<MenuCategoriesProps> = ({ totalMealInfo, totalSnackInfo, curUrl }) => {
-  console.log(totalMealInfo);
-  console.log(totalSnackInfo);
-  console.log(curUrl);
   return (
     <nav className="MenuCategories">
       <ul>

@@ -1,6 +1,6 @@
 import React, { FC, useCallback } from 'react';
 import { useHistory } from 'react-router';
-import './Header.scss';
+import { HeaderContainerStyle, LeftArrow, Side, Title } from './styles';
 
 interface HeaderProps{
   children: JSX.Element[];
@@ -17,13 +17,13 @@ const Header :FC<HeaderProps> = ({ children, pathname}) => {
   }, [history,pathname]);
 
   return (
-    <header className="HeaderContainer">
-      <div className="LeftArrow" onClick={onBackPage}>
+    <HeaderContainerStyle>
+      <LeftArrow onClick={onBackPage}>
         {leftArrow}
-      </div>
-      <div className="Side">{side}</div>
-      <div className="Title">{title}</div>
-    </header>
+      </LeftArrow>
+      <Side>{side}</Side>
+      <Title>{title}</Title>
+    </HeaderContainerStyle>
   );
 };
 

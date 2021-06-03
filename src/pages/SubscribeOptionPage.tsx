@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import SubscribeDropdown from '../components/Subscribe/SubscribeDropdown';
 import OrderInfos from '../components/Subscribe/OrderInfos';
 import TotalPay from '../components/Subscribe/TotalPay';
@@ -22,6 +22,10 @@ const SubscribeOptionPage = () => {
     user: auth.user,
   }));
 
+  const onSelectCancle = useCallback(()=>{
+    setCanSelectOption(true)
+  },[])
+
   if (!user) {
     return <Redirect to={{ pathname: '/login', state: { from: pathname } }} />;
   }
@@ -39,10 +43,10 @@ const SubscribeOptionPage = () => {
         </>
       ) : (
         <>
-          <Header pathname='/subscribe-option'>
-            <LeftIcon />
+          <Header pathname='/detail'>
+            <LeftIcon/>
             <h3>구독 옵션 선택</h3>
-            <p>선택취소</p>
+            <p onClick={onSelectCancle}>선택취소</p>
           </Header>
           <div className="OrderInfoContainer">
             <OrderInfos />

@@ -1,28 +1,27 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import {  useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import { ReactComponent as ShareLogo } from '../assets/images/ShareLogo.svg';
 import LargeMeal_02 from '../assets/images/large/Large_Meal_02.png';
 
 import Carousel from '../components/Common/Carousel';
-import MealInfomation from '../components/Detail/MealInfomation';
 import Header from '../components/Common/Header';
 import MealMenus from '../components/Detail/MealMenus';
 import SnackMenus from '../components/Detail/SnackMenus';
 import SelectMenu from '../components/Detail/SelectMenu';
 import DetailBackground from '../components/Detail/DetailBackground';
-
-import './DetailPage.scss';
 import MealCategories from '../components/Detail/MealCategories';
 import Button from '../components/Common/Button';
-import {  useLocation } from 'react-router';
-import { Link } from 'react-router-dom';
 import NavBar from '../components/Common/NavBar';
+
+import { snackInfo } from '../utils/data';
 import { useDispatch } from 'react-redux';
 import { currentSnackInfo } from '../reducers/food';
-import { snackInfo } from '../utils/data';
 
-
+import { StartButtonContainer, DetailPageContainer } from '../components/Detail/styles';
+import FoodInfomation from '../components/Detail/FoodInfomation';
 
 const DetailPage = () => {
   const [isMeal, setIsMeal] = useState(true);
@@ -46,8 +45,9 @@ const DetailPage = () => {
     setIsMeal(false);
   }, [setIsMeal]);
 
+
   return (
-    <div className="DetailPage">
+    <DetailPageContainer>
       <Header pathname='/'>
         <LeftIcon />
         <h3>헬밀 프로틴</h3>
@@ -56,7 +56,7 @@ const DetailPage = () => {
       <Carousel>
         <img src={LargeMeal_02} alt="LargeMeal_02" />
       </Carousel>
-      <MealInfomation />
+      <FoodInfomation />
       <DetailBackground />
       <SelectMenu onClickMeal={onClickMeal} onClickSnack={onClickSnack} isMeal={isMeal} />
       {isMeal ? (
@@ -67,13 +67,13 @@ const DetailPage = () => {
       ) : (
         <SnackMenus />
       )}
-      <div className="ButtonContainer">
+      <StartButtonContainer>
         <Link to="/subscribe-option">
           <Button>루틴 시작하기</Button>
         </Link>
-      </div>
+      </StartButtonContainer>
       <NavBar path={pathname} />
-    </div>
+    </DetailPageContainer>
   );
 };
 

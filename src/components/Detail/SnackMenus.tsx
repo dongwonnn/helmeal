@@ -1,10 +1,10 @@
 import React from 'react';
 import MenuCard from './MenuCard';
 
-import './SnackMenus.scss';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ITotalSnackInfo } from '../../types/ITotalSnackInfo';
+import { SnackCarsdContainer } from './styles';
 
 const SnackMenus = () => {
   const { totalSnackInfo } = useSelector(({ food }) => ({
@@ -16,7 +16,7 @@ const SnackMenus = () => {
   }
 
   return (
-    <div className="SnackCarsdContainer">
+    <SnackCarsdContainer>
       {totalSnackInfo.map((snack:ITotalSnackInfo) => {
         return (
           <Link key={snack.id} to={`/menu-detail/${snack.id}`}>
@@ -24,7 +24,7 @@ const SnackMenus = () => {
           </Link>
         );
       })}
-    </div>
+    </SnackCarsdContainer>
   );
 };
 
