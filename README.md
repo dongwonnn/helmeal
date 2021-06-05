@@ -1,10 +1,5 @@
 Healmeal 프로젝트
 
-#### 06.03 할 것
-
-- [ ] styled component로 바꾸기
-- selectMene props로 css 수정해야함
-
 #### 06.04
 
 - [ ] 쿠키 처리를 할 것 인지? Redirect
