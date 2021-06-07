@@ -1,10 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RootState } from '../../reducers';
 import { AddressButton, AddressButtonContainer, AddressContainer } from './styles';
 
 const Address = () => {
-  const { mainAddress, detailAddress } = useSelector(({ address }) => ({
+  const { mainAddress, detailAddress } = useSelector(({ address } : RootState) => ({
     mainAddress: address.mainAddress,
     detailAddress: address.detailAddress,
   }));

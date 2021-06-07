@@ -1,12 +1,13 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
+import { RootState } from '../../reducers';
 import { getDeliveryDate } from '../../utils/getDate';
 
 import { AddressInfo, DateInfo, DeliveryInfo, OrderInfo, OrderInfosContainer } from './styles';
 
 const OrderInfos:FC = ({ children }) => {
   const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
-    ({ option }) => ({
+    ({ option } : RootState) => ({
       proteinInfo: option.proteinInfo,
       dateInfo: option.dateInfo,
       subscribeTerm: option.subscribeTerm,

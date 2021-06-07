@@ -331,29 +331,19 @@ export const PayWayList = styled.li<{active: boolean}>`
     color: #09101d;
 
     svg {
-      padding-right: 12px;
+      margin-right: 12px;
 
-      ${props => props.active ? (
-        `
-        rect:first-child {
-        fill: #fc5c42;
-        }
+      rect:first-child{
+        ${props => props.active ? (`
+          fill: #fc5c42;
+        `):(`
+          fill: #ccc;
+        `)}
+      }
 
-        circle {
+      circle {
           fill: white;
-        }
-        `
-      ) : (
-        `
-        rect:first-child {
-        fill: #ccc;
-        }
-
-        circle {
-          fill: white;
-        }
-        `
-      )}
+      }
     }
 
     &:last-child{

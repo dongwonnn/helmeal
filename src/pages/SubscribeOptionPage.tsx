@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { Redirect, useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
 import { ButtonContainer, OrderInfoContainer, SubscribeOptionPageContainer } from '../components/Subscribe/styles'
+import { RootState } from '../reducers';
 
 const SubscribeOptionPage = () => {
   const [canSelectOption, setCanSelectOption] = useState(true);
@@ -18,7 +19,7 @@ const SubscribeOptionPage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const { user } = useSelector(({ auth }) => ({
+  const { user } = useSelector(({ auth } : RootState) => ({
     user: auth.user,
   }));
 

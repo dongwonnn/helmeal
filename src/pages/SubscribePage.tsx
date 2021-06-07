@@ -11,6 +11,7 @@ import PayWayContainer from '../components/Subscribe/PayWayContainer';
 import Address from '../components/Subscribe/Address';
 import { useLocation } from 'react-router';
 import { PayButtonContainer, SubscribeContainer, SubscribePageContainer } from '../components/Subscribe/styles';
+import { RootState } from '../reducers';
 
 const SubscribePage = () => {
   const { pathname } = useLocation();
@@ -20,7 +21,7 @@ const SubscribePage = () => {
   }, [pathname]);
 
 
-  const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option }) => ({
+  const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option } : RootState) => ({
     dateInfoPrice: option.dateInfoPrice,
     subscribeTermPrice: option.subscribeTermPrice,
   }));

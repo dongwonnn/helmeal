@@ -11,9 +11,10 @@ import OrderHistory from '../components/Profile/OrderHistory';
 import Polices from '../components/Profile/Polices';
 import Question from '../components/Profile/Question';
 import { Divider, ProfileContainer, ProfileLogin, ProfileMessage, ProfilePageContainer } from '../components/Profile/styles';
+import { RootState } from '../reducers';
 const ProfilePage = () => {
   const history = useHistory();
-  const { user } = useSelector(({ auth }) => ({
+  const { user } = useSelector(({ auth } : RootState) => ({
     user: auth.user,
   }));
 

@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ITotalSnackInfo } from '../../types/ITotalSnackInfo';
 import { SnackCarsdContainer } from './styles';
+import { RootState } from '../../reducers';
 
 const SnackMenus = () => {
-  const { totalSnackInfo } = useSelector(({ food }) => ({
+  const { totalSnackInfo } = useSelector(({ food } :RootState) => ({
     totalSnackInfo: food.totalSnackInfo,
   }));
 

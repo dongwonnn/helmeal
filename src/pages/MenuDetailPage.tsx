@@ -7,6 +7,7 @@ import MenuInfo from '../components/MenuDetail/MenuInfo';
 import { getFoodKinds, getParamsId } from '../utils/getParamsId';
 
 import { MenuDetailContainer, MenuDetailPageContainer } from '../components/MenuDetail/styles'
+import { RootState } from '../reducers';
 
 interface ParamTypes{
   id: string;
@@ -21,7 +22,7 @@ const MenuDetailPage = ()   => {
 
   const [currentMeal, setCurrentMeal] = useState<ITotalMealInfo | null>(null);
 
-  const { totalMealInfo, totalSnackInfo } = useSelector(({ food }) => ({
+  const { totalMealInfo, totalSnackInfo } = useSelector(({ food } : RootState) => ({
     totalMealInfo: food.totalMealInfo,
     totalSnackInfo: food.totalSnackInfo,
   }));

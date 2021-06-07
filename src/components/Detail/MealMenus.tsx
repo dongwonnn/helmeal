@@ -7,6 +7,7 @@ import { currentMealInfo } from '../../reducers/food';
 import { ITotalMealInfo } from '../../types/ITotalMealInfo';
 
 import { MealMenusContainer } from './styles';
+import { RootState } from '../../reducers';
 
 const MealMenus = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const MealMenus = () => {
     dispatch(currentMealInfo(mealInfo));
   }, [dispatch]);
 
-  const { totalMealInfo } = useSelector(({ food }) => ({
+  const { totalMealInfo } = useSelector(({ food } :RootState) => ({
     totalMealInfo: food.totalMealInfo,
   }));
 

@@ -1,5 +1,6 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../reducers';
 import {
   setProteinInfo,
   setDateInfo,
@@ -19,7 +20,7 @@ interface DropdownProps {
 const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
   const dispatch = useDispatch();
   const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
-    ({ option }) => ({
+    ({ option } : RootState) => ({
       proteinInfo: option.proteinInfo,
       dateInfo: option.dateInfo,
       subscribeTerm: option.subscribeTerm,

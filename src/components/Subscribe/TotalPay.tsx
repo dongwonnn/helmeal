@@ -1,10 +1,11 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
+import { RootState } from '../../reducers';
 import { getPayForm } from '../../utils/getPayForm';
 import { TotalPayContent, TotalPayContiner } from './styles';
 
 const TotalPay = () => {
-  const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option }) => ({
+  const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option } : RootState) => ({
     dateInfoPrice: option.dateInfoPrice,
     subscribeTermPrice: option.subscribeTermPrice,
   }));

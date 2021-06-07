@@ -5,6 +5,7 @@ import { useLocation } from 'react-router';
 import PostCode from '../components/Address/PostCode';
 import { useSelector } from 'react-redux';
 import { AddressInput, AddressSettingContainer, RecentAddress, RecentAddressList } from '../components/Subscribe/styles';
+import { RootState } from '../reducers';
 
 const AddressPage = () => {
   const { pathname } = useLocation();
@@ -13,7 +14,7 @@ const AddressPage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const { mainAddress, detailAddress } = useSelector(({ address }) => ({
+  const { mainAddress, detailAddress } = useSelector(({ address } : RootState) => ({
     mainAddress: address.mainAddress,
     detailAddress: address.detailAddress,
   }));
