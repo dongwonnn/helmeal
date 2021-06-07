@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import './NavBar.scss';
 import { Link } from 'react-router-dom';
 import Home from '../../assets/images/Home.svg';
 import Routine from '../../assets/images/Routine.svg';
 import ColorRoutine from '../../assets/images/ColorRoutine.svg';
 import Profile from '../../assets/images/Profile.svg';
+import { NavBarContainer, ListContainer } from './styles';
 
 interface NavBarProps {
   path: string;
@@ -12,14 +12,14 @@ interface NavBarProps {
 
 const NavBar:FC<NavBarProps> = ({ path }) => {
   return (
-    <ul className="NavBarContainer">
-      <li className={path === '/' ? 'Cliked' : ''}>
+    <NavBarContainer>
+      <ListContainer clicked={ path === '/'} detailClicked={false}>
         <Link to="/">
           <img src={Home} alt="Home" />
           <p>홈</p>
         </Link>
-      </li>
-      <li className={path === '/detail' ? 'DetailClick' : ''}>
+      </ListContainer>
+      <ListContainer clicked={ path === '/detail'} detailClicked={true}>
         <Link to="/detail">
           {path === '/detail' ? (
             <img src={ColorRoutine} alt="Detail" />
@@ -28,14 +28,14 @@ const NavBar:FC<NavBarProps> = ({ path }) => {
           )}
           <p>루틴시작</p>
         </Link>
-      </li>
-      <li className={path === '/profile' ? 'Cliked' : ''}>
+      </ListContainer>
+      <ListContainer clicked={ path === '/profile'} detailClicked={false}>
         <Link to="/profile">
           <img src={Profile} alt="Profile" />
           <p>마이페이지</p>
         </Link>
-      </li>
-    </ul>
+      </ListContainer>
+    </NavBarContainer>
   );
 };
 

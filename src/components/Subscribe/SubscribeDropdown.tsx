@@ -10,8 +10,7 @@ import {
 import { getReceiveDay } from '../../utils/getDate';
 
 import { getNumberForm } from '../../utils/getNumberForm';
-import { DropDown, OrderGroup, SubscribeDropdownContainer } from './styles';
-import './SubscribeDropdown.scss';
+import { DropDown, OrderGroup, SubscribeDropdownContainer, DropDownTitle, DropDownMenu, OptionMenu, OptionDetail, Option, DeliveryInfoContainer } from './styles';
 
 interface DropdownProps {
   setCanSelectOption: (e:boolean) => void 
@@ -35,15 +34,16 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
   const onProteinInfo = useCallback(
     (e) => {
       if (
-        // li 제외 클릭했을 때
-        e.target.className === 'OptionDetail' ||
-        e.target.className === 'OptionMenu'
+        // 자식 요소 클릭했을 때
+        e.target.id === 'OptionDetail' ||
+        e.target.id === 'OptionMenu'
       ) {
         dispatch(setProteinInfo(e.target.parentElement.firstChild.innerText));
-      } else if (e.target.className === 'Option') {
-        dispatch(setProteinInfo(e.target.firstChild.innerText));
+      } else if (e.target.id === 'Option') {
         // li를 클릭했을 때
+        dispatch(setProteinInfo(e.target.firstChild.innerText));
       }
+
       setIsProteinBoxShow(false);
       setIsDateBoxShow(true);
     },
@@ -54,15 +54,15 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
     (e) => {
       if (
         // 자식 DOM 클릭 했을 시 처리
-        e.target.className === 'OptionDetail' ||
-        e.target.className === 'OptionMenu'
+        e.target.id === 'OptionDetail' ||
+        e.target.id === 'OptionMenu'
       ) {
         dispatch(setDateInfo(e.target.parentElement.firstChild.innerText));
         const tempDatePrice =
           e.target.parentElement.lastChild.innerText.split(' / ')[1];
         const newDatePrice = getNumberForm(tempDatePrice);
         dispatch(setDatePrice(newDatePrice));
-      } else if (e.target.className === 'Option') {
+      } else if (e.target.id === 'Option') {
         dispatch(setDateInfo(e.target.firstChild.innerText));
         const tempDatePrice = e.target.lastChild.innerText.split(' / ')[1];
         const newDatePrice = getNumberForm(tempDatePrice);
@@ -82,8 +82,8 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
     (e) => {
       if (
         // 자식 DOM 클릭 했을 시 처리
-        e.target.className === 'OptionDetail' ||
-        e.target.className === 'OptionMenu'
+        e.target.id === 'OptionDetail' ||
+        e.target.id === 'OptionMenu'
       ) {
         dispatch(setSubscribeInfo(e.target.parentElement.firstChild.innerText));
 
@@ -91,7 +91,7 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
         const newSubscribePrice = getNumberForm(tempSubscribePrice);
 
         dispatch(setSubscribePrice(newSubscribePrice));
-      } else if (e.target.className === 'Option') {
+      } else if (e.target.id === 'Option') {
         dispatch(setSubscribeInfo(e.target.firstChild.innerText));
 
         const tempSubscribePrice = e.target.lastChild.innerText;
@@ -128,59 +128,47 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
       <OrderGroup>주문 상품</OrderGroup>
       <h2>헬밀 프로틴</h2>
       <DropDown>
-        <div
-          className={`DropDownTitle ${isProteinBoxShow ? 'show' : 'hide'}`}
-          onClick={() => onChangeMenu('first')}
-        >
+        <DropDownTitle active = {isProteinBoxShow} onClick={() => onChangeMenu('first')}>
           {proteinInfo || '프로틴 종류'}
-        </div>
-        <ul
-          className={`DropDownMenu ${isProteinBoxShow ? 'show' : 'hide'}`}
-          onClick={onProteinInfo}
-        >
-          <li className="Option">
-            <p className="OptionMenu">골고루 프로틴</p>
-            <p className="OptionDetail">모든 프로틴 혼합형</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">소고기 프로틴</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">돼지고기 프로틴</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">생선 프로틴</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">식물성 (비건)프로틴</p>
-          </li>
-        </ul>
+        </DropDownTitle>
+        <DropDownMenu show={isProteinBoxShow} onClick={onProteinInfo}>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu" >골고루 프로틴</OptionMenu>
+            <OptionDetail id="OptionDetail">모든 프로틴 혼합형</OptionDetail>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">소고기 프로틴</OptionMenu>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">돼지고기 프로틴</OptionMenu>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">생선 프로틴</OptionMenu>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">식물성 (비건)프로틴</OptionMenu>
+          </Option>
+        </DropDownMenu>
       </DropDown>
       <DropDown>
-        <div
-          className={`DropDownTitle ${isDateBoxShow ? 'show' : 'hide'}`}
-          onClick={() => onChangeMenu('second')}
-        >
+        <DropDownTitle active={isDateBoxShow} onClick={() => onChangeMenu('second')}> 
           {dateInfo || '요일 선택'}
-        </div>
-        <ul
-          className={`DropDownMenu ${isDateBoxShow ? 'show' : 'hide'}`}
-          onClick={onDateinInfo}
-        >
-          <li className="Option">
-            <p className="OptionMenu">5일 - 월 / 화 / 수 / 목 / 금</p>
-            <p className="OptionDetail">1주 / 30,000원</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">3일 - 월/수/금</p>
-            <p className="OptionDetail">1주 / 18,000원</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">2일 - 화/목</p>
-            <p className="OptionDetail">1주 / 12,000원</p>
-          </li>
+        </DropDownTitle>
+        <DropDownMenu show={isDateBoxShow} onClick={onDateinInfo}>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">5일 - 월 / 화 / 수 / 목 / 금</OptionMenu>
+            <OptionDetail id="OptionDetail">1주 / 30,000원</OptionDetail>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">3일 - 월/수/금</OptionMenu>
+            <OptionDetail id="OptionDetail">1주 / 18,000원</OptionDetail>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">2일 - 화/목</OptionMenu>
+            <OptionDetail id="OptionDetail">1주 / 12,000원</OptionDetail>
+          </Option>
 
-          <div className="DeliveryInfo">
+          <DeliveryInfoContainer>
             <p>
               오늘 신청하면 <span>{receiveDay}요일</span>에 받아보실 수 있어요!
             </p>
@@ -189,37 +177,31 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
               월요일 신청 &gt; 수요일 수령(자정 이후 신청시 목요일 수령) <br />
               목요일 신청 &gt; 월요일 수령, 금요일 신청&gt;화요일 수령
             </p>
-          </div>
-        </ul>
+          </DeliveryInfoContainer>
+        </DropDownMenu>
       </DropDown>
       <DropDown>
-        <div
-          className={`DropDownTitle ${isTermBoxShow ? 'show' : 'hide'}`}
-          onClick={() => onChangeMenu('third')}
-        >
+        <DropDownTitle active={isTermBoxShow} onClick={() => onChangeMenu('third')}>
           {subscribeTerm || '구독 기간 선택'}
-        </div>
-        <ul
-          className={`DropDownMenu ${isTermBoxShow ? 'show' : 'hide'}`}
-          onClick={OnSubscribeTerm}
-        >
-          <li className="Option">
-            <p className="OptionMenu">1주</p>
-            <p className="OptionDetail">30,000원</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">2주</p>
-            <p className="OptionDetail">60,000원</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">3주</p>
-            <p className="OptionDetail">90,000원</p>
-          </li>
-          <li className="Option">
-            <p className="OptionMenu">4주</p>
-            <p className="OptionDetail">120,000원</p>
-          </li>
-        </ul>
+          </DropDownTitle>
+        <DropDownMenu show={isTermBoxShow} onClick={OnSubscribeTerm}>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">1주</OptionMenu>
+            <OptionDetail id="OptionDetail">30,000원</OptionDetail>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">2주</OptionMenu>
+            <OptionDetail id="OptionDetail">60,000원</OptionDetail>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">3주</OptionMenu>
+            <OptionDetail id="OptionDetail">90,000원</OptionDetail>
+          </Option>
+          <Option id="Option">
+            <OptionMenu id="OptionMenu">4주</OptionMenu>
+            <OptionDetail id="OptionDetail">120,000원</OptionDetail>
+          </Option>
+        </DropDownMenu>
       </DropDown>
     </SubscribeDropdownContainer>
   );

@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { ReactComponent as ListIcon } from '../../assets/images/ListIcon.svg';
-import './PayWayContainer.scss';
 import { payWay } from '../../utils/data';
+import {PayWay, PayWayList, PayWayListContainer} from './styles'
 // import { useSelector } from 'react-redux';
 
 const PayWayContainer = () => {
@@ -21,28 +21,24 @@ const PayWayContainer = () => {
       }
 
       setClickId((targetId));
-    },
-    [],
-  );
-
+      }, [],
+    );
+    
   return (
-    <div className="PayWayContainer">
-      <div className="PayWay">
-        <ul className="PayList">
+      <PayWay>
+        <PayWayListContainer>
           {payWay.map((payway) => (
-            <li
-              key={payway.id}
-              id={payway.id}
+            <PayWayList key={payway.id} 
+              id={payway.id} 
               onClick={onClick}
-              className={clickId === payway.id ? 'active' : ''}
+              active = { clickId === payway.id}
             >
               <ListIcon />
               {payway.way}
-            </li>
+            </PayWayList>
           ))}
-        </ul>
-      </div>
-    </div>
+        </PayWayListContainer>
+      </PayWay>
   );
 };
 

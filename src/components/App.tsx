@@ -9,7 +9,8 @@ import SubscribeOptionPage from '../pages/SubscribeOptionPage';
 import AddressPage from '../pages/AddressPage';
 import SubscribeCompletePage from '../pages/SubscribeCompletePage';
 import MenuDetailPage from '../pages/MenuDetailPage';
-import './App.scss';
+// import './App.scss';
+import GlobalStyles from './GlobalStyles';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
 
         <Route path="/login" component={LoginPage} />
       </Switch>
+      <GlobalStyles />
     </>
   );
 };

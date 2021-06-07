@@ -87,3 +87,58 @@ export const TextContainer = styled.div`
       color: #000000;
     }
 `
+
+export const NavBarContainer = styled.ul`
+ z-index: 1000;
+  max-width: 480px;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  align-items: center;
+  border-top: 0.05px solid #ccc;
+`
+
+interface ListContainerProps {
+  clicked : boolean;
+  detailClicked : boolean;
+}
+
+export const ListContainer = styled.li<ListContainerProps>`
+    a {
+      display: block;
+    }
+
+    img {
+      padding: 7px 0 2px 0;
+      padding-bottom: 5px;
+
+      // 루틴 시작의 로고를 위해 3항 연산자 2개를 사용
+      filter: ${props => props.clicked ? (
+        props.detailClicked ? (
+          null
+        ) : (
+          `invert(68%) sepia(85%) saturate(4997%) hue-rotate(333deg)
+          brightness(102%) contrast(107%)`
+        )
+      ) : (
+        null
+      )}
+
+      /* filter: ${props => props.clicked ? (
+        `invert(68%) sepia(85%) saturate(4997%) hue-rotate(333deg)
+        brightness(102%) contrast(107%)`
+      ): (
+        null
+      )} */
+    }
+    
+    margin-bottom: 7px;
+    font-size: 0.6887rem;
+    font-weight: 400;
+    letter-spacing: -0.41px;
+    color : ${props => props.clicked ? `#fc5c42` : `#767676`};
+`

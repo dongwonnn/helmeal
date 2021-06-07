@@ -308,3 +308,125 @@ export const RecentAddressList = styled.ul`
     }
   }
 `
+
+export const PayWay = styled.div`
+  border-radius: 8px;
+  background-color: #f5f6f7;
+  margin-bottom: 16px;
+`
+
+export const PayWayListContainer = styled.ul`
+  padding: 24px;
+`
+
+export const PayWayList = styled.li<{active: boolean}>`
+    display: flex;
+    align-items: center;
+
+    padding-bottom: 16px;
+    font-size: 1rem;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+
+    color: #09101d;
+
+    svg {
+      padding-right: 12px;
+
+      ${props => props.active ? (
+        `
+        rect:first-child {
+        fill: #fc5c42;
+        }
+
+        circle {
+          fill: white;
+        }
+        `
+      ) : (
+        `
+        rect:first-child {
+        fill: #ccc;
+        }
+
+        circle {
+          fill: white;
+        }
+        `
+      )}
+    }
+
+    &:last-child{
+      padding-bottom: 0;
+    }
+`
+
+export const DropDownTitle = styled.div<{ active: boolean }>`
+  padding: 9px 14px;
+  border: 2px solid #d2d2d2;
+  border-radius: 4px;
+
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 26px;
+  letter-spacing: -0.5px;
+
+  color : ${props=> props.active ? `#1d1d1d` : `#d2d2d2`};
+`
+
+export const DropDownMenu = styled.ul<{show : boolean}>`
+  display: ${props => props.show ? `block` : `none`};
+`
+
+export const Option = styled.li`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f5f5f5;
+`
+
+export const OptionMenu = styled.p`
+    padding: 11px 16px;
+    font-size: 1rem;
+    line-height: 26px;
+
+    letter-spacing: -0.5px;
+
+    color: #1d1d1d;
+`
+
+export const OptionDetail = styled.p`
+      font-size: 0.75rem;
+      line-height: 16px;
+
+      text-align: right;
+      letter-spacing: -0.5px;
+
+      color: #767676;
+`
+
+export const DeliveryInfoContainer = styled.div`
+    p:first-child {
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      padding: 8px 26px;
+      font-size: 0.875rem;
+      line-height: 24px;
+      text-align: center;
+      letter-spacing: -0.5px;
+
+      color: #767676;
+      margin-bottom: 16px;
+
+      span {
+        color: rgba(252, 92, 66, 1);
+      }
+    }
+    p:last-child {
+      font-size: 0.75rem;
+      line-height: 16px;
+      letter-spacing: -0.5px;
+
+      color: #767676;
+    }
+`
