@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/index.css"],"names":[],"mappings":"AAAA,MACE,qBAAuB,CACvB,eAAgB,CAChB,aACF,CAEA,wBACE,YACF","file":"main.95061247.chunk.css","sourcesContent":["#root {\r\n  background-color: white;\r\n  max-width: 480px;\r\n  margin: 0 auto;\r\n}\r\n\r\nbody::-webkit-scrollbar {\r\n  display: none; /* Chrome, Safari, Opera*/\r\n}\r\n"]}

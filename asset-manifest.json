@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/helmeal/static/css/main.31ea6a85.chunk.css",
-    "main.js": "/helmeal/static/js/main.eab881db.chunk.js",
-    "main.js.map": "/helmeal/static/js/main.eab881db.chunk.js.map",
+    "main.css": "/helmeal/static/css/main.95061247.chunk.css",
+    "main.js": "/helmeal/static/js/main.7c872f71.chunk.js",
+    "main.js.map": "/helmeal/static/js/main.7c872f71.chunk.js.map",
     "runtime-main.js": "/helmeal/static/js/runtime-main.4bb52fe4.js",
     "runtime-main.js.map": "/helmeal/static/js/runtime-main.4bb52fe4.js.map",
-    "static/js/2.741e1e9f.chunk.js": "/helmeal/static/js/2.741e1e9f.chunk.js",
-    "static/js/2.741e1e9f.chunk.js.map": "/helmeal/static/js/2.741e1e9f.chunk.js.map",
+    "static/js/2.f197ce8d.chunk.js": "/helmeal/static/js/2.f197ce8d.chunk.js",
+    "static/js/2.f197ce8d.chunk.js.map": "/helmeal/static/js/2.f197ce8d.chunk.js.map",
     "index.html": "/helmeal/index.html",
-    "static/css/main.31ea6a85.chunk.css.map": "/helmeal/static/css/main.31ea6a85.chunk.css.map",
-    "static/js/2.741e1e9f.chunk.js.LICENSE.txt": "/helmeal/static/js/2.741e1e9f.chunk.js.LICENSE.txt",
+    "static/css/main.95061247.chunk.css.map": "/helmeal/static/css/main.95061247.chunk.css.map",
+    "static/js/2.f197ce8d.chunk.js.LICENSE.txt": "/helmeal/static/js/2.f197ce8d.chunk.js.LICENSE.txt",
     "static/media/Beef_Protein.e43f5f3b.svg": "/helmeal/static/media/Beef_Protein.e43f5f3b.svg",
     "static/media/Chicken_Protein.d9d06d30.svg": "/helmeal/static/media/Chicken_Protein.d9d06d30.svg",
     "static/media/ColorRoutine.863885e7.svg": "/helmeal/static/media/ColorRoutine.863885e7.svg",
@@ -32,8 +32,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4bb52fe4.js",
-    "static/js/2.741e1e9f.chunk.js",
-    "static/css/main.31ea6a85.chunk.css",
-    "static/js/main.eab881db.chunk.js"
+    "static/js/2.f197ce8d.chunk.js",
+    "static/css/main.95061247.chunk.css",
+    "static/js/main.7c872f71.chunk.js"
   ]
 }
