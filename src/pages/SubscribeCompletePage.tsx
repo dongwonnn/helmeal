@@ -6,7 +6,17 @@ import Header from '../components/Common/Header';
 import OrderInfos from '../components/Subscribe/OrderInfos';
 import { useLocation } from 'react-router';
 
-import { DelivertAddress, MesseageDetail, MesseageTitle, OrderInfo, SubscribeCompleteContainer, SubscribeCompleteMesseg } from '../components/Subscribe/styles';
+import {
+  AddrssDetail,
+  DelivertAddress,
+  MesseageDetail,
+  MesseageTitle,
+  OrderInfo,
+  SubscribeCompleteContainer,
+  SubscribeCompleteMesseg,
+} from '../components/Subscribe/styles';
+import { useSelector } from 'react-redux';
+import { RootState } from '../reducers';
 
 const SubscribeCompletePage = () => {
   const { pathname } = useLocation();
@@ -15,12 +25,13 @@ const SubscribeCompletePage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  const { detailAddress } = useSelector(({ address }: RootState) => ({
+    detailAddress: address.detailAddress,
+  }));
+
   return (
-    <div>
-      <Header pathname='/subscribe'>
+    <>
+      <Header pathname="/subscribe">
         <LeftIcon />
         <h3>구독 완료</h3>
         <p></p>
@@ -38,16 +49,16 @@ const SubscribeCompletePage = () => {
           <h4>주문내역</h4>
           <OrderInfos>
             <DelivertAddress>배송지</DelivertAddress>
-            <p className="AddrssDetail">서울시 강남구</p>
+            <AddrssDetail>{detailAddress}</AddrssDetail>
           </OrderInfos>
         </OrderInfo>
       </SubscribeCompleteContainer>
-      <div className="ButtonContainer">
+      <div>
         <Link to="/">
           <Button>확인</Button>
         </Link>
       </div>
-    </div>
+    </>
   );
 };
 

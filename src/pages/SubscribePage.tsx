@@ -10,7 +10,11 @@ import { getPayForm } from '../utils/getPayForm';
 import PayWayContainer from '../components/Subscribe/PayWayContainer';
 import Address from '../components/Subscribe/Address';
 import { useLocation } from 'react-router';
-import { PayButtonContainer, SubscribeContainer, SubscribePageContainer } from '../components/Subscribe/styles';
+import {
+  PayButtonContainer,
+  SubscribeContainer,
+  SubscribePageContainer,
+} from '../components/Subscribe/styles';
 import { RootState } from '../reducers';
 
 const SubscribePage = () => {
@@ -20,11 +24,12 @@ const SubscribePage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-
-  const { dateInfoPrice, subscribeTermPrice } = useSelector(({ option } : RootState) => ({
-    dateInfoPrice: option.dateInfoPrice,
-    subscribeTermPrice: option.subscribeTermPrice,
-  }));
+  const { dateInfoPrice, subscribeTermPrice } = useSelector(
+    ({ option }: RootState) => ({
+      dateInfoPrice: option.dateInfoPrice,
+      subscribeTermPrice: option.subscribeTermPrice,
+    }),
+  );
 
   const totalPay = useMemo(
     () => getPayForm(parseInt(dateInfoPrice) + parseInt(subscribeTermPrice)),
@@ -32,37 +37,32 @@ const SubscribePage = () => {
   );
 
   return (
-    <SubscribePageContainer>
+    <>
       <Header pathname="/subscribe-option">
         <LeftIcon />
         <h3>구독하기</h3>
         <p></p>
       </Header>
-      <SubscribeContainer>
-        <h4>배송지 정보</h4>
-        <Address />
+      <SubscribePageContainer>
+        <SubscribeContainer>
+          <h4>배송지 정보</h4>
+          <Address />
 
-        <h4>주문내역</h4>
-        <OrderInfos />
+          <h4>주문내역</h4>
+          <OrderInfos />
 
-        <h4>결제 수단</h4>
-        <PayWayContainer  />
+          <h4>결제 수단</h4>
+          <PayWayContainer />
 
-        <TotalPay />
-      </SubscribeContainer>
-      <PayButtonContainer>
+          <TotalPay />
+        </SubscribeContainer>
+        <PayButtonContainer>
           <Link to="/subscribe-complete">
             <Button>{totalPay}원 결제하기</Button>
           </Link>
-        {/* {isSelect ? (
-          <Link to="/subscribe-complete">
-            <Button>{totalPay}원 결제하기</Button>
-          </Link>
-        ) : (
-          <Button isSelect={isSelect}>{totalPay}원 결제하기</Button>
-        )} */}
-      </PayButtonContainer>
-    </SubscribePageContainer>
+        </PayButtonContainer>
+      </SubscribePageContainer>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MenuDetailPageContainer = styled.div`
   max-width: 480px;
@@ -12,13 +12,13 @@ export const MenuDetailPageContainer = styled.div`
 
   z-index: 1011;
   background-color: #c4c4c4;
-`
+`;
 
 export const MenuDetailContainer = styled.div`
   height: 100vh;
   display: grid;
   grid-template-columns: 1.9fr 8fr;
-`
+`;
 
 export const MenuCategoriesContainer = styled.nav`
   border-right: 0.5px solid #f5f5f5;
@@ -47,18 +47,18 @@ export const MenuCategoriesContainer = styled.nav`
   }
 
   &::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
-}
-`
+    display: none; /* Chrome, Safari, Opera*/
+  }
+`;
 
 export const MenuInfoContainer = styled.article`
   background-color: white;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera*/
-}
-`
+    display: none; /* Chrome, Safari, Opera*/
+  }
+`;
 
 export const MainImageContainer = styled.div`
   position: relative;
@@ -73,10 +73,10 @@ export const MainImageContainer = styled.div`
     top: 10px;
     right: 10px;
   }
-`
+`;
 
 export const MenuDetail = styled.div`
- h3 {
+  h3 {
     padding: 0 24px;
 
     font-weight: 600;
@@ -98,58 +98,58 @@ export const MenuDetail = styled.div`
     color: #000000;
     margin-bottom: 16px;
   }
-`
+`;
 export const MenuIntegrity = styled.div`
-    padding: 0 24px;
-    margin-bottom: 20px;
+  padding: 0 24px;
+  margin-bottom: 20px;
 
-    height: 10vh;
+  height: 10vh;
 
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+`;
 
 export const MenuCalorie = styled.div`
-      p:first-child {
-        font-weight: bold;
-        font-size: 2.5rem;
-        line-height: 48px;
+  p:first-child {
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 48px;
 
-        display: flex;
-        align-items: center;
-        text-align: center;
-        letter-spacing: -0.41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.41px;
 
-        color: #fc5c42;
-        padding-bottom: 8px;
-      }
+    color: #fc5c42;
+    padding-bottom: 8px;
+  }
 
-      p:last-child {
-        font-size: 0.75rem;
-        line-height: 16px;
+  p:last-child {
+    font-size: 0.75rem;
+    line-height: 16px;
 
-        text-align: center;
-        letter-spacing: -0.41px;
+    text-align: center;
+    letter-spacing: -0.41px;
 
-        color: #000000;
-      }
-`
+    color: #000000;
+  }
+`;
 
 export const MenuProtein = styled.div`
-        font-size: 0.75rem;
-        line-height: 16px;
-        text-align: center;
-        letter-spacing: -0.41px;
-        color: #000000;
-`
+  font-size: 0.75rem;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: -0.41px;
+  color: #000000;
+`;
 
 export const Gap = styled.div`
-      width: 1px;
-      height: 100%;
-      background-color: #eaeaea;
-`
+  width: 1px;
+  height: 100%;
+  background-color: #eaeaea;
+`;
 
 export const MenuNutrient = styled.div`
   padding: 0 10px;
@@ -157,11 +157,11 @@ export const MenuNutrient = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   align-items: center;
-`
+`;
 
 export const DoughnutContainer = styled.section`
   width: 100%;
-    canvas {
-      max-width: 100%;
-    }
-`
+  canvas {
+    max-width: 100%;
+  }
+`;

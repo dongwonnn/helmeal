@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import {  useLocation } from 'react-router';
+import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
@@ -20,7 +20,10 @@ import { snackInfo } from '../utils/data';
 import { useDispatch } from 'react-redux';
 import { currentSnackInfo } from '../reducers/food';
 
-import { StartButtonContainer, DetailPageContainer } from '../components/Detail/styles';
+import {
+  StartButtonContainer,
+  DetailPageContainer,
+} from '../components/Detail/styles';
 import FoodInfomation from '../components/Detail/FoodInfomation';
 
 const DetailPage = () => {
@@ -45,10 +48,9 @@ const DetailPage = () => {
     setIsMeal(false);
   }, [setIsMeal]);
 
-
   return (
     <DetailPageContainer>
-      <Header pathname='/'>
+      <Header pathname="/">
         <LeftIcon />
         <h3>헬밀 프로틴</h3>
         <ShareLogo />
@@ -58,10 +60,14 @@ const DetailPage = () => {
       </Carousel>
       <FoodInfomation />
       <DetailBackground />
-      <SelectMenu onClickMeal={onClickMeal} onClickSnack={onClickSnack} isMeal={isMeal} />
+      <SelectMenu
+        onClickMeal={onClickMeal}
+        onClickSnack={onClickSnack}
+        isMeal={isMeal}
+      />
       {isMeal ? (
         <>
-          <MealCategories />
+          {/* <MealCategories /> */}
           <MealMenus />
         </>
       ) : (

@@ -4,8 +4,14 @@ import Header from '../components/Common/Header';
 import { useLocation } from 'react-router';
 import PostCode from '../components/Address/PostCode';
 import { useSelector } from 'react-redux';
-import { AddressInput, AddressSettingContainer, RecentAddress, RecentAddressList } from '../components/Subscribe/styles';
+import {
+  AddressInput,
+  AddressSettingContainer,
+  RecentAddress,
+  RecentAddressList,
+} from '../components/Subscribe/styles';
 import { RootState } from '../reducers';
+import { Link } from 'react-router-dom';
 
 const AddressPage = () => {
   const { pathname } = useLocation();
@@ -14,10 +20,12 @@ const AddressPage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const { mainAddress, detailAddress } = useSelector(({ address } : RootState) => ({
-    mainAddress: address.mainAddress,
-    detailAddress: address.detailAddress,
-  }));
+  const { mainAddress, detailAddress } = useSelector(
+    ({ address }: RootState) => ({
+      mainAddress: address.mainAddress,
+      detailAddress: address.detailAddress,
+    }),
+  );
 
   const [showPostCode, setShowPostCode] = useState(false);
 
@@ -44,8 +52,10 @@ const AddressPage = () => {
               <h4>최근 배송지</h4>
               <RecentAddressList>
                 <li>
-                  <p>{detailAddress}</p>
-                  <p>{mainAddress}</p>
+                  <Link to="/subscribe">
+                    <p>{detailAddress}</p>
+                    <p>{mainAddress}</p>
+                  </Link>
                 </li>
               </RecentAddressList>
             </RecentAddress>

@@ -1,22 +1,32 @@
 import React from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { RootState } from '../../reducers';
-import { AddressButton, AddressButtonContainer, AddressContainer } from './styles';
+import {
+  AddressButton,
+  AddressButtonContainer,
+  AddressContainer,
+  AddressInfoContainer,
+} from './styles';
 
 const Address = () => {
-  const { mainAddress, detailAddress } = useSelector(({ address } : RootState) => ({
-    mainAddress: address.mainAddress,
-    detailAddress: address.detailAddress,
-  }));
+  const { mainAddress, detailAddress } = useSelector(
+    ({ address }: RootState) => ({
+      mainAddress: address.mainAddress,
+      detailAddress: address.detailAddress,
+    }),
+  );
 
   return (
     <AddressContainer>
       {detailAddress ? (
-          <p>
-            {detailAddress}
-            {mainAddress}
-          </p>
+        <AddressInfoContainer>
+          <p>{detailAddress}</p>
+          <Link to="/address">
+            <AiOutlineClose />
+          </Link>
+        </AddressInfoContainer>
       ) : (
         <>
           <p>배송지 정보가 없습니다.</p>
@@ -31,4 +41,4 @@ const Address = () => {
   );
 };
 
-export default Address
+export default Address;
