@@ -11,6 +11,7 @@ import SubscribeCompletePage from '../pages/SubscribeCompletePage';
 import MenuDetailPage from '../pages/MenuDetailPage';
 // import './App.scss';
 import GlobalStyles from './GlobalStyles';
+import OrderHistoryPage from '../pages/OrderHistoryPage';
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
         <Route path="/subscribe-complete" component={SubscribeCompletePage} />
         <Route path="/menu-detail/:id" component={MenuDetailPage} />
         <Route path="/profile" component={ProfilePage} />
-
+        <Route path="/order-history" component={OrderHistoryPage} />
         <Route path="/login" component={LoginPage} />
       </Switch>
       <GlobalStyles />

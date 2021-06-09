@@ -71,6 +71,7 @@ export const AddressInfoContainer = styled.div`
   svg {
     color: #d9d9d9;
     position: absolute;
+    font-size: 1.3rem;
     top: 10px;
     right: 10px;
   }
