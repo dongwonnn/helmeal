@@ -61,16 +61,19 @@
 
 ## 📜 주요 페이지
 
-1. HomePage
+1. **HomePage**
+
    <details>
-    |  홈페이지 |
-    | :----------------------------------------------------------------------------------------------------------------: |
-    | <video src="https://user-images.githubusercontent.com/59330828/121315202-122f1780-c943-11eb-965a-f8a609cf8ff9.mp4" autoplay alt="home" width="150px" /> |
-    </details>
 
-    <br>
+   |                                                                        홈페이지                                                                         |
+   | :-----------------------------------------------------------------------------------------------------------------------------------------------------: |
+   | <video src="https://user-images.githubusercontent.com/59330828/121315202-122f1780-c943-11eb-965a-f8a609cf8ff9.mp4" autoplay alt="home" width="150px" /> |
 
-2. DetailPage
+   </details>
+
+<br/>
+
+2. **DetailPage**
    <details>
 
    |                                                                        전체 메뉴                                                                        |                                                                        상세 메뉴                                                                        |
@@ -78,18 +81,21 @@
    | <video src="https://user-images.githubusercontent.com/59330828/121317219-0c3a3600-c945-11eb-8820-3af59bac46d5.mp4" autoplay alt="home" width="150px" /> | <video src="https://user-images.githubusercontent.com/59330828/121318769-84edc200-c946-11eb-9aa5-7a29c9de0ba8.mp4" autoplay alt="home" width="150px" /> |
 
    </details>
-    <br>
 
-3. SubscribePage
+</br>
+
+3. **SubscribePage**
    <details>
-   | 옵션 선택 | ✔ 상세 메뉴 |
+
+   |                                                                        옵션 선택                                                                        |                                                                       ✔ 상세 메뉴                                                                       |
    | :-----------------------------------------------------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------: |
    | <video src="https://user-images.githubusercontent.com/59330828/121319194-ef066700-c946-11eb-98d1-5a265787f10f.mp4" autoplay alt="home" width="150px" /> | <video src="https://user-images.githubusercontent.com/59330828/121319490-3c82d400-c947-11eb-9156-f6ab4e241b77.mp4" autoplay alt="home" width="150px" /> |
 
    </details>
-    <br>
 
-4. ProfilePage
+<br />
+
+4. **ProfilePage**
    <details>
 
    |                                                                주문내역 조회 · 로그아웃                                                                 |
@@ -99,59 +105,3 @@
    </details>
 
 <br>
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
-#### 06.09
-
-- [ ] S3 적용 -> 쿠팡 이미지 올리기
-- [ ] 자소서 쓰기
-- [ ] 포트폴리오 정리
-- [ ] service 정리
-
-#### 06.08
-
-- [ ] 쿠키 처리를 할 것 인지? Redirect 할 것 인지?
-
-### 처리해야할 것
-
-- [ ] 프로틴별 Scroll Spy -> API 적용 후에
-- [ ] 주소 설정하기
-- [ ] 디자인 대로 구현하려면 주소 DB 필요함
-- [ ] 최근 3개 까지만 설정하기
-- [ ] 현재 주소 체크하기
-- [ ] Carousel 추가할 이미지
-- [ ] Carousel 상태 색상넣기
-- [ ] 결제 수단 연동
-
-- [ ] 올라오는 팝업 css 구현 -> 보류
-- [ ] oAuth 인증 방식
-- [ ] 결제 한 상태에서 또 결제할 때 로직 처리
