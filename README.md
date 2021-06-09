@@ -67,7 +67,7 @@
 
    |                                                                        홈페이지                                                                         |
    | :-----------------------------------------------------------------------------------------------------------------------------------------------------: |
-   | <video src="https://user-images.githubusercontent.com/59330828/121315202-122f1780-c943-11eb-965a-f8a609cf8ff9.mp4" autoplay alt="home" width="150px" /> |
+   | <video src="https://user-images.githubusercontent.com/59330828/121320935-946e0a80-c948-11eb-8139-438bd5497368.mp4" autoplay alt="home" width="150px" /> |
 
    </details>
 
