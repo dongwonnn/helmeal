@@ -6,7 +6,7 @@
 
 ## 📺 배포 사이트
 
-### [배포 사이트](https://dongwonnn.github.io/helmeal)
+### 사이트 : [helmeal.shop](helmeal.shop)
 
 <br/>
 
@@ -24,6 +24,7 @@
   <img src= "https://img.shields.io/badge/ReduxSaga-999999?logo=Redux-saga&logoColor=white"/>
   <img src= "https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript"/>
   <img src= "https://img.shields.io/badge/TypeScript-blue?logo=typescript&logoColor=white"/>
+  <img src= "https://img.shields.io/badge/Nginx-green?logo=nginx"/>
 </p>
 
 <h3 align="center">  
@@ -34,7 +35,7 @@
   <img src= "https://img.shields.io/badge/MariaDB-003545?logo=mariadb&logoColor=white"/>
   <img src= "https://img.shields.io/badge/Docker-2CA5E0?logo=docker&logoColor=white"/>
   <img src= "https://img.shields.io/badge/Redis-FF4500?logo=redis&logoColor=white"/>
-  
+  <img src= "https://img.shields.io/badge/Nginx-green?logo=nginx"/>
 </p>
 
 <h3 align="center">  
@@ -43,7 +44,6 @@
 <p align="center">
   <img src="https://img.shields.io/badge/AWS-EC2-red?logo=amazon-aws" />
   <img src= "https://img.shields.io/badge/AWS-S3-red?logo=amazon-aws"/>
-  <img src= "https://img.shields.io/badge/AWS-CloudFront-red?logo=amazon-aws"/>
 </p>
 
 <h3 align="center">  
