@@ -1,7 +1,6 @@
 // 동영상
 export const videoUrl =
-  'https://user-images.githubusercontent.com/59330828/119786834-87462a00-bf0b-11eb-942b-fbce2cc2545b.mp4';
-
+  'https://user-images.githubusercontent.com/59330828/121664014-ff9f1480-cae1-11eb-9aca-a2dcd46dcd12.mp4';
 // 지불 방법
 export const payWay = [
   {

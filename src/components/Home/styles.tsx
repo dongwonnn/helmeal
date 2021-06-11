@@ -72,7 +72,7 @@ export const VideoStyle = styled.div`
   overflow: hidden;
   margin-bottom: 40px;
   video {
-    height: 70vh;
+    width: 100%;
   }
 `
 
