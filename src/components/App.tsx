@@ -9,7 +9,6 @@ import SubscribeOptionPage from '../pages/SubscribeOptionPage';
 import AddressPage from '../pages/AddressPage';
 import SubscribeCompletePage from '../pages/SubscribeCompletePage';
 import MenuDetailPage from '../pages/MenuDetailPage';
-// import './App.scss';
 import GlobalStyles from './GlobalStyles';
 import OrderHistoryPage from '../pages/OrderHistoryPage';
 

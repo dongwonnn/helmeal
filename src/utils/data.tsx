@@ -1,23 +1,26 @@
 // 동영상
 export const videoUrl =
-  'https://user-images.githubusercontent.com/59330828/119786834-87462a00-bf0b-11eb-942b-fbce2cc2545b.mp4';
+  'https://user-images.githubusercontent.com/59330828/121664014-ff9f1480-cae1-11eb-9aca-a2dcd46dcd12.mp4';
+<<<<<<< HEAD
+=======
 
+>>>>>>> 40b2367b98f430672a5b9e5012af51dede39ee82
 // 지불 방법
 export const payWay = [
   {
-    id: "0",
+    id: '0',
     way: '네이버 페이',
   },
   {
-    id: "1",
+    id: '1',
     way: '카카오 페이',
   },
   {
-    id: "2",
+    id: '2',
     way: '신용/체크 카드',
   },
   {
-    id: "3",
+    id: '3',
     way: '휴대폰 결제',
   },
 ];
