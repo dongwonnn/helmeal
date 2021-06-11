@@ -7,7 +7,7 @@ import store from './reducers/store';
 import './index.css';
 
 ReactDOM.render(
-  <BrowserRouter basename="helmeal/">
+  <BrowserRouter>
     <Provider store={store}>
       <App />
     </Provider>
