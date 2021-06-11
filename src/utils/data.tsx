@@ -1,23 +1,23 @@
 // 동영상
 export const videoUrl =
-  'https://user-images.githubusercontent.com/59330828/119786834-87462a00-bf0b-11eb-942b-fbce2cc2545b.mp4';
+  'https://helmeal.s3.ap-northeast-2.amazonaws.com/%ED%97%AC%EB%B0%80_%EC%B5%9C%EC%A2%85.mp4?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLW5vcnRoZWFzdC0yIkcwRQIgGuDPstAoXPda%2BeU20L%2ByPHdpX7ncK2zNM2YYuP48qpECIQCUW5aLI9JJdMHpL7Yq7XRl8ZtC1Xpg2BdIUTT9p86OZCr%2FAgi4%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAEaDDUzNDQzOTYyOTYxNCIM2fU1oplODpl95788KtMCyVaz1DkhVeGCSOd9AeTENJtR9lvA%2Br4ngofMlZqo5bprTetRYESHqBBY8Rt%2Bt9g5D7S%2FD1eVQwqgCKMNiKI6j5G5RMtBGe089iyw2RpB4AZ2IjRosTEE9ylYlvXDtB5MdILlRZnAHKIrsxcpsL5qGhCzfqe7ZZTs8ymUIFiVBfwl%2Bs3a0NTxtOpyYzBUSvywzrNyGP%2FPuiHoC58r%2F%2B43Vg3YpkmPuV8Aq8uhCz2v5%2Fd5x6PtFgmqfn0NFzQvHjKjV%2F510sW1N49XywwHvKcncPotqD%2Bym9ich7JAeViiUS7%2FnpvcS8N9ZxW5wKBtyXi6S78%2FqK8vxPizc996HDa4jZV2BVNx%2FiKv3O71%2FXADp%2F6afefioaylB9UITjFey8oXTo8KRx2%2FbMUl38l518sLQwUVJU%2B9e4Ls0BeGxgrASk6lMUSjBjQ3HJrmiNbDYoapfXwVMLmcjIYGOrMCIYuF7QgPeajjb83ry4LvncoosglCdpNaVfy4fiR9xwH0%2F8TZ6HGB9OjlT78Mubyw3zu2r%2Fm8eyQF0kLhgnx%2F2wTV8M42b8YOMnBtT7YLmyYzePUf%2FFHRPGLiEgZJV%2BqGzgC0ecnE86SVS%2FSc3kwY4PkxFkAe2IbR%2BsxjjKZrHTlbQW1qGHOKesX60bm6NT7PBhg7eMEyM%2FdTI6WBw%2FvcilovyMS%2BDn3gwesYmsot8odvrFckBm58lPVnjh1ilgcLAr%2F5G1MMwIy17zxzDbp1skKRvU54wvGtB%2FEf1bxlWHVyHK%2Fr6I8VCroZOppO0o844u%2BKvMwUilCynjpE18LyOMHeB096vepA6cTwLPo6hWT5EyF0BoyxM9UT%2FF92KPhQyFhXc7%2BY6yxTaATjCmDXMgMLtA%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210611T080944Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAXY3YVSMXHXKDEWJB%2F20210611%2Fap-northeast-2%2Fs3%2Faws4_request&X-Amz-Signature=d97e15f643a7093fdde3a3f7ba876caca957e32501dc6dd079dcae00a449aacc';
 
 // 지불 방법
 export const payWay = [
   {
-    id: "0",
+    id: '0',
     way: '네이버 페이',
   },
   {
-    id: "1",
+    id: '1',
     way: '카카오 페이',
   },
   {
-    id: "2",
+    id: '2',
     way: '신용/체크 카드',
   },
   {
-    id: "3",
+    id: '3',
     way: '휴대폰 결제',
   },
 ];
