@@ -5,11 +5,15 @@ import NavBar from '../components/Common/NavBar';
 import VideoContainer from '../components/Home/VideoContainer';
 import ShowMenuButton from '../components/Home/ShowMenuButton';
 
-import { HomePageContainer, ArticleStyle, BacgroundArticleStyle, BackgroundStyle } from '../components/Home/styles';
-
+import {
+  HomePageContainer,
+  ArticleStyle,
+  BacgroundArticleStyle,
+  BackgroundStyle,
+} from '../components/Home/styles';
 
 const HomePage = () => {
-  const history = useHistory()
+  const history = useHistory();
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -74,7 +78,7 @@ const HomePage = () => {
           <ShowMenuButton />
         </BacgroundArticleStyle>
       </BackgroundStyle>
-      
+
       <NavBar path={history.location.pathname} />
     </HomePageContainer>
   );
