@@ -62,7 +62,6 @@ export const SubscribeContainer = styled.div`
 
 export const PayButtonContainer = styled.div`
   width: 100%;
-  bottom: 0;
 `;
 
 export const AddressInfoContainer = styled.div`
@@ -155,7 +154,6 @@ export const OrderInfo = styled.div`
 `;
 
 export const DeliveryInfo = styled.div`
-  border-bottom: 1px solid #eaeaea;
   padding-bottom: 16px;
 
   h4 {
@@ -197,9 +195,10 @@ export const AddrssDetail = styled.div`
   color: #020202;
 `;
 
-export const TotalPayContiner = styled.article`
+export const CardContiner = styled.article`
   background-color: #f5f6f7;
   border-radius: 8px;
+  margin-bottom: 16px;
 `;
 
 export const TotalPayContent = styled.div`
@@ -215,12 +214,71 @@ export const TotalPayContent = styled.div`
     line-height: 26px;
     text-align: right;
     letter-spacing: -0.5px;
+    padding-bottom: 4px;
 
     color: #020202;
   }
-  div:last-child {
+  div:nth-child(2) {
     font-size: 0.75rem;
     line-height: 16px;
+    letter-spacing: -0.5px;
+
+    color: #767676;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 16px;
+  }
+  div:last-child {
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 26px;
+
+    letter-spacing: -0.5px;
+    color: #020202;
+    padding-top: 15px;
+    P:last-child {
+      font-weight: bold;
+      font-size: 1.375rem;
+      line-height: 28px;
+
+      text-align: right;
+      letter-spacing: -0.41px;
+
+      color: #020202;
+    }
+  }
+`;
+
+export const PayPoliceContent = styled.div`
+  padding: 24px 18px 24px 24px;
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    p {
+      font-size: 0.875rem;
+      line-height: 24px;
+      letter-spacing: -0.5px;
+
+      color: #020202;
+    }
+    a {
+      font-weight: normal;
+      font-size: 0.875rem;
+      line-height: 24px;
+      text-align: right;
+      letter-spacing: -0.5px;
+
+      color: #767676;
+    }
+  }
+  li:last-child {
+    border-bottom: 1px solid #eaeaea;
+  }
+  div {
+    margin-top: 16px;
+    font-size: 0.875rem;
+    line-height: 24px;
     letter-spacing: -0.5px;
 
     color: #767676;
@@ -318,15 +376,16 @@ export const RecentAddressList = styled.ul`
   li {
     padding: 16px 0;
     border-bottom: 1px solid #f5f5f5;
-    p:first-child {
+    p {
       padding-bottom: 8px;
-    }
+      font-size: 1rem;
+      line-height: 26px;
 
-    p:last-child {
-      font-size: 0.75rem;
-      line-height: 16px;
       letter-spacing: -0.5px;
-      color: #767676;
+
+      /* Grey/200 */
+
+      color: #1d1d1d;
     }
   }
 `;

@@ -56,6 +56,27 @@ export const ButtonContainer = styled.div`
   }
 `;
 
+export const DisableButtonContainer = styled.div`
+  max-width: 400px;
+  display: block;
+  background-color: white;
+  padding: 23px 24px 34px 24px;
+
+  p {
+    background-color: #ccc;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    padding: 17px 7.63px;
+    font-weight: bold;
+
+    font-size: 1.06rem;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.408px;
+  }
+`;
+
 export const GraphContainer = styled.article`
   position: relative;
 `;

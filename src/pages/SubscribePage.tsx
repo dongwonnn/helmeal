@@ -15,14 +15,24 @@ import {
   SubscribeContainer,
   SubscribePageContainer,
 } from '../components/Subscribe/styles';
+import { DisableButtonContainer } from '../components/Common/styles';
 import { RootState } from '../reducers';
+import PayPolice from '../components/Subscribe/PayPolice';
+import { useState } from 'react';
 
 const SubscribePage = () => {
+  const [payCheck, setPayCheck] = useState(false);
+  const [addressCheck, setAddressCheck] = useState(false);
+
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  const { mainAddress } = useSelector(({ address }: RootState) => ({
+    mainAddress: address.mainAddress,
+  }));
 
   const { dateInfoPrice, subscribeTermPrice } = useSelector(
     ({ option }: RootState) => ({
@@ -46,20 +56,30 @@ const SubscribePage = () => {
       <SubscribePageContainer>
         <SubscribeContainer>
           <h4>배송지 정보</h4>
-          <Address />
+          <Address setAddressCheck={setAddressCheck} />
 
           <h4>주문내역</h4>
           <OrderInfos />
 
           <h4>결제 수단</h4>
-          <PayWayContainer />
+          <PayWayContainer setPayCheck={setPayCheck} />
 
           <TotalPay />
+
+          <h4>구매조건/약관 및 개인정보 이용 동의</h4>
+          <PayPolice />
         </SubscribeContainer>
+
         <PayButtonContainer>
-          <Link to="/subscribe-complete">
-            <Button>{totalPay}원 결제하기</Button>
-          </Link>
+          {payCheck && mainAddress ? (
+            <Link to="/subscribe-complete">
+              <Button>{totalPay}원 결제하기</Button>
+            </Link>
+          ) : (
+            <DisableButtonContainer>
+              <p>{totalPay}원 결제하기</p>
+            </DisableButtonContainer>
+          )}
         </PayButtonContainer>
       </SubscribePageContainer>
     </>

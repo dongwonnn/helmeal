@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { FC } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -10,7 +11,11 @@ import {
   AddressInfoContainer,
 } from './styles';
 
-const Address = () => {
+interface AddressProps {
+  setAddressCheck: (e: boolean) => void;
+}
+
+const Address: FC<AddressProps> = ({ setAddressCheck }) => {
   const { mainAddress, detailAddress } = useSelector(
     ({ address }: RootState) => ({
       mainAddress: address.mainAddress,
@@ -20,9 +25,9 @@ const Address = () => {
 
   return (
     <AddressContainer>
-      {detailAddress ? (
+      {mainAddress ? (
         <AddressInfoContainer>
-          <p>{detailAddress}</p>
+          <p>{mainAddress}</p>
           <Link to="/address">
             <AiOutlineClose />
           </Link>

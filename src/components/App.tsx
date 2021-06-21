@@ -11,6 +11,7 @@ import SubscribeCompletePage from '../pages/SubscribeCompletePage';
 import MenuDetailPage from '../pages/MenuDetailPage';
 import GlobalStyles from './GlobalStyles';
 import OrderHistoryPage from '../pages/OrderHistoryPage';
+import SetAddressPage from '../pages/SetAddressPage';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         <Route path="/subscribe-option" component={SubscribeOptionPage} />
         <Route path="/subscribe" component={SubscribePage} />
         <Route path="/address" component={AddressPage} />
+        <Route path="/set-address" component={SetAddressPage} />
         <Route path="/subscribe-complete" component={SubscribeCompletePage} />
         <Route path="/menu-detail/:id" component={MenuDetailPage} />
         <Route path="/profile" component={ProfilePage} />

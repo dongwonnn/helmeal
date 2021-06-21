@@ -7,19 +7,19 @@ import { Location } from 'history';
 import { LoginButtonContainer } from './styles';
 import { RootState } from '../../reducers';
 
-interface LoginButtonProps{
-  from : Location;
+interface LoginButtonProps {
+  from: Location;
 }
 
-const LoginButton:FC<LoginButtonProps> = ({ children, from }) => {
+const LoginButton: FC<LoginButtonProps> = ({ children, from }) => {
   const dispatch = useDispatch();
 
-  const { user } = useSelector(({ auth } : RootState) => ({
+  const { user } = useSelector(({ auth }: RootState) => ({
     user: auth.user,
   }));
 
   const onCheckUser = useCallback(() => {
-    dispatch(check(userData))
+    dispatch(check(userData));
   }, [dispatch]);
 
   if (user) {

@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import Header from '../components/Common/Header';
 import { useLocation } from 'react-router';
-import PostCode from '../components/Address/PostCode';
 import { useSelector } from 'react-redux';
 import {
   AddressInput,
@@ -27,44 +26,38 @@ const AddressPage = () => {
     }),
   );
 
-  const [showPostCode, setShowPostCode] = useState(false);
-
-  const onShowPostCode = useCallback(() => {
-    setShowPostCode((prev) => !prev);
-  }, []);
-
   return (
-    <div>
-      <Header pathname="/">
+    <>
+      <Header pathname="/subscribe">
         <LeftIcon />
         <h3>배송지 입력</h3>
         <p></p>
       </Header>
-      {showPostCode ? (
-        <PostCode setShowPostCode={setShowPostCode} />
-      ) : (
-        <AddressSettingContainer>
-          <AddressInput onClick={onShowPostCode}>
+
+      <AddressSettingContainer>
+        <Link to="set-address">
+          <AddressInput>
             <p>지번, 도로면, 건물명을 입력해 주세요</p>
           </AddressInput>
-          {mainAddress || detailAddress ? (
-            <RecentAddress>
-              <h4>최근 배송지</h4>
-              <RecentAddressList>
-                <li>
-                  <Link to="/subscribe">
-                    <p>{detailAddress}</p>
-                    <p>{mainAddress}</p>
-                  </Link>
-                </li>
-              </RecentAddressList>
-            </RecentAddress>
-          ) : (
-            ''
-          )}
-        </AddressSettingContainer>
-      )}
-    </div>
+        </Link>
+
+        {mainAddress || detailAddress ? (
+          <RecentAddress>
+            <h4>최근 배송지</h4>
+            <RecentAddressList>
+              <li>
+                <Link to="/subscribe">
+                  <p>{detailAddress}</p>
+                  <p>{mainAddress}</p>
+                </Link>
+              </li>
+            </RecentAddressList>
+          </RecentAddress>
+        ) : (
+          <h4>최근 배송지</h4>
+        )}
+      </AddressSettingContainer>
+    </>
   );
 };
 
