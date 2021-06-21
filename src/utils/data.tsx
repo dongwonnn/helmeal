@@ -22,6 +22,30 @@ export const payWay = [
   },
 ];
 
+// MEAL 카테고리 정보
+export const mealCategories = [
+  {
+    id: '0',
+    protein: '골고루',
+  },
+  {
+    id: '1',
+    protein: '소고기',
+  },
+  {
+    id: '2',
+    protein: '돼지고기',
+  },
+  {
+    id: '3',
+    protein: '닭고기',
+  },
+  {
+    id: '4',
+    protein: '식물성',
+  },
+];
+
 // MEAL 정보
 export const mealInfo = [
   {
@@ -31,7 +55,7 @@ export const mealInfo = [
     carb: 36,
     fat: 15,
     cal: 510,
-    integrity: '소고기 프로틴',
+    integrity: '소고기',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790514-f5402080-bf0e-11eb-90d2-ef9b50929b3e.png',
     largeImgUrl:
@@ -46,7 +70,7 @@ export const mealInfo = [
     carb: 10,
     fat: 20,
     cal: 480,
-    integrity: '돼지고기 프로틴',
+    integrity: '돼지고기',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790521-f709e400-bf0e-11eb-8853-149c1324b638.png',
     largeImgUrl:
@@ -61,7 +85,7 @@ export const mealInfo = [
     carb: 48,
     fat: 30,
     cal: 600,
-    integrity: '닭고기 프로틴',
+    integrity: '닭고기',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790527-f8d3a780-bf0e-11eb-89d2-6aed96d7088d.png',
     largeImgUrl:
@@ -76,7 +100,7 @@ export const mealInfo = [
     carb: 15,
     fat: 25,
     cal: 700,
-    integrity: '생선 프로틴',
+    integrity: '생선',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790537-fa04d480-bf0e-11eb-9612-a9784196857d.png',
     largeImgUrl:
@@ -91,7 +115,7 @@ export const mealInfo = [
     carb: 36,
     fat: 25,
     cal: 410,
-    integrity: '식물성 프로틴',
+    integrity: '식물성',
     proteinImgUrl:
       'https://user-images.githubusercontent.com/59330828/119790544-fbce9800-bf0e-11eb-845a-8f5454cf1e1e.png',
     largeImgUrl:

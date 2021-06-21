@@ -6,14 +6,17 @@ import { ITotalMealInfo } from '../types/ITotalMealInfo';
 import MenuInfo from '../components/MenuDetail/MenuInfo';
 import { getFoodKinds, getParamsId } from '../utils/getParamsId';
 
-import { MenuDetailContainer, MenuDetailPageContainer } from '../components/MenuDetail/styles'
+import {
+  MenuDetailContainer,
+  MenuDetailPageContainer,
+} from '../components/MenuDetail/styles';
 import { RootState } from '../reducers';
 
-interface ParamTypes{
+interface ParamTypes {
   id: string;
 }
 
-const MenuDetailPage = ()   => {
+const MenuDetailPage = () => {
   const history = useHistory();
   const { id } = useParams<ParamTypes>();
   const { pathname } = useLocation();
@@ -22,10 +25,12 @@ const MenuDetailPage = ()   => {
 
   const [currentMeal, setCurrentMeal] = useState<ITotalMealInfo | null>(null);
 
-  const { totalMealInfo, totalSnackInfo } = useSelector(({ food } : RootState) => ({
-    totalMealInfo: food.totalMealInfo,
-    totalSnackInfo: food.totalSnackInfo,
-  }));
+  const { totalMealInfo, totalSnackInfo } = useSelector(
+    ({ food }: RootState) => ({
+      totalMealInfo: food.totalMealInfo,
+      totalSnackInfo: food.totalSnackInfo,
+    }),
+  );
 
   useEffect(() => {
     if (getFoodKinds(id) === 'meal') {
@@ -45,11 +50,9 @@ const MenuDetailPage = ()   => {
       if (history.action === 'POP') {
         if (locationKeys[1] === location.key) {
           setLocationKeys(([_, ...keys]) => keys);
-          console.log("1")
 
           // 앞으로 가기
         } else {
-          console.log("2")
           setLocationKeys((keys) => [location.key, ...keys]);
 
           // 뒤로 가기
@@ -64,7 +67,7 @@ const MenuDetailPage = ()   => {
   }, [pathname]);
 
   if (currentMeal === null) {
-    return <div>로딩중...</div>
+    return <div>로딩중...</div>;
   }
 
   return (
@@ -75,7 +78,7 @@ const MenuDetailPage = ()   => {
           totalSnackInfo={totalSnackInfo}
           curUrl={history.location.pathname}
         />
-        <MenuInfo totalMealInfo={totalMealInfo} totalSnackInfo={totalSnackInfo} currentMeal={currentMeal}/>
+        <MenuInfo currentMeal={currentMeal} />
       </MenuDetailContainer>
     </MenuDetailPageContainer>
   );

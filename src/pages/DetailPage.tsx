@@ -16,9 +16,13 @@ import MealCategories from '../components/Detail/MealCategories';
 import Button from '../components/Common/Button';
 import NavBar from '../components/Common/NavBar';
 
-import { snackInfo } from '../utils/data';
+import { mealInfo, snackInfo } from '../utils/data';
 import { useDispatch } from 'react-redux';
-import { currentSnackInfo } from '../reducers/food';
+import {
+  categoryMealInfo,
+  currentMealInfo,
+  currentSnackInfo,
+} from '../reducers/food';
 
 import {
   StartButtonContainer,
@@ -32,6 +36,8 @@ const DetailPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(currentSnackInfo(snackInfo));
+    dispatch(currentMealInfo(mealInfo));
+    dispatch(categoryMealInfo(mealInfo));
   }, [dispatch]);
 
   const { pathname } = useLocation();
@@ -67,7 +73,7 @@ const DetailPage = () => {
       />
       {isMeal ? (
         <>
-          {/* <MealCategories /> */}
+          <MealCategories />
           <MealMenus />
         </>
       ) : (
