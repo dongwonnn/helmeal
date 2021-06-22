@@ -1,13 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ProfilePageContainer = styled.article`
   height: 100vh;
-`
+`;
 
 export const ProfileContainer = styled.div`
-    padding: 24px;
-
-`
+  padding: 24px;
+`;
 
 export const ProfileMessage = styled.div`
   padding: 24px 0 48px 0;
@@ -18,7 +17,7 @@ export const ProfileMessage = styled.div`
   letter-spacing: -0.5px;
 
   color: #000000;
-`
+`;
 
 export const ProfileLogin = styled.div`
   max-width: 892.95px;
@@ -34,13 +33,13 @@ export const ProfileLogin = styled.div`
     text-align: center;
     font-weight: bold;
   }
-`
+`;
 
 export const Divider = styled.div`
   width: 100%;
   border-bottom: 1px solid #ccc;
   margin-bottom: 48px;
-`
+`;
 
 export const OrderHistoryContainer = styled.div`
   font-weight: bold;
@@ -50,7 +49,7 @@ export const OrderHistoryContainer = styled.div`
 
   color: #111111;
   margin-bottom: 16px;
-`
+`;
 export const QuestionContainer = styled.div`
   font-weight: bold;
   font-size: 1.25rem;
@@ -59,7 +58,7 @@ export const QuestionContainer = styled.div`
 
   color: #111111;
   margin-bottom: 16px;
-`
+`;
 export const PoliciesContainer = styled.div`
   font-weight: bold;
   font-size: 1.25rem;
@@ -69,7 +68,7 @@ export const PoliciesContainer = styled.div`
   color: #111111;
   margin-bottom: 16px;
   margin-bottom: 60px;
-`
+`;
 
 export const LogoutContainer = styled.div`
   font-weight: bold;
@@ -78,9 +77,9 @@ export const LogoutContainer = styled.div`
   letter-spacing: -0.5px;
 
   color: #ccc;
-`
+`;
 
-export const TermsOfServiceContainer= styled.div`
+export const TermsOfServiceContainer = styled.div`
   margin: 32px auto 0 auto;
   color: #767676;
   text-align: center;
@@ -92,4 +91,11 @@ export const TermsOfServiceContainer= styled.div`
   a {
     text-decoration: underline;
   }
-`
+`;
+
+export const OrderHistoryButtonContainer = styled.div`
+  max-width: 480px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+`;

@@ -15,6 +15,7 @@ import {
   SubscribeCompleteContainer,
   SubscribeCompleteMesseg,
 } from '../components/Subscribe/styles';
+
 import { useSelector } from 'react-redux';
 import { RootState } from '../reducers';
 
@@ -25,9 +26,20 @@ const SubscribeCompletePage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const { detailAddress } = useSelector(({ address }: RootState) => ({
-    detailAddress: address.detailAddress,
-  }));
+  const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
+    ({ option }: RootState) => ({
+      proteinInfo: option.proteinInfo,
+      dateInfo: option.dateInfo,
+      subscribeTerm: option.subscribeTerm,
+    }),
+  );
+
+  const { mainAddress, detailAddress } = useSelector(
+    ({ address }: RootState) => ({
+      mainAddress: address.mainAddress,
+      detailAddress: address.detailAddress,
+    }),
+  );
 
   return (
     <>
@@ -47,9 +59,13 @@ const SubscribeCompletePage = () => {
         </SubscribeCompleteMesseg>
         <OrderInfo>
           <h4>주문내역</h4>
-          <OrderInfos>
+          <OrderInfos
+            proteinInfo={proteinInfo}
+            dateInfo={dateInfo}
+            subscribeTerm={subscribeTerm}
+          >
             <DelivertAddress>배송지</DelivertAddress>
-            <AddrssDetail>{detailAddress}</AddrssDetail>
+            <AddrssDetail>{mainAddress}</AddrssDetail>
           </OrderInfos>
         </OrderInfo>
       </SubscribeCompleteContainer>

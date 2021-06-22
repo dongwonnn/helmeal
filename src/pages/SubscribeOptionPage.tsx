@@ -8,7 +8,11 @@ import Button from '../components/Common/Button';
 import { Link } from 'react-router-dom';
 import { Redirect, useLocation } from 'react-router';
 import { useSelector } from 'react-redux';
-import { ButtonContainer, OrderInfoContainer, SubscribeOptionPageContainer } from '../components/Subscribe/styles'
+import {
+  ButtonContainer,
+  OrderInfoContainer,
+  SubscribeOptionPageContainer,
+} from '../components/Subscribe/styles';
 import { RootState } from '../reducers';
 
 const SubscribeOptionPage = () => {
@@ -19,13 +23,21 @@ const SubscribeOptionPage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const { user } = useSelector(({ auth } : RootState) => ({
+  const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
+    ({ option }: RootState) => ({
+      proteinInfo: option.proteinInfo,
+      dateInfo: option.dateInfo,
+      subscribeTerm: option.subscribeTerm,
+    }),
+  );
+
+  const { user } = useSelector(({ auth }: RootState) => ({
     user: auth.user,
   }));
 
-  const onSelectCancle = useCallback(()=>{
-    setCanSelectOption(true)
-  },[])
+  const onSelectCancle = useCallback(() => {
+    setCanSelectOption(true);
+  }, []);
 
   if (!user) {
     return <Redirect to={{ pathname: '/login', state: { from: pathname } }} />;
@@ -35,7 +47,7 @@ const SubscribeOptionPage = () => {
     <SubscribeOptionPageContainer>
       {canSelectOption ? (
         <>
-          <Header pathname='/detail'>
+          <Header pathname="/detail">
             <LeftIcon />
             <h3>구독 옵션 선택</h3>
             <p></p>
@@ -44,13 +56,17 @@ const SubscribeOptionPage = () => {
         </>
       ) : (
         <>
-          <Header pathname='/detail'>
-            <LeftIcon/>
+          <Header pathname="/detail">
+            <LeftIcon />
             <h3>구독 옵션 선택</h3>
             <p onClick={onSelectCancle}>선택취소</p>
           </Header>
           <OrderInfoContainer>
-            <OrderInfos />
+            <OrderInfos
+              proteinInfo={proteinInfo}
+              dateInfo={dateInfo}
+              subscribeTerm={subscribeTerm}
+            />
             <TotalPay />
           </OrderInfoContainer>
           <ButtonContainer>

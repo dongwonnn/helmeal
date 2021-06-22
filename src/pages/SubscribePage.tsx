@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useCallback } from 'react';
 import Header from '../components/Common/Header';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Button from '../components/Common/Button';
 import OrderInfos from '../components/Subscribe/OrderInfos';
@@ -19,10 +19,13 @@ import { DisableButtonContainer } from '../components/Common/styles';
 import { RootState } from '../reducers';
 import PayPolice from '../components/Subscribe/PayPolice';
 import { useState } from 'react';
+import { getDeliveryDate } from '../utils/getDate';
+import { setOrderList } from '../reducers/orderList';
 
 const SubscribePage = () => {
   const [payCheck, setPayCheck] = useState(false);
   const [addressCheck, setAddressCheck] = useState(false);
+  const dispatch = useDispatch();
 
   const { pathname } = useLocation();
 
@@ -30,10 +33,21 @@ const SubscribePage = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  // 프로틴 종류, 날짜, 구독 기간
+  const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
+    ({ option }: RootState) => ({
+      proteinInfo: option.proteinInfo,
+      dateInfo: option.dateInfo,
+      subscribeTerm: option.subscribeTerm,
+    }),
+  );
+
+  // 주소
   const { mainAddress } = useSelector(({ address }: RootState) => ({
     mainAddress: address.mainAddress,
   }));
 
+  // 구독 기간별 금액
   const { dateInfoPrice, subscribeTermPrice } = useSelector(
     ({ option }: RootState) => ({
       dateInfoPrice: option.dateInfoPrice,
@@ -41,10 +55,26 @@ const SubscribePage = () => {
     }),
   );
 
+  // 결제 금액
   const totalPay = useMemo(
     () => getPayForm(parseInt(dateInfoPrice) + parseInt(subscribeTermPrice)),
     [dateInfoPrice, subscribeTermPrice],
   );
+
+  const orderList = [
+    {
+      proteinInfo,
+      dateInfo,
+      subscribeTerm,
+      mainAddress,
+      deliveryPeriod: getDeliveryDate(subscribeTerm),
+      totalPay,
+    },
+  ];
+
+  const onSubscribeComplete = useCallback(() => {
+    dispatch(setOrderList(orderList));
+  }, [dispatch]);
 
   return (
     <>
@@ -59,7 +89,11 @@ const SubscribePage = () => {
           <Address setAddressCheck={setAddressCheck} />
 
           <h4>주문내역</h4>
-          <OrderInfos />
+          <OrderInfos
+            proteinInfo={proteinInfo}
+            dateInfo={dateInfo}
+            subscribeTerm={subscribeTerm}
+          />
 
           <h4>결제 수단</h4>
           <PayWayContainer setPayCheck={setPayCheck} />
@@ -70,7 +104,7 @@ const SubscribePage = () => {
           <PayPolice />
         </SubscribeContainer>
 
-        <PayButtonContainer>
+        <PayButtonContainer onClick={onSubscribeComplete}>
           {payCheck && mainAddress ? (
             <Link to="/subscribe-complete">
               <Button>{totalPay}원 결제하기</Button>
