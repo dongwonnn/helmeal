@@ -1,4 +1,4 @@
-import {IUser} from '../types/IUser'
+import { IUser } from '../types/IUser';
 
 // 액션 타입 정의
 const LOGIN = 'auth/LOGIN' as const;
@@ -32,12 +32,12 @@ type AuthState = {
 };
 
 // 초기값 설정
-const initialStete: AuthState= {
+const initialStete: AuthState = {
   user: [],
 };
 
 // 리듀서 작성
-function auth(state: AuthState= initialStete, action:AuthAction) : AuthState {
+function auth(state: AuthState = initialStete, action: AuthAction): AuthState {
   switch (action.type) {
     case LOGIN:
       return {

@@ -30,7 +30,7 @@ const OrderInfos: FC<OrderInfosProps> = ({
       <OrderInfo>{dateInfo}</OrderInfo>
       <OrderInfo>{subscribeTerm}</OrderInfo>
       <DeliveryInfo>
-        <h4>배송 시작일</h4>
+        <h4>구독 기간</h4>
         <DateInfo>{getDeliveryDate(subscribeTerm)}</DateInfo>
       </DeliveryInfo>
       <AddressInfo>{children}</AddressInfo>

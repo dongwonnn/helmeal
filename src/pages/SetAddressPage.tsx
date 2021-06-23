@@ -8,6 +8,10 @@ const SetAddressPage = () => {
   const history = useHistory();
   const [showPostCode, setShowPostCode] = useState(true);
 
+  if (!showPostCode) {
+    history.push('/address');
+  }
+
   return (
     <>
       {showPostCode ? (
@@ -23,7 +27,7 @@ const SetAddressPage = () => {
         <>
           <Header pathname="/address">
             <LeftIcon />
-            <h3>상세주소 입력</h3>
+            <h3>배송지 입력</h3>
             <p></p>
           </Header>
         </>

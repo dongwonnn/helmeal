@@ -85,7 +85,7 @@ const SubscribePage = () => {
       </Header>
       <SubscribePageContainer>
         <SubscribeContainer>
-          <h4>배송지 정보</h4>
+          <h4>배송 정보</h4>
           <Address setAddressCheck={setAddressCheck} />
 
           <h4>주문내역</h4>
