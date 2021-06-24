@@ -12,6 +12,7 @@ import MenuDetailPage from '../pages/MenuDetailPage';
 import GlobalStyles from './GlobalStyles';
 import OrderHistoryPage from '../pages/OrderHistoryPage';
 import SetAddressPage from '../pages/SetAddressPage';
+import RegisterPage from '../pages/RegisterPage';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/profile" component={ProfilePage} />
         <Route path="/order-history" component={OrderHistoryPage} />
         <Route path="/login" component={LoginPage} />
+        <Route path="/register" component={RegisterPage} />
       </Switch>
       <GlobalStyles />
     </>

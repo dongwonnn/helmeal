@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactComponent as LeftIcon } from '../assets/images/LeftIcon.svg';
 import Header from '../components/Common/Header';
 import { useHistory, useLocation } from 'react-router';
@@ -17,12 +17,9 @@ import {
   ProfileMessage,
   ProfilePageContainer,
 } from '../components/Profile/styles';
-import { RootState } from '../reducers';
 const ProfilePage = () => {
   const history = useHistory();
-  const { user } = useSelector(({ auth }: RootState) => ({
-    user: auth.user,
-  }));
+  const [user, setUser] = useState(true);
 
   const { pathname } = useLocation();
 

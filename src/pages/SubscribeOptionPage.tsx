@@ -31,17 +31,9 @@ const SubscribeOptionPage = () => {
     }),
   );
 
-  const { user } = useSelector(({ auth }: RootState) => ({
-    user: auth.user,
-  }));
-
   const onSelectCancle = useCallback(() => {
     setCanSelectOption(true);
   }, []);
-
-  if (!user) {
-    return <Redirect to={{ pathname: '/login', state: { from: pathname } }} />;
-  }
 
   return (
     <SubscribeOptionPageContainer>

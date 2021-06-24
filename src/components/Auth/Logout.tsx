@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
-import { logout } from '../../reducers/auth';
+import { logout } from '../../reducers/user';
 import { LogoutContainer } from '../Profile/styles';
 
 const Logout = () => {
@@ -10,7 +10,6 @@ const Logout = () => {
 
   const onLogout = useCallback(() => {
     dispatch(logout());
-
     history.push('/');
   }, [dispatch, history]);
 
