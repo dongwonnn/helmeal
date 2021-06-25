@@ -1,5 +1,4 @@
 import * as authApi from '../lib/api/auth';
-import client from '../lib/api/client';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { finishLoding, startLoading } from './loading';
 

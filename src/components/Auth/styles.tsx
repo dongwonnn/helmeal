@@ -39,3 +39,22 @@ export const LoginButtonContainer = styled.div`
     font-weight: bold;
   }
 `;
+
+export const AuthFormContainer = styled.main``;
+
+export const InputContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  input {
+    border: none;
+    background-color: #ffffff;
+    border: 0.5px #cccccc solid;
+    margin-top: 13.328px;
+    padding: 15px;
+    height: 20px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+`;

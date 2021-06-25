@@ -5,6 +5,8 @@ import { RootState } from '../reducers';
 import { changeField, initializeForm, register } from '../reducers/auth';
 import { check } from '../reducers/user';
 
+import { InputContainer } from '../components/Auth/styles';
+
 const RegisterPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -73,7 +75,7 @@ const RegisterPage = () => {
         <div className="register-content">
           <p>회원정보를 입력해주세요</p>
           <form onSubmit={onSubmit}>
-            <div className="register-content">
+            <InputContainer>
               <input
                 name="email"
                 type="text"
@@ -109,7 +111,7 @@ const RegisterPage = () => {
                 onChange={onChange}
                 value={form.phoneNum || ''}
               />
-            </div>
+            </InputContainer>
             <div>
               <button className="register-submit">동의하고 가입하기</button>
             </div>

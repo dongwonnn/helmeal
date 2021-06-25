@@ -1,5 +1,6 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { RootState } from '../../reducers';
 import {
   setProteinInfo,
@@ -11,21 +12,36 @@ import {
 import { getReceiveDay } from '../../utils/getDate';
 
 import { getNumberForm } from '../../utils/getNumberForm';
-import { DropDown, OrderGroup, SubscribeDropdownContainer, DropDownTitle, DropDownMenu, OptionMenu, OptionDetail, Option, DeliveryInfoContainer } from './styles';
+import {
+  DropDown,
+  OrderGroup,
+  SubscribeDropdownContainer,
+  DropDownTitle,
+  DropDownMenu,
+  OptionMenu,
+  OptionDetail,
+  Option,
+  DeliveryInfoContainer,
+} from './styles';
 
 interface DropdownProps {
-  setCanSelectOption: (e:boolean) => void 
+  setCanSelectOption: (e: boolean) => void;
 }
 
-const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
+const SubscribeDropdown: FC<DropdownProps> = ({ setCanSelectOption }) => {
+  const history = useHistory();
   const dispatch = useDispatch();
   const { proteinInfo, dateInfo, subscribeTerm } = useSelector(
-    ({ option } : RootState) => ({
+    ({ option }: RootState) => ({
       proteinInfo: option.proteinInfo,
       dateInfo: option.dateInfo,
       subscribeTerm: option.subscribeTerm,
     }),
   );
+
+  const { user } = useSelector(({ user }: RootState) => ({
+    user: user.user,
+  }));
 
   // 드롭박스 상태
   const [isProteinBoxShow, setIsProteinBoxShow] = useState(true);
@@ -124,17 +140,24 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
 
   const receiveDay = useMemo(() => getReceiveDay(), []);
 
+  if (!user) {
+    history.push('/login');
+  }
+
   return (
     <SubscribeDropdownContainer>
       <OrderGroup>주문 상품</OrderGroup>
       <h2>헬밀 프로틴</h2>
       <DropDown>
-        <DropDownTitle active = {isProteinBoxShow} onClick={() => onChangeMenu('first')}>
+        <DropDownTitle
+          active={isProteinBoxShow}
+          onClick={() => onChangeMenu('first')}
+        >
           {proteinInfo || '프로틴 종류'}
         </DropDownTitle>
         <DropDownMenu show={isProteinBoxShow} onClick={onProteinInfo}>
           <Option id="Option">
-            <OptionMenu id="OptionMenu" >골고루 프로틴</OptionMenu>
+            <OptionMenu id="OptionMenu">골고루 프로틴</OptionMenu>
             <OptionDetail id="OptionDetail">모든 프로틴 혼합형</OptionDetail>
           </Option>
           <Option id="Option">
@@ -152,12 +175,17 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
         </DropDownMenu>
       </DropDown>
       <DropDown>
-        <DropDownTitle active={isDateBoxShow} onClick={() => onChangeMenu('second')}> 
+        <DropDownTitle
+          active={isDateBoxShow}
+          onClick={() => onChangeMenu('second')}
+        >
           {dateInfo || '요일 선택'}
         </DropDownTitle>
         <DropDownMenu show={isDateBoxShow} onClick={onDateinInfo}>
           <Option id="Option">
-            <OptionMenu id="OptionMenu">5일 - 월 / 화 / 수 / 목 / 금</OptionMenu>
+            <OptionMenu id="OptionMenu">
+              5일 - 월 / 화 / 수 / 목 / 금
+            </OptionMenu>
             <OptionDetail id="OptionDetail">1주 / 30,000원</OptionDetail>
           </Option>
           <Option id="Option">
@@ -182,9 +210,12 @@ const SubscribeDropdown:FC<DropdownProps>= ({ setCanSelectOption }) => {
         </DropDownMenu>
       </DropDown>
       <DropDown>
-        <DropDownTitle active={isTermBoxShow} onClick={() => onChangeMenu('third')}>
+        <DropDownTitle
+          active={isTermBoxShow}
+          onClick={() => onChangeMenu('third')}
+        >
           {subscribeTerm || '구독 기간 선택'}
-          </DropDownTitle>
+        </DropDownTitle>
         <DropDownMenu show={isTermBoxShow} onClick={OnSubscribeTerm}>
           <Option id="Option">
             <OptionMenu id="OptionMenu">1주</OptionMenu>

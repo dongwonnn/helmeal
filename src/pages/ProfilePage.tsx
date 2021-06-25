@@ -14,39 +14,23 @@ import {
   Divider,
   ProfileContainer,
   ProfileLogin,
-  ProfileMessage,
+  ProfileMessageContainer,
   ProfilePageContainer,
+  ProfileMessage,
 } from '../components/Profile/styles';
+import { RootState } from '../reducers';
 const ProfilePage = () => {
   const history = useHistory();
-  const [user, setUser] = useState(true);
+
+  const { user } = useSelector(({ user }: RootState) => ({
+    user: user.user,
+  }));
 
   const { pathname } = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
-  if (!user) {
-    return (
-      <ProfilePageContainer>
-        <ProfileContainer>
-          <ProfileMessage>
-            <p>가입하고 건강한 식단을 준비하세요!</p>
-          </ProfileMessage>
-
-          <ProfileLogin>
-            <Link to="/login">
-              <p>로그인/회원가입</p>
-            </Link>
-          </ProfileLogin>
-          <Divider />
-          <Question />
-          <Polices />
-        </ProfileContainer>
-      </ProfilePageContainer>
-    );
-  }
 
   return (
     <ProfilePageContainer>
@@ -55,14 +39,57 @@ const ProfilePage = () => {
         <h3>마이페이지</h3>
         <p></p>
       </Header>
-      <ProfileContainer>
-        <Link to="/order-history">
-          <OrderHistory />
-        </Link>
-        <Question />
-        <Polices />
-        <Logout />
-      </ProfileContainer>
+      {user ? (
+        <ProfileContainer>
+          <Link to="/order-history">
+            <ProfileMessage>
+              <p>구독 내역</p>
+            </ProfileMessage>
+          </Link>
+          <ProfileMessage>
+            <p>문의하기 (카카오톡 채널)</p>
+          </ProfileMessage>
+          <ProfileMessage>
+            <p>자주하는 질문</p>
+          </ProfileMessage>
+          <a
+            href="https://www.notion.so/fe94fa076c884e50b689d10dcd16f1b6"
+            target="_blank"
+          >
+            <ProfileMessage>
+              <p>배송안내 및 환불정책</p>
+            </ProfileMessage>
+          </a>
+          <Logout />
+        </ProfileContainer>
+      ) : (
+        <ProfileContainer>
+          <ProfileMessageContainer>
+            <p>가입하고 건강한 식단을 준비하세요!</p>
+          </ProfileMessageContainer>
+
+          <ProfileLogin>
+            <Link to="/login">
+              <p>로그인/회원가입</p>
+            </Link>
+          </ProfileLogin>
+          <Divider />
+          <ProfileMessage>
+            <p>문의하기 (카카오톡 채널)</p>
+          </ProfileMessage>
+          <ProfileMessage>
+            <p>자주하는 질문</p>
+          </ProfileMessage>
+          <a
+            href="https://www.notion.so/fe94fa076c884e50b689d10dcd16f1b6"
+            target="_blank"
+          >
+            <ProfileMessage>
+              <p>배송안내 및 환불정책</p>
+            </ProfileMessage>
+          </a>
+        </ProfileContainer>
+      )}
       <NavBar path={history.location.pathname} />
     </ProfilePageContainer>
   );

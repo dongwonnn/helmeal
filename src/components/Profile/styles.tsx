@@ -8,7 +8,7 @@ export const ProfileContainer = styled.div`
   padding: 24px;
 `;
 
-export const ProfileMessage = styled.div`
+export const ProfileMessageContainer = styled.div`
   padding: 24px 0 48px 0;
   font-weight: 600;
   font-size: 1rem;
@@ -39,6 +39,16 @@ export const Divider = styled.div`
   width: 100%;
   border-bottom: 1px solid #ccc;
   margin-bottom: 48px;
+`;
+
+export const ProfileMessage = styled.div`
+  font-weight: bold;
+  font-size: 1.25rem;
+  line-height: 28px;
+  letter-spacing: -0.5px;
+
+  color: #111111;
+  margin-bottom: 16px;
 `;
 
 export const OrderHistoryContainer = styled.div`

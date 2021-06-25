@@ -9,6 +9,7 @@ import {
   LoginPageContainer,
   LogoContainer,
   LoginButtonGroup,
+  InputContainer,
 } from '../components/Auth/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeField, initializeForm, login } from '../reducers/auth';
@@ -24,6 +25,7 @@ const LoginPage = ({
   location,
 }: RouteComponentProps<{}, StaticContext, LocationProps>) => {
   const [goLoginForm, setGoLoginForm] = useState(false);
+
   const { pathname } = useLocation();
   const { from } = location.state || { from: '/profile' };
 
@@ -38,6 +40,7 @@ const LoginPage = ({
     }),
   );
 
+  // input form 변경 체크
   const onChange = (e: any) => {
     const { value, name } = e.target;
     dispatch(
@@ -49,6 +52,7 @@ const LoginPage = ({
     );
   };
 
+  // 제출 버튼
   const onSubmit = (e: any) => {
     e.preventDefault();
     const { userId, email, password } = form;
@@ -111,9 +115,9 @@ const LoginPage = ({
           <LogoContainer isloginForm={goLoginForm}>
             <Logo />
           </LogoContainer>
-          <main className="login-main">
+          <main>
             <form onSubmit={onSubmit}>
-              <div className="login-content">
+              <InputContainer>
                 <input
                   name="email"
                   type="text"
@@ -135,7 +139,7 @@ const LoginPage = ({
                   onChange={onChange}
                   value={form.password || ''}
                 />
-              </div>
+              </InputContainer>
               <div className="login-submit">
                 <button className="login-login">로그인</button>
               </div>
