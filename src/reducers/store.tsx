@@ -3,6 +3,7 @@ import rootReducer, { rootSaga } from './index';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { check, tempSetUser } from './user';
+import { IUser } from '../types/IUser';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -17,7 +18,7 @@ function loadUser() {
 
     if (!user) return;
 
-    store.dispatch(tempSetUser(user));
+    store.dispatch(tempSetUser(JSON.parse(user)));
     store.dispatch(check());
   } catch (e) {
     console.log('localStorage is not working');

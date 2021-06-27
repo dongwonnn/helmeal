@@ -70,7 +70,7 @@ const LoginPage = ({
     if (auth) {
       dispatch(check());
     }
-  }, [auth, authError, history]);
+  }, [auth, authError, dispatch]);
 
   // user 있을 경우 바로 home으로 이동
   useEffect(() => {

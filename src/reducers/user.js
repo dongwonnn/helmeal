@@ -1,7 +1,9 @@
 import * as authApi from '../lib/api/auth';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { finishLoding, startLoading } from './loading';
+import { IUser } from '../types/IUser';
 
+// as const 붙이기
 const TEMP_SET_USER = 'user/TEMP_SET_USER';
 
 const CHECK = 'user/CHECK';
@@ -10,9 +12,10 @@ const CHECK_FAILURE = 'user/CHECK_FAILURE';
 
 const LOGOUT = 'user/LOGOUT';
 
+// export const tempSetUser = (user: IUser) => ({
 export const tempSetUser = (user) => ({
   type: TEMP_SET_USER,
-  user,
+  payload: user,
 });
 
 export const check = () => ({
@@ -22,6 +25,12 @@ export const check = () => ({
 export const logout = () => ({
   type: LOGOUT,
 });
+
+// 액션 타입
+// type UserAction =
+//   | ReturnType<typeof tempSetUser>
+//   | ReturnType<typeof check>
+//   | ReturnType<typeof logout>;
 
 // saga 생성
 function* checkSaga() {
@@ -69,29 +78,43 @@ export function* userSaga() {
   yield takeLatest(LOGOUT, logoutSaga);
 }
 
+// 초기값 타입
+// type UserState = {
+//   user: IUser[] | null;
+//   checkError: null;
+// };
+
 const initialStete = {
   user: null,
   checkError: null,
 };
 
+// const user = (
+//   state: UserState = initialStete,
+//   action: UserAction,
+// ): UserState => {
 const user = (state = initialStete, action) => {
   switch (action.type) {
     case TEMP_SET_USER:
       return {
         ...state,
-        user: action.payload,
+        user: action.payload.data,
       };
     case CHECK_SUCCESS:
+      console.log(action);
+
       return {
         ...state,
         user: action.payload,
         checkError: null,
       };
     case CHECK_FAILURE:
+      console.log(action);
+
       return {
         ...state,
         user: null,
-        checkError: error,
+        checkError: action.payload,
       };
     case LOGOUT:
       return {

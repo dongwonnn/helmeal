@@ -43,11 +43,9 @@ const RegisterPage = () => {
   // 회원가입 성공 / 실패
   useEffect(() => {
     if (authError) {
-      alert('회원가입 실패');
       return;
     }
     if (auth) {
-      alert('회원가입 성공');
       dispatch(check());
     }
   }, [auth, authError, dispatch]);

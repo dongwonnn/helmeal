@@ -7,9 +7,6 @@ import NavBar from '../components/Common/NavBar';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Logout from '../components/Auth/Logout';
-import OrderHistory from '../components/Profile/OrderHistory';
-import Polices from '../components/Profile/Polices';
-import Question from '../components/Profile/Question';
 import {
   Divider,
   ProfileContainer,
