@@ -2,24 +2,35 @@ import * as authApi from '../lib/api/auth';
 import { call, put, takeLatest } from 'redux-saga/effects';
 import { finishLoding, startLoading } from './loading';
 import { IUser } from '../types/IUser';
+import { IAuth } from '../types/IAuth';
+import { AxiosResponse } from 'axios';
 
 // as const 붙이기
-const TEMP_SET_USER = 'user/TEMP_SET_USER';
+export const TEMP_SET_USER = 'user/TEMP_SET_USER' as const;
 
-const CHECK = 'user/CHECK';
-const CHECK_SUCCESS = 'user/CHECK_SUCCESS';
-const CHECK_FAILURE = 'user/CHECK_FAILURE';
+export const CHECK = 'user/CHECK' as const;
+export const CHECK_SUCCESS = 'user/CHECK_SUCCESS' as const;
+export const CHECK_FAILURE = 'user/CHECK_FAILURE' as const;
 
-const LOGOUT = 'user/LOGOUT';
+export const LOGOUT = 'user/LOGOUT' as const;
 
-// export const tempSetUser = (user: IUser) => ({
-export const tempSetUser = (user) => ({
+export const tempSetUser = (user: IUser) => ({
   type: TEMP_SET_USER,
-  payload: user,
+  user,
 });
 
 export const check = () => ({
   type: CHECK,
+});
+
+export const checkSuccess = (payload: IUser) => ({
+  type: CHECK_SUCCESS,
+  payload,
+});
+
+export const checkFailure = (payload: string) => ({
+  type: CHECK_FAILURE,
+  payload,
 });
 
 export const logout = () => ({
@@ -27,16 +38,18 @@ export const logout = () => ({
 });
 
 // 액션 타입
-// type UserAction =
-//   | ReturnType<typeof tempSetUser>
-//   | ReturnType<typeof check>
-//   | ReturnType<typeof logout>;
+type UserAction =
+  | ReturnType<typeof tempSetUser>
+  | ReturnType<typeof check>
+  | ReturnType<typeof checkSuccess>
+  | ReturnType<typeof checkFailure>
+  | ReturnType<typeof logout>;
 
 // saga 생성
 function* checkSaga() {
   yield put(startLoading(CHECK));
   try {
-    const response = yield call(authApi.check);
+    const response: AxiosResponse<{ user: IAuth }> = yield call(authApi.check);
 
     yield put({
       type: CHECK_SUCCESS,
@@ -79,38 +92,33 @@ export function* userSaga() {
 }
 
 // 초기값 타입
-// type UserState = {
-//   user: IUser[] | null;
-//   checkError: null;
-// };
+type UserState = {
+  user: IUser | null;
+  checkError: string | null;
+};
 
 const initialStete = {
   user: null,
   checkError: null,
 };
 
-// const user = (
-//   state: UserState = initialStete,
-//   action: UserAction,
-// ): UserState => {
-const user = (state = initialStete, action) => {
+const user = (
+  state: UserState = initialStete,
+  action: UserAction,
+): UserState => {
   switch (action.type) {
-    case TEMP_SET_USER:
-      return {
-        ...state,
-        user: action.payload.data,
-      };
+    // case TEMP_SET_USER:
+    //   return {
+    //     ...state,
+    //     user: action.payload.data,
+    //   };
     case CHECK_SUCCESS:
-      console.log(action);
-
       return {
         ...state,
         user: action.payload,
         checkError: null,
       };
     case CHECK_FAILURE:
-      console.log(action);
-
       return {
         ...state,
         user: null,

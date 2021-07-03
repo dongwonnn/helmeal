@@ -96,16 +96,16 @@ export function* authSaga() {
 
 const initialStete = {
   register: {
-    userId: '',
-    password: '',
-    passwordConfirm: '',
-    email: '',
-    phoneNum: '',
+    userId: null,
+    password: null,
+    passwordConfirm: null,
+    email: null,
+    phoneNum: null,
   },
   login: {
-    userId: '',
-    email: '',
-    password: '',
+    userId: null,
+    email: null,
+    password: null,
   },
   auth: null,
   authError: null,

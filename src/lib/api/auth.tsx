@@ -1,5 +1,6 @@
 import { IAuth } from '../../types/IAuth';
 import client from './client';
+import axios from 'axios';
 
 export const login = ({ email, userId, password }: IAuth) =>
   client.post('/auth/login', {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { MealCategoriesContainer, MealCategoryLabel } from './styles';
 import { mealCategories } from '../../utils/data';
 import { useCallback } from 'react';

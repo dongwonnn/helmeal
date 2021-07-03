@@ -55,7 +55,7 @@ const LoginPage = ({
   // 제출 버튼
   const onSubmit = (e: any) => {
     e.preventDefault();
-    const { userId, email, password } = form;
+    const { email, userId, password } = form;
 
     dispatch(login({ userId, email, password }));
   };
