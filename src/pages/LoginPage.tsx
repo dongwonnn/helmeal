@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import {
-  LoginPageContainer,
+  AuthPageContainer,
   InputContainer,
   LogoContainer,
 } from '../components/Auth/styles';
 import { ReactComponent as Logo } from '../assets/images/Logo.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../reducers';
-import { changeField, initializeForm, login } from '../reducers/auth';
+import { changeFieldLogin, initializeLoginForm, login } from '../reducers/auth';
 import Button from '../components/Common/Button';
 import { check } from '../reducers/user';
 import { useHistory } from 'react-router-dom';
@@ -28,7 +28,7 @@ const LoginPage = () => {
   const onChange = (e: any) => {
     const { value, name } = e.target;
     dispatch(
-      changeField({
+      changeFieldLogin({
         form: 'login',
         key: name,
         value,
@@ -70,11 +70,11 @@ const LoginPage = () => {
   }, [history, user]);
 
   useEffect(() => {
-    dispatch(initializeForm('login'));
+    dispatch(initializeLoginForm('login'));
   }, [dispatch]);
 
   return (
-    <LoginPageContainer>
+    <AuthPageContainer>
       <LogoContainer>
         <Logo />
       </LogoContainer>
@@ -101,7 +101,7 @@ const LoginPage = () => {
           <Button>로그인</Button>
         </form>
       </main>
-    </LoginPageContainer>
+    </AuthPageContainer>
   );
 };
 

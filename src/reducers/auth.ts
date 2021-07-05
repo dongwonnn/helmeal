@@ -6,8 +6,10 @@ import { IAuth } from '../types/IAuth';
 import { IRegister } from '../types/IRegister';
 import { AxiosResponse } from 'axios';
 
-const CHANGE_FIELD = 'auth/CHANGE_FIELD' as const;
-const INITIALIZE_FORM = 'auth/INITIALIZE_FORM' as const;
+const CHANGE_FIELD_LOGIN = 'auth/CHANGE_FIELD_LOGIN' as const;
+const CHANGE_FIELD_REGISTER = 'auth/CHANGE_FIELD_REGISTER' as const;
+const INITIALIZE_LOGIN_FORM = 'auth/INITIALIZE_LOGIN_FORM' as const;
+const INITIALIZE_REGISTER_FORM = 'auth/INITIALIZE_REGISTER_FORM' as const;
 
 const LOGIN = 'auth/LOGIN' as const;
 const LOGIN_SUCCESS = 'auth/LOGIN_SUCCESS' as const;
@@ -17,15 +19,26 @@ const REGISTER = 'auth/REGISTER' as const;
 const REGISTER_SUCCESS = 'auth/REGISTER_SUCCESS' as const;
 const REGISTER_FAILURE = 'auth/REGISTER_FAILURE' as const;
 
-export const changeField = ({ form, key, value }: IChangeFiled) => ({
-  type: CHANGE_FIELD,
+export const changeFieldLogin = ({ form, key, value }: IChangeFiled) => ({
+  type: CHANGE_FIELD_LOGIN,
   form, // lgoin인지, register 인지
   key, // userId, password...
   value, // 실제 바꾸려는 값
 });
 
-export const initializeForm = (form: string) => ({
-  type: INITIALIZE_FORM,
+export const changeFieldRegister = ({ form, key, value }: IChangeFiled) => ({
+  type: CHANGE_FIELD_REGISTER,
+  form, // lgoin인지, register 인지
+  key, // userId, password...
+  value, // 실제 바꾸려는 값
+});
+
+export const initializeLoginForm = (form: string) => ({
+  type: INITIALIZE_LOGIN_FORM,
+  form,
+});
+export const initializeRegisterForm = (form: string) => ({
+  type: INITIALIZE_REGISTER_FORM,
   form,
 });
 
@@ -74,8 +87,10 @@ export const registerFailure = (payload: string) => ({
 
 // 액션 타입
 type AuthAction =
-  | ReturnType<typeof changeField>
-  | ReturnType<typeof initializeForm>
+  | ReturnType<typeof changeFieldLogin>
+  | ReturnType<typeof changeFieldRegister>
+  | ReturnType<typeof initializeLoginForm>
+  | ReturnType<typeof initializeRegisterForm>
   | ReturnType<typeof login>
   | ReturnType<typeof loginSuccess>
   | ReturnType<typeof loginFailure>
@@ -151,7 +166,10 @@ type AuthState = {
     birthday: string | null;
     sex: string | null;
   };
-  login: IAuth;
+  login: {
+    email: string | null;
+    password: string | null;
+  };
   auth: string | null;
   authError: string | null;
 };
@@ -179,23 +197,40 @@ const auth = (
   action: AuthAction,
 ): AuthState => {
   switch (action.type) {
-    case CHANGE_FIELD:
+    case CHANGE_FIELD_LOGIN:
       console.log(action.form);
       return {
         ...state,
         [action.form]: {
           // ...state[action.form],
           ...state['login'],
+          [action.key]: action.value,
+        },
+      };
+    case CHANGE_FIELD_REGISTER:
+      console.log(action.form);
+      return {
+        ...state,
+        [action.form]: {
+          // ...state[action.form],
           ...state['register'],
           [action.key]: action.value,
         },
       };
-    // case INITIALIZE_FORM:
-    //   return {
-    //     ...state,
-    //     [action.form]: initialStete[action.form],
-    //     authError: null,
-    //   };
+    case INITIALIZE_LOGIN_FORM:
+      return {
+        ...state,
+        // [action.form]: initialStete[action.form],
+        [action.form]: initialStete['login'],
+        authError: null,
+      };
+    case INITIALIZE_REGISTER_FORM:
+      return {
+        ...state,
+        // [action.form]: initialStete[action.form],
+        [action.form]: initialStete['login'],
+        authError: null,
+      };
     case LOGIN_SUCCESS:
       return {
         ...state,

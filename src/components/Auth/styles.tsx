@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const LoginPageContainer = styled.div`
+export const AuthPageContainer = styled.div`
   width: 100%;
   height: 100vh;
   max-width: 1024px;
@@ -81,6 +81,10 @@ export const NextButton = styled.div`
   background-color: white;
   padding: 23px 24px 34px 24px;
 
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+
   p {
     background-color: #fc5c42;
     border-radius: 8px;
@@ -94,4 +98,36 @@ export const NextButton = styled.div`
     text-align: center;
     letter-spacing: -0.408px;
   }
+`;
+
+export const SubmitButton = styled.button`
+  max-width: 420px;
+  width: 100%;
+  border: none;
+  display: block;
+  background-color: white;
+  padding: 23px 24px 34px 24px;
+
+  margin: 0 auto;
+  position: fixed;
+  bottom: 0;
+
+  p {
+    background-color: #fc5c42;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    padding: 17px 7.63px;
+    font-weight: bold;
+
+    font-size: 1.06rem;
+    line-height: 22px;
+    text-align: center;
+    letter-spacing: -0.408px;
+  }
+`;
+
+export const RegisterPageContainer = styled.div`
+  max-width: 420px;
+  height: 100vh;
 `;

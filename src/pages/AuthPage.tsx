@@ -7,7 +7,7 @@ import { Location } from 'history';
 import { StaticContext } from 'react-router';
 import LoginButton from '../components/Auth/LoginButton';
 import {
-  LoginPageContainer,
+  AuthPageContainer,
   LogoContainer,
   LoginButtonGroup,
 } from '../components/Auth/styles';
@@ -27,22 +27,22 @@ const AuthPage = ({
   }, [pathname]);
 
   return (
-    <LoginPageContainer>
+    <AuthPageContainer>
       <LogoContainer>
         <Logo />
       </LogoContainer>
       <LoginButtonGroup>
-        <LoginButton>
-          <Link to="/login">헬밀 이메일로 로그인</Link>
-        </LoginButton>
+        <Link to="/login">
+          <LoginButton>헬밀 이메일로 로그인</LoginButton>
+        </Link>
         <LoginButton from={from}>카카오톡 아이디 로그인</LoginButton>
         <LoginButton from={from}>구글 아이디 로그인</LoginButton>
-        <LoginButton>
-          <Link to="/register">회원가입</Link>
-        </LoginButton>
+        <Link to="/register">
+          <LoginButton>회원가입</LoginButton>
+        </Link>
         <TermsOfService />
       </LoginButtonGroup>
-    </LoginPageContainer>
+    </AuthPageContainer>
   );
 };
 
