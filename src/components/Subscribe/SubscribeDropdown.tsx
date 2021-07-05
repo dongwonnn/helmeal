@@ -141,7 +141,7 @@ const SubscribeDropdown: FC<DropdownProps> = ({ setCanSelectOption }) => {
   const receiveDay = useMemo(() => getReceiveDay(), []);
 
   if (!user) {
-    history.push('/login');
+    history.push('/auth');
   }
 
   return (

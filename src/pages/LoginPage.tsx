@@ -1,34 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { ReactComponent as Logo } from '../assets/images/Logo.svg';
-import { RouteComponentProps, useLocation } from 'react-router';
-import TermsOfService from '../components/Profile/TermsOfService';
-import { Location } from 'history';
-import { StaticContext } from 'react-router';
-import LoginButton from '../components/Auth/LoginButton';
+import React, { useEffect } from 'react';
 import {
   LoginPageContainer,
-  LogoContainer,
-  LoginButtonGroup,
   InputContainer,
+  LogoContainer,
 } from '../components/Auth/styles';
+import { ReactComponent as Logo } from '../assets/images/Logo.svg';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeField, initializeForm, login } from '../reducers/auth';
 import { RootState } from '../reducers';
-import { useHistory } from 'react-router-dom';
+import { changeField, initializeForm, login } from '../reducers/auth';
+import Button from '../components/Common/Button';
 import { check } from '../reducers/user';
+import { useHistory } from 'react-router-dom';
 
-interface LocationProps {
-  from: Location;
-}
-
-const LoginPage = ({
-  location,
-}: RouteComponentProps<{}, StaticContext, LocationProps>) => {
-  const [goLoginForm, setGoLoginForm] = useState(false);
-
-  const { pathname } = useLocation();
-  const { from } = location.state || { from: '/profile' };
-
+const LoginPage = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { form, auth, authError, user } = useSelector(
@@ -55,9 +39,9 @@ const LoginPage = ({
   // 제출 버튼
   const onSubmit = (e: any) => {
     e.preventDefault();
-    const { email, userId, password } = form;
+    const { email, password } = form;
 
-    dispatch(login({ userId, email, password }));
+    dispatch(login({ email, password }));
   };
 
   useEffect(() => {
@@ -89,64 +73,34 @@ const LoginPage = ({
     dispatch(initializeForm('login'));
   }, [dispatch]);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
   return (
     <LoginPageContainer>
-      {!goLoginForm ? (
-        <>
-          <LogoContainer isloginForm={goLoginForm}>
-            <Logo />
-          </LogoContainer>
-          <LoginButtonGroup>
-            <LoginButton setGoLoginForm={setGoLoginForm}>
-              헬밀 이메일로 로그인
-            </LoginButton>
-            <LoginButton from={from}>카카오톡 아이디 로그인</LoginButton>
-            <LoginButton from={from}>애플 아이디 로그인</LoginButton>
-            <LoginButton from={from}>구글 아이디 로그인</LoginButton>
-            <TermsOfService />
-          </LoginButtonGroup>
-        </>
-      ) : (
-        <>
-          <LogoContainer isloginForm={goLoginForm}>
-            <Logo />
-          </LogoContainer>
-          <main>
-            <form onSubmit={onSubmit}>
-              <InputContainer>
-                <input
-                  name="email"
-                  type="text"
-                  placeholder="아이디(이메일)"
-                  onChange={onChange}
-                  value={form.email || ''}
-                />
-                <input
-                  type="text"
-                  name="userId"
-                  placeholder="이름"
-                  onChange={onChange}
-                  value={form.userId || ''}
-                />
-                <input
-                  type="password"
-                  name="password"
-                  placeholder="비밀번호"
-                  onChange={onChange}
-                  value={form.password || ''}
-                />
-              </InputContainer>
-              <div className="login-submit">
-                <button className="login-login">로그인</button>
-              </div>
-            </form>
-          </main>
-        </>
-      )}
+      <LogoContainer>
+        <Logo />
+      </LogoContainer>
+      <main>
+        <form onSubmit={onSubmit}>
+          <InputContainer>
+            <p>이메일</p>
+            <input
+              name="email"
+              type="text"
+              placeholder="아이디(이메일)"
+              onChange={onChange}
+              value={form.email || ''}
+            />
+            <p>비밀번호</p>
+            <input
+              type="password"
+              name="password"
+              placeholder="비밀번호"
+              onChange={onChange}
+              value={form.password || ''}
+            />
+          </InputContainer>
+          <Button>로그인</Button>
+        </form>
+      </main>
     </LoginPageContainer>
   );
 };

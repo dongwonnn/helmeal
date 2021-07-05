@@ -66,7 +66,7 @@ const ProfilePage = () => {
           </ProfileMessageContainer>
 
           <ProfileLogin>
-            <Link to="/login">
+            <Link to="/auth">
               <p>로그인/회원가입</p>
             </Link>
           </ProfileLogin>

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const HeaderContainerStyle = styled.header`
-  max-width: 400px;
+  max-width: 420px;
   background-color: white;
   border-bottom: 1px solid #cccccc;
   padding: 18px 16px 18px 16px;
@@ -35,8 +35,10 @@ export const Side = styled.div`
   }
 `;
 
-export const ButtonContainer = styled.div`
-  max-width: 400px;
+export const ButtonContainer = styled.button`
+  max-width: 420px;
+  width: 100%;
+  border: none;
   display: block;
   background-color: white;
   padding: 23px 24px 34px 24px;
@@ -57,7 +59,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const DisableButtonContainer = styled.div`
-  max-width: 400px;
+  max-width: 420px;
   display: block;
   background-color: white;
   padding: 23px 24px 34px 24px;
@@ -111,7 +113,7 @@ export const TextContainer = styled.div`
 
 export const NavBarContainer = styled.ul`
   z-index: 1000;
-  max-width: 400px;
+  max-width: 420px;
   width: 100%;
   background-color: white;
   position: fixed;

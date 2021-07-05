@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
-import LoginPage from '../pages/LoginPage';
+import AuthPage from '../pages/AuthPage';
 import DetailPage from '../pages/DetailPage';
 import ProfilePage from '../pages/ProfilePage';
 import SubscribePage from '../pages/SubscribePage';
@@ -13,6 +13,7 @@ import GlobalStyles from './GlobalStyles';
 import OrderHistoryPage from '../pages/OrderHistoryPage';
 import SetAddressPage from '../pages/SetAddressPage';
 import RegisterPage from '../pages/RegisterPage';
+import LoginPage from '../pages/LoginPage';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/menu-detail/:id" component={MenuDetailPage} />
         <Route path="/profile" component={ProfilePage} />
         <Route path="/order-history" component={OrderHistoryPage} />
+        <Route path="/auth" component={AuthPage} />
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
       </Switch>

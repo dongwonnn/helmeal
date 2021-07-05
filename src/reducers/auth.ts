@@ -5,7 +5,6 @@ import { IChangeFiled } from '../types/IChangeFiled';
 import { IAuth } from '../types/IAuth';
 import { IRegister } from '../types/IRegister';
 import { AxiosResponse } from 'axios';
-import { IUser } from '../types/IUser';
 
 const CHANGE_FIELD = 'auth/CHANGE_FIELD' as const;
 const INITIALIZE_FORM = 'auth/INITIALIZE_FORM' as const;
@@ -30,10 +29,9 @@ export const initializeForm = (form: string) => ({
   form,
 });
 
-export const login = ({ email, userId, password }: IAuth) => ({
+export const login = ({ email, password }: IAuth) => ({
   type: LOGIN,
   email,
-  userId,
   password,
 });
 
@@ -47,11 +45,21 @@ export const loginFailure = (payload: string) => ({
   payload,
 });
 
-export const register = ({ email, userId, password }: IRegister) => ({
+export const register = ({
+  email,
+  password,
+  phoneNum,
+  birthday,
+  userId,
+  sex,
+}: IRegister) => ({
   type: REGISTER,
   email,
-  userId,
   password,
+  phoneNum,
+  birthday,
+  userId,
+  sex,
 });
 
 export const registerSuccess = (payload: string) => ({
@@ -79,11 +87,14 @@ type AuthAction =
 function* registerSaga(action: ReturnType<typeof register>) {
   yield put(startLoading(REGISTER));
   try {
-    const { email, userId, password } = action;
+    const { email, password, phoneNum, birthday, userId, sex } = action;
     const response: AxiosResponse = yield call(authApi.register, {
       email,
-      userId,
       password,
+      phoneNum,
+      birthday,
+      userId,
+      sex,
     });
 
     yield put({
@@ -103,9 +114,8 @@ function* registerSaga(action: ReturnType<typeof register>) {
 function* loginSaga(action: ReturnType<typeof login>) {
   yield put(startLoading(LOGIN));
   try {
-    const { userId, email, password } = action;
+    const { email, password } = action;
     const response: AxiosResponse = yield call(authApi.login, {
-      userId,
       email,
       password,
     });
@@ -138,12 +148,10 @@ type AuthState = {
     passwordConfirm: string | null;
     email: string | null;
     phoneNum: string | null;
+    birthday: string | null;
+    sex: string | null;
   };
-  login: {
-    email: string | null;
-    userId: string | null;
-    password: string | null;
-  };
+  login: IAuth;
   auth: string | null;
   authError: string | null;
 };
@@ -154,11 +162,12 @@ const initialStete = {
     password: null,
     passwordConfirm: null,
     email: null,
+    birthday: null,
     phoneNum: null,
+    sex: null,
   },
   login: {
     email: null,
-    userId: null,
     password: null,
   },
   auth: null,
@@ -171,11 +180,13 @@ const auth = (
 ): AuthState => {
   switch (action.type) {
     case CHANGE_FIELD:
+      console.log(action.form);
       return {
         ...state,
         [action.form]: {
           // ...state[action.form],
           ...state['login'],
+          ...state['register'],
           [action.key]: action.value,
         },
       };
