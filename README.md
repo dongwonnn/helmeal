@@ -6,7 +6,7 @@
 
 ## 📺 배포
 
-### URL : [helmeal.shop](helmeal.shop)
+### URL : [helmeal.shop](hhttp://helmeal.shop/)
 
 <br/>
 
