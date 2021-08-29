@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ButtonContainer } from '../Common/styles';
+import { ButtonContainer } from './styles';
 
 const Button: FC = ({ children }) => {
   return (

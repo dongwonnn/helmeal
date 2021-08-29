@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { MealCategoriesContainer, MealCategoryLabel } from './styles';
-import { mealCategories } from '../../utils/data';
-import { useCallback } from 'react';
-import { RootState } from '../../reducers';
+import React, { useState, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { categoryMealInfo } from '../../reducers/food';
+import { mealCategories } from 'utils/data';
+import { RootState } from 'reducers';
+import { categoryMealInfo } from 'reducers/food';
+import { MealCategoriesContainer, MealCategoryLabel } from './styles';
 
 const MealCategories = () => {
   const [clickId, setClickId] = useState<string>('0');

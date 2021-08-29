@@ -1,10 +1,10 @@
 import React, { FC, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { userData } from '../../utils/data';
 import { Redirect } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { userData } from 'utils/data';
 import { Location } from 'history';
+import { RootState } from 'reducers';
 import { LoginButtonContainer } from './styles';
-import { RootState } from '../../reducers';
 
 interface LoginButtonProps {
   from?: Location;

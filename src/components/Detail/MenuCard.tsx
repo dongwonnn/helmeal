@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import { ITotalMealInfo } from '../../types/ITotalMealInfo';
+import { ITotalMealInfo } from 'types/ITotalMealInfo';
 import { MenuCardContainer } from './styles';
 
-interface MenuCardProps{
-  food: ITotalMealInfo
+interface MenuCardProps {
+  food: ITotalMealInfo;
 }
 
-const MenuCard:FC<MenuCardProps> = ({ food }) => {
+const MenuCard: FC<MenuCardProps> = ({ food }) => {
   return (
     <MenuCardContainer>
       <img src={food.largeImgUrl} alt="MenuImage" />

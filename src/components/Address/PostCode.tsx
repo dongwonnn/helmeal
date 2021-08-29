@@ -1,9 +1,9 @@
 import React from 'react';
 import { FC } from 'react';
-import DaumPostcode from 'react-daum-postcode';
 import { useDispatch } from 'react-redux';
+import DaumPostcode from 'react-daum-postcode';
+import { setMainAddress } from 'reducers/address';
 
-import { setMainAddress } from '../../reducers/address';
 interface PostCodeProps {
   setShowPostCode: (e: boolean) => void;
 }

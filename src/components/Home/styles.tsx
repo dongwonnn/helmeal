@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import imgUrl from '../../assets/images/HomeImage.png';
+import imgUrl from 'assets/images/HomeImage.png';
 
 export const HomePageContainer = styled.div`
   padding-bottom: 53.25px;

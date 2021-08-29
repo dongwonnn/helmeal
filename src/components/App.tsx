@@ -1,19 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import HomePage from '../pages/HomePage';
-import AuthPage from '../pages/AuthPage';
-import DetailPage from '../pages/DetailPage';
-import ProfilePage from '../pages/ProfilePage';
-import SubscribePage from '../pages/SubscribePage';
-import SubscribeOptionPage from '../pages/SubscribeOptionPage';
-import AddressPage from '../pages/AddressPage';
-import SubscribeCompletePage from '../pages/SubscribeCompletePage';
-import MenuDetailPage from '../pages/MenuDetailPage';
+import HomePage from 'pages/HomePage';
+import AuthPage from 'pages/AuthPage';
+import DetailPage from 'pages/DetailPage';
+import ProfilePage from 'pages/ProfilePage';
+import SubscribePage from 'pages/SubscribePage';
+import SubscribeOptionPage from 'pages/SubscribeOptionPage';
+import AddressPage from 'pages/AddressPage';
+import SubscribeCompletePage from 'pages/SubscribeCompletePage';
+import MenuDetailPage from 'pages/MenuDetailPage';
 import GlobalStyles from './GlobalStyles';
-import OrderHistoryPage from '../pages/OrderHistoryPage';
-import SetAddressPage from '../pages/SetAddressPage';
-import RegisterPage from '../pages/RegisterPage';
-import LoginPage from '../pages/LoginPage';
+import OrderHistoryPage from 'pages/OrderHistoryPage';
+import SetAddressPage from 'pages/SetAddressPage';
+import RegisterPage from 'pages/RegisterPage';
+import LoginPage from 'pages/LoginPage';
 
 const App = () => {
   return (

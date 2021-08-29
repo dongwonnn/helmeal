@@ -1,17 +1,16 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { RootState } from '../../reducers';
+import { getReceiveDay } from 'utils/getDate';
+import { getNumberForm } from 'utils/getNumberForm';
+import { RootState } from 'reducers';
 import {
   setProteinInfo,
   setDateInfo,
   setDatePrice,
   setSubscribeInfo,
   setSubscribePrice,
-} from '../../reducers/option';
-import { getReceiveDay } from '../../utils/getDate';
-
-import { getNumberForm } from '../../utils/getNumberForm';
+} from 'reducers/option';
 import {
   DropDown,
   OrderGroup,

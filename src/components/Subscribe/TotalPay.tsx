@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../reducers';
-import { getPayForm } from '../../utils/getPayForm';
+import { RootState } from 'reducers';
+import { getPayForm } from 'utils/getPayForm';
 import { TotalPayContent, CardContiner } from './styles';
 
 const TotalPay = () => {

@@ -1,15 +1,19 @@
 import React from 'react';
-import { ReactComponent as BeefProtein } from '../../assets/images/ingredients/Beef_Protein.svg';
-import { ReactComponent as ChickenProtein } from '../../assets/images/ingredients/Chicken_Protein.svg';
-import { ReactComponent as FishProtein } from '../../assets/images/ingredients/Fish_Protein.svg';
-import { ReactComponent as ForkProtein } from '../../assets/images/ingredients/Fork_Protein.svg';
-import { ReactComponent as VegetableProtein } from '../../assets/images/ingredients/Vegetable_Protein.svg';
-import { ReactComponent as PlusIcon } from '../../assets/images/PlusIcon.svg';
+import { ReactComponent as BeefProtein } from 'assets/images/ingredients/Beef_Protein.svg';
+import { ReactComponent as ChickenProtein } from 'assets/images/ingredients/Chicken_Protein.svg';
+import { ReactComponent as FishProtein } from 'assets/images/ingredients/Fish_Protein.svg';
+import { ReactComponent as ForkProtein } from 'assets/images/ingredients/Fork_Protein.svg';
+import { ReactComponent as VegetableProtein } from 'assets/images/ingredients/Vegetable_Protein.svg';
+import { ReactComponent as PlusIcon } from 'assets/images/PlusIcon.svg';
 
-import Snack from '../../assets/images/large/Snack_Presentation.png';
-import Meal from '../../assets/images/large/Meal_Presentation.png';
+import Snack from 'assets/images/large/Snack_Presentation.png';
+import Meal from 'assets/images/large/Meal_Presentation.png';
 
-import { DietComposition, FoodInfomationContainer, IngredientsGroup } from './styles';
+import {
+  DietComposition,
+  FoodInfomationContainer,
+  IngredientsGroup,
+} from './styles';
 
 const FoodInfomation = () => {
   return (

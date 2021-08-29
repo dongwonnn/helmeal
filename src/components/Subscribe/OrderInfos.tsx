@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../reducers';
-import { getDeliveryDate } from '../../utils/getDate';
+import { RootState } from 'reducers';
+import { getDeliveryDate } from 'utils/getDate';
 
 import {
   AddressInfo,

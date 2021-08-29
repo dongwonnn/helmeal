@@ -1,9 +1,9 @@
 import React, { FC, useCallback } from 'react';
-import { AiOutlineClose } from 'react-icons/ai';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
-import { ITotalMealInfo } from '../../types/ITotalMealInfo';
-import { ITotalSnackInfo } from '../../types/ITotalSnackInfo';
+import { AiOutlineClose } from 'react-icons/ai';
+import { ITotalMealInfo } from 'types/ITotalMealInfo';
+import { ITotalSnackInfo } from 'types/ITotalSnackInfo';
 import Button from '../Common/Button';
 import DoughnutGraph from '../Common/DoughnutGraph';
 import {

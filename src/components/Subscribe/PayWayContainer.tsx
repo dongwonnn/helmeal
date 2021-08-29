@@ -1,7 +1,6 @@
-import React, { useCallback, useState } from 'react';
-import { FC } from 'react';
-import { ReactComponent as ListIcon } from '../../assets/images/ListIcon.svg';
-import { payWay } from '../../utils/data';
+import React, { FC, useCallback, useState } from 'react';
+import { ReactComponent as ListIcon } from 'assets/images/ListIcon.svg';
+import { payWay } from 'utils/data';
 import { PayWay, PayWayList, PayWayListContainer } from './styles';
 // import { RootState } from '../../reducers';
 // import { useSelector } from 'react-redux';

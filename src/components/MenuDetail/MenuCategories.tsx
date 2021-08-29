@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ITotalMealInfo } from '../../types/ITotalMealInfo';
-import { ITotalSnackInfo } from '../../types/ITotalSnackInfo';
+import { ITotalMealInfo } from 'types/ITotalMealInfo';
+import { ITotalSnackInfo } from 'types/ITotalSnackInfo';
 import { MenuCategoriesContainer } from './styles';
 
 interface MenuCategoriesProps {

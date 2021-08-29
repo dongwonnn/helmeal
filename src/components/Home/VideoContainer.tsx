@@ -1,5 +1,5 @@
 import React from 'react';
-import { videoUrl } from '../../utils/data';
+import { videoUrl } from 'utils/data';
 import { VideoStyle } from './styles';
 
 const VideoContainer = () => {
