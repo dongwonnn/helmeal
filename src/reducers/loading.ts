@@ -10,7 +10,6 @@ export const finishLoding = (requestType: string) => ({
   requestType,
 });
 
-// 액션 타입
 type LoadingAction =
   | ReturnType<typeof startLoading>
   | ReturnType<typeof finishLoding>;

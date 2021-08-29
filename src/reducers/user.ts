@@ -5,7 +5,6 @@ import { IUser } from '../types/IUser';
 import { IAuth } from '../types/IAuth';
 import { AxiosResponse } from 'axios';
 
-// as const 붙이기
 export const TEMP_SET_USER = 'user/TEMP_SET_USER' as const;
 
 export const CHECK = 'user/CHECK' as const;
@@ -37,7 +36,6 @@ export const logout = () => ({
   type: LOGOUT,
 });
 
-// 액션 타입
 type UserAction =
   | ReturnType<typeof tempSetUser>
   | ReturnType<typeof check>
@@ -45,7 +43,6 @@ type UserAction =
   | ReturnType<typeof checkFailure>
   | ReturnType<typeof logout>;
 
-// saga 생성
 function* checkSaga() {
   yield put(startLoading(CHECK));
   try {
@@ -67,7 +64,6 @@ function* checkSaga() {
 
 function* checkFailureSaga() {
   try {
-    // 체크 실패시 로컬스토리지 삭제
     localStorage.removeItem('user');
   } catch (e) {
     console.log('localStorage is not working');
@@ -76,7 +72,6 @@ function* checkFailureSaga() {
 
 function* logoutSaga() {
   try {
-    // logout 호출 후 user 제거
     yield call(authApi.logout);
     localStorage.removeItem('user');
   } catch (e) {
@@ -84,14 +79,12 @@ function* logoutSaga() {
   }
 }
 
-// SAGA 통합
 export function* userSaga() {
   yield takeLatest(CHECK, checkSaga);
   yield takeLatest(CHECK_FAILURE, checkFailureSaga);
   yield takeLatest(LOGOUT, logoutSaga);
 }
 
-// 초기값 타입
 type UserState = {
   user: IUser | null;
   checkError: string | null;
@@ -107,11 +100,6 @@ const user = (
   action: UserAction,
 ): UserState => {
   switch (action.type) {
-    // case TEMP_SET_USER:
-    //   return {
-    //     ...state,
-    //     user: action.payload.data,
-    //   };
     case CHECK_SUCCESS:
       return {
         ...state,

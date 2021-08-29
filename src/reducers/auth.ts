@@ -21,16 +21,16 @@ const REGISTER_FAILURE = 'auth/REGISTER_FAILURE' as const;
 
 export const changeFieldLogin = ({ form, key, value }: IChangeFiled) => ({
   type: CHANGE_FIELD_LOGIN,
-  form, // lgoin인지, register 인지
-  key, // userId, password...
-  value, // 실제 바꾸려는 값
+  form,
+  key,
+  value,
 });
 
 export const changeFieldRegister = ({ form, key, value }: IChangeFiled) => ({
   type: CHANGE_FIELD_REGISTER,
-  form, // lgoin인지, register 인지
-  key, // userId, password...
-  value, // 실제 바꾸려는 값
+  form,
+  key,
+  value,
 });
 
 export const initializeLoginForm = (form: string) => ({
@@ -85,7 +85,6 @@ export const registerFailure = (payload: string) => ({
   payload,
 });
 
-// 액션 타입
 type AuthAction =
   | ReturnType<typeof changeFieldLogin>
   | ReturnType<typeof changeFieldRegister>
@@ -155,7 +154,6 @@ export function* authSaga() {
   yield takeLatest(LOGIN, loginSaga);
 }
 
-// 초기값 타입
 type AuthState = {
   register: {
     userId: string | null;
@@ -202,7 +200,6 @@ const auth = (
       return {
         ...state,
         [action.form]: {
-          // ...state[action.form],
           ...state['login'],
           [action.key]: action.value,
         },
@@ -212,7 +209,6 @@ const auth = (
       return {
         ...state,
         [action.form]: {
-          // ...state[action.form],
           ...state['register'],
           [action.key]: action.value,
         },
@@ -220,14 +216,12 @@ const auth = (
     case INITIALIZE_LOGIN_FORM:
       return {
         ...state,
-        // [action.form]: initialStete[action.form],
         [action.form]: initialStete['login'],
         authError: null,
       };
     case INITIALIZE_REGISTER_FORM:
       return {
         ...state,
-        // [action.form]: initialStete[action.form],
         [action.form]: initialStete['login'],
         authError: null,
       };
