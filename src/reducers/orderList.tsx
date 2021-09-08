@@ -23,7 +23,6 @@ function order(
 ): OrderState {
   switch (action.type) {
     case SET_ORDER_LIST:
-      console.log(state.orderList);
       return {
         ...state,
         orderList: state.orderList.concat(action.data).reverse(),

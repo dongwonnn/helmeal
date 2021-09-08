@@ -66,7 +66,7 @@ function* checkFailureSaga() {
   try {
     localStorage.removeItem('user');
   } catch (e) {
-    console.log('localStorage is not working');
+    // console.log('localStorage is not working');
   }
 }
 
@@ -75,7 +75,7 @@ function* logoutSaga() {
     yield call(authApi.logout);
     localStorage.removeItem('user');
   } catch (e) {
-    console.log(e);
+    // console.log(e);
   }
 }
 

@@ -1,7 +1,6 @@
-import { IAuth } from '../../types/IAuth';
-import client from './client';
-import axios from 'axios';
-import { IRegister } from '../../types/IRegister';
+import client from 'lib/api/client';
+import { IAuth } from 'types/IAuth';
+import { IRegister } from 'types/IRegister';
 
 export const login = ({ email, password }: IAuth) =>
   client.post('/auth/login', {

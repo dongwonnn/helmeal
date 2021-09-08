@@ -196,7 +196,6 @@ const auth = (
 ): AuthState => {
   switch (action.type) {
     case CHANGE_FIELD_LOGIN:
-      console.log(action.form);
       return {
         ...state,
         [action.form]: {
@@ -205,7 +204,6 @@ const auth = (
         },
       };
     case CHANGE_FIELD_REGISTER:
-      console.log(action.form);
       return {
         ...state,
         [action.form]: {
