@@ -6,7 +6,7 @@
 
 ## 📺 배포
 
-### URL : [helmeal.shop](http://helmeal.shop/)
+### URL : [helmeal.shop](https://dongwonnn.github.io/helmeal/)
 
 <br/>
 
